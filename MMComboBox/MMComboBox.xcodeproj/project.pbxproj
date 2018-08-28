@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAB52275213010D2009EF004 /* MMComboBox.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB52273213010D2009EF004 /* MMComboBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522B921301100009EF004 /* MMSelectedPath.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5227F21301100009EF004 /* MMSelectedPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522BA21301100009EF004 /* MMSelectedPath.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228021301100009EF004 /* MMSelectedPath.m */; };
+		AAB522BB21301100009EF004 /* MMSingleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228321301100009EF004 /* MMSingleItem.m */; };
+		AAB522BC21301100009EF004 /* MMSingleItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5228421301100009EF004 /* MMSingleItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522BD21301100009EF004 /* MMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228621301100009EF004 /* MMItem.m */; };
+		AAB522BE21301100009EF004 /* MMItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5228721301100009EF004 /* MMItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522BF21301100009EF004 /* MMCombinationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228921301100009EF004 /* MMCombinationItem.m */; };
+		AAB522C021301100009EF004 /* MMAlternativeItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5228A21301100009EF004 /* MMAlternativeItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522C121301100009EF004 /* MMLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5228B21301100009EF004 /* MMLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522C221301100009EF004 /* MMCombinationItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5228C21301100009EF004 /* MMCombinationItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522C321301100009EF004 /* MMLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228D21301100009EF004 /* MMLayout.m */; };
+		AAB522C421301100009EF004 /* MMAlternativeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228E21301100009EF004 /* MMAlternativeItem.m */; };
+		AAB522C521301100009EF004 /* MMMultiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229021301100009EF004 /* MMMultiItem.m */; };
+		AAB522C621301100009EF004 /* MMMultiItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229121301100009EF004 /* MMMultiItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522C721301100009EF004 /* MMSingleFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229521301100009EF004 /* MMSingleFitlerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522C821301100009EF004 /* MMSingleFitlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229621301100009EF004 /* MMSingleFitlerView.m */; };
+		AAB522C921301100009EF004 /* MMCombineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229821301100009EF004 /* MMCombineCell.m */; };
+		AAB522CA21301100009EF004 /* MMHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229921301100009EF004 /* MMHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522CB21301100009EF004 /* MMCombinationFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229A21301100009EF004 /* MMCombinationFitlerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522CC21301100009EF004 /* MMCombineCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229B21301100009EF004 /* MMCombineCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522CD21301100009EF004 /* MMHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229C21301100009EF004 /* MMHeaderView.m */; };
+		AAB522CE21301100009EF004 /* MMCombinationFitlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229D21301100009EF004 /* MMCombinationFitlerView.m */; };
+		AAB522CF21301100009EF004 /* MMMultiFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229F21301100009EF004 /* MMMultiFitlerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D021301100009EF004 /* MMNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A021301100009EF004 /* MMNormalCell.m */; };
+		AAB522D121301100009EF004 /* MMLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A121301100009EF004 /* MMLeftCell.m */; };
+		AAB522D221301100009EF004 /* MMNormalCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A221301100009EF004 /* MMNormalCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D321301100009EF004 /* MMMultiFitlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A321301100009EF004 /* MMMultiFitlerView.m */; };
+		AAB522D421301100009EF004 /* MMLeftCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A421301100009EF004 /* MMLeftCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D521301100009EF004 /* MMBasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A621301100009EF004 /* MMBasePopupView.m */; };
+		AAB522D621301100009EF004 /* MMBasePopupView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A721301100009EF004 /* MMBasePopupView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D721301100009EF004 /* MMDropDownBox.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A921301100009EF004 /* MMDropDownBox.m */; };
+		AAB522D821301100009EF004 /* MMComBoBoxView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AA21301100009EF004 /* MMComBoBoxView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D921301100009EF004 /* MMDropDownBox.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AB21301100009EF004 /* MMDropDownBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522DA21301100009EF004 /* MMComBoBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522AC21301100009EF004 /* MMComBoBoxView.m */; };
+		AAB522DC21301100009EF004 /* MMComboBoxHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AF21301100009EF004 /* MMComboBoxHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522DD21301100009EF004 /* UIView+ComboBoxExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522B121301100009EF004 /* UIView+ComboBoxExtension.m */; };
+		AAB522DE21301100009EF004 /* UIColor+ComboBoxExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522B221301100009EF004 /* UIColor+ComboBoxExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522DF21301100009EF004 /* UIView+ComboBoxExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522B321301100009EF004 /* UIView+ComboBoxExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522E021301100009EF004 /* UIColor+ComboBoxExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522B421301100009EF004 /* UIColor+ComboBoxExtension.m */; };
+		AAB522E121301100009EF004 /* pulldown.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB522B621301100009EF004 /* pulldown.png */; };
+		AAB522E221301100009EF004 /* list_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB522B721301100009EF004 /* list_selected@2x.png */; };
+		AAB522E321301100009EF004 /* pullup.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB522B821301100009EF004 /* pullup.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AAB52270213010D2009EF004 /* MMComboBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMComboBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAB52273213010D2009EF004 /* MMComboBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMComboBox.h; sourceTree = "<group>"; };
+		AAB52274213010D2009EF004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAB5227F21301100009EF004 /* MMSelectedPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSelectedPath.h; sourceTree = "<group>"; };
+		AAB5228021301100009EF004 /* MMSelectedPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSelectedPath.m; sourceTree = "<group>"; };
+		AAB5228321301100009EF004 /* MMSingleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSingleItem.m; sourceTree = "<group>"; };
+		AAB5228421301100009EF004 /* MMSingleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSingleItem.h; sourceTree = "<group>"; };
+		AAB5228621301100009EF004 /* MMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMItem.m; sourceTree = "<group>"; };
+		AAB5228721301100009EF004 /* MMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMItem.h; sourceTree = "<group>"; };
+		AAB5228921301100009EF004 /* MMCombinationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCombinationItem.m; sourceTree = "<group>"; };
+		AAB5228A21301100009EF004 /* MMAlternativeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAlternativeItem.h; sourceTree = "<group>"; };
+		AAB5228B21301100009EF004 /* MMLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLayout.h; sourceTree = "<group>"; };
+		AAB5228C21301100009EF004 /* MMCombinationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCombinationItem.h; sourceTree = "<group>"; };
+		AAB5228D21301100009EF004 /* MMLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLayout.m; sourceTree = "<group>"; };
+		AAB5228E21301100009EF004 /* MMAlternativeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAlternativeItem.m; sourceTree = "<group>"; };
+		AAB5229021301100009EF004 /* MMMultiItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMultiItem.m; sourceTree = "<group>"; };
+		AAB5229121301100009EF004 /* MMMultiItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMultiItem.h; sourceTree = "<group>"; };
+		AAB5229521301100009EF004 /* MMSingleFitlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSingleFitlerView.h; sourceTree = "<group>"; };
+		AAB5229621301100009EF004 /* MMSingleFitlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSingleFitlerView.m; sourceTree = "<group>"; };
+		AAB5229821301100009EF004 /* MMCombineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCombineCell.m; sourceTree = "<group>"; };
+		AAB5229921301100009EF004 /* MMHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHeaderView.h; sourceTree = "<group>"; };
+		AAB5229A21301100009EF004 /* MMCombinationFitlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCombinationFitlerView.h; sourceTree = "<group>"; };
+		AAB5229B21301100009EF004 /* MMCombineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCombineCell.h; sourceTree = "<group>"; };
+		AAB5229C21301100009EF004 /* MMHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHeaderView.m; sourceTree = "<group>"; };
+		AAB5229D21301100009EF004 /* MMCombinationFitlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCombinationFitlerView.m; sourceTree = "<group>"; };
+		AAB5229F21301100009EF004 /* MMMultiFitlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMultiFitlerView.h; sourceTree = "<group>"; };
+		AAB522A021301100009EF004 /* MMNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNormalCell.m; sourceTree = "<group>"; };
+		AAB522A121301100009EF004 /* MMLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLeftCell.m; sourceTree = "<group>"; };
+		AAB522A221301100009EF004 /* MMNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNormalCell.h; sourceTree = "<group>"; };
+		AAB522A321301100009EF004 /* MMMultiFitlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMultiFitlerView.m; sourceTree = "<group>"; };
+		AAB522A421301100009EF004 /* MMLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLeftCell.h; sourceTree = "<group>"; };
+		AAB522A621301100009EF004 /* MMBasePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBasePopupView.m; sourceTree = "<group>"; };
+		AAB522A721301100009EF004 /* MMBasePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBasePopupView.h; sourceTree = "<group>"; };
+		AAB522A921301100009EF004 /* MMDropDownBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDropDownBox.m; sourceTree = "<group>"; };
+		AAB522AA21301100009EF004 /* MMComBoBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMComBoBoxView.h; sourceTree = "<group>"; };
+		AAB522AB21301100009EF004 /* MMDropDownBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDropDownBox.h; sourceTree = "<group>"; };
+		AAB522AC21301100009EF004 /* MMComBoBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMComBoBoxView.m; sourceTree = "<group>"; };
+		AAB522AF21301100009EF004 /* MMComboBoxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMComboBoxHeader.h; sourceTree = "<group>"; };
+		AAB522B121301100009EF004 /* UIView+ComboBoxExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ComboBoxExtension.m"; sourceTree = "<group>"; };
+		AAB522B221301100009EF004 /* UIColor+ComboBoxExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ComboBoxExtension.h"; sourceTree = "<group>"; };
+		AAB522B321301100009EF004 /* UIView+ComboBoxExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ComboBoxExtension.h"; sourceTree = "<group>"; };
+		AAB522B421301100009EF004 /* UIColor+ComboBoxExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ComboBoxExtension.m"; sourceTree = "<group>"; };
+		AAB522B621301100009EF004 /* pulldown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulldown.png; sourceTree = "<group>"; };
+		AAB522B721301100009EF004 /* list_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_selected@2x.png"; sourceTree = "<group>"; };
+		AAB522B821301100009EF004 /* pullup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullup.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAB5226C213010D2009EF004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAB52266213010D2009EF004 = {
+			isa = PBXGroup;
+			children = (
+				AAB52272213010D2009EF004 /* MMComboBox */,
+				AAB52271213010D2009EF004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAB52271213010D2009EF004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAB52270213010D2009EF004 /* MMComboBox.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAB52272213010D2009EF004 /* MMComboBox */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5227B21301100009EF004 /* MMComboBox */,
+				AAB52274213010D2009EF004 /* Info.plist */,
+			);
+			path = MMComboBox;
+			sourceTree = "<group>";
+		};
+		AAB5227B21301100009EF004 /* MMComboBox */ = {
+			isa = PBXGroup;
+			children = (
+				AAB52273213010D2009EF004 /* MMComboBox.h */,
+				AAB5227C21301100009EF004 /* Classes */,
+				AAB522B521301100009EF004 /* Assetses */,
+			);
+			path = MMComboBox;
+			sourceTree = "<group>";
+		};
+		AAB5227C21301100009EF004 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5227D21301100009EF004 /* MMModel */,
+				AAB5229221301100009EF004 /* MMView */,
+				AAB522AD21301100009EF004 /* MMHeader */,
+				AAB522B021301100009EF004 /* MMCategory */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AAB5227D21301100009EF004 /* MMModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5227E21301100009EF004 /* SelectedPath */,
+				AAB5228121301100009EF004 /* Item */,
+			);
+			path = MMModel;
+			sourceTree = "<group>";
+		};
+		AAB5227E21301100009EF004 /* SelectedPath */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5227F21301100009EF004 /* MMSelectedPath.h */,
+				AAB5228021301100009EF004 /* MMSelectedPath.m */,
+			);
+			path = SelectedPath;
+			sourceTree = "<group>";
+		};
+		AAB5228121301100009EF004 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5228221301100009EF004 /* SingleFitlerItem */,
+				AAB5228521301100009EF004 /* BaseItem */,
+				AAB5228821301100009EF004 /* CombinationItem */,
+				AAB5228F21301100009EF004 /* MultFitlerItem */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		AAB5228221301100009EF004 /* SingleFitlerItem */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5228321301100009EF004 /* MMSingleItem.m */,
+				AAB5228421301100009EF004 /* MMSingleItem.h */,
+			);
+			path = SingleFitlerItem;
+			sourceTree = "<group>";
+		};
+		AAB5228521301100009EF004 /* BaseItem */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5228621301100009EF004 /* MMItem.m */,
+				AAB5228721301100009EF004 /* MMItem.h */,
+			);
+			path = BaseItem;
+			sourceTree = "<group>";
+		};
+		AAB5228821301100009EF004 /* CombinationItem */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5228921301100009EF004 /* MMCombinationItem.m */,
+				AAB5228A21301100009EF004 /* MMAlternativeItem.h */,
+				AAB5228B21301100009EF004 /* MMLayout.h */,
+				AAB5228C21301100009EF004 /* MMCombinationItem.h */,
+				AAB5228D21301100009EF004 /* MMLayout.m */,
+				AAB5228E21301100009EF004 /* MMAlternativeItem.m */,
+			);
+			path = CombinationItem;
+			sourceTree = "<group>";
+		};
+		AAB5228F21301100009EF004 /* MultFitlerItem */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5229021301100009EF004 /* MMMultiItem.m */,
+				AAB5229121301100009EF004 /* MMMultiItem.h */,
+			);
+			path = MultFitlerItem;
+			sourceTree = "<group>";
+		};
+		AAB5229221301100009EF004 /* MMView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5229321301100009EF004 /* PopupView */,
+				AAB522A821301100009EF004 /* ComBoBoxView */,
+			);
+			path = MMView;
+			sourceTree = "<group>";
+		};
+		AAB5229321301100009EF004 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5229421301100009EF004 /* SingleFitlerView */,
+				AAB5229721301100009EF004 /* CombinationFitlerView */,
+				AAB5229E21301100009EF004 /* MultFitlerView */,
+				AAB522A521301100009EF004 /* BasePopupView */,
+			);
+			path = PopupView;
+			sourceTree = "<group>";
+		};
+		AAB5229421301100009EF004 /* SingleFitlerView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5229521301100009EF004 /* MMSingleFitlerView.h */,
+				AAB5229621301100009EF004 /* MMSingleFitlerView.m */,
+			);
+			path = SingleFitlerView;
+			sourceTree = "<group>";
+		};
+		AAB5229721301100009EF004 /* CombinationFitlerView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5229821301100009EF004 /* MMCombineCell.m */,
+				AAB5229921301100009EF004 /* MMHeaderView.h */,
+				AAB5229A21301100009EF004 /* MMCombinationFitlerView.h */,
+				AAB5229B21301100009EF004 /* MMCombineCell.h */,
+				AAB5229C21301100009EF004 /* MMHeaderView.m */,
+				AAB5229D21301100009EF004 /* MMCombinationFitlerView.m */,
+			);
+			path = CombinationFitlerView;
+			sourceTree = "<group>";
+		};
+		AAB5229E21301100009EF004 /* MultFitlerView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB5229F21301100009EF004 /* MMMultiFitlerView.h */,
+				AAB522A021301100009EF004 /* MMNormalCell.m */,
+				AAB522A121301100009EF004 /* MMLeftCell.m */,
+				AAB522A221301100009EF004 /* MMNormalCell.h */,
+				AAB522A321301100009EF004 /* MMMultiFitlerView.m */,
+				AAB522A421301100009EF004 /* MMLeftCell.h */,
+			);
+			path = MultFitlerView;
+			sourceTree = "<group>";
+		};
+		AAB522A521301100009EF004 /* BasePopupView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB522A621301100009EF004 /* MMBasePopupView.m */,
+				AAB522A721301100009EF004 /* MMBasePopupView.h */,
+			);
+			path = BasePopupView;
+			sourceTree = "<group>";
+		};
+		AAB522A821301100009EF004 /* ComBoBoxView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB522A921301100009EF004 /* MMDropDownBox.m */,
+				AAB522AA21301100009EF004 /* MMComBoBoxView.h */,
+				AAB522AB21301100009EF004 /* MMDropDownBox.h */,
+				AAB522AC21301100009EF004 /* MMComBoBoxView.m */,
+			);
+			path = ComBoBoxView;
+			sourceTree = "<group>";
+		};
+		AAB522AD21301100009EF004 /* MMHeader */ = {
+			isa = PBXGroup;
+			children = (
+				AAB522AF21301100009EF004 /* MMComboBoxHeader.h */,
+			);
+			path = MMHeader;
+			sourceTree = "<group>";
+		};
+		AAB522B021301100009EF004 /* MMCategory */ = {
+			isa = PBXGroup;
+			children = (
+				AAB522B121301100009EF004 /* UIView+ComboBoxExtension.m */,
+				AAB522B221301100009EF004 /* UIColor+ComboBoxExtension.h */,
+				AAB522B321301100009EF004 /* UIView+ComboBoxExtension.h */,
+				AAB522B421301100009EF004 /* UIColor+ComboBoxExtension.m */,
+			);
+			path = MMCategory;
+			sourceTree = "<group>";
+		};
+		AAB522B521301100009EF004 /* Assetses */ = {
+			isa = PBXGroup;
+			children = (
+				AAB522B621301100009EF004 /* pulldown.png */,
+				AAB522B721301100009EF004 /* list_selected@2x.png */,
+				AAB522B821301100009EF004 /* pullup.png */,
+			);
+			path = Assetses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AAB5226D213010D2009EF004 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAB522C121301100009EF004 /* MMLayout.h in Headers */,
+				AAB522D821301100009EF004 /* MMComBoBoxView.h in Headers */,
+				AAB522DF21301100009EF004 /* UIView+ComboBoxExtension.h in Headers */,
+				AAB522D221301100009EF004 /* MMNormalCell.h in Headers */,
+				AAB522BC21301100009EF004 /* MMSingleItem.h in Headers */,
+				AAB522C721301100009EF004 /* MMSingleFitlerView.h in Headers */,
+				AAB522C221301100009EF004 /* MMCombinationItem.h in Headers */,
+				AAB522CF21301100009EF004 /* MMMultiFitlerView.h in Headers */,
+				AAB522D921301100009EF004 /* MMDropDownBox.h in Headers */,
+				AAB522D421301100009EF004 /* MMLeftCell.h in Headers */,
+				AAB522CB21301100009EF004 /* MMCombinationFitlerView.h in Headers */,
+				AAB522D621301100009EF004 /* MMBasePopupView.h in Headers */,
+				AAB522CC21301100009EF004 /* MMCombineCell.h in Headers */,
+				AAB522C021301100009EF004 /* MMAlternativeItem.h in Headers */,
+				AAB522CA21301100009EF004 /* MMHeaderView.h in Headers */,
+				AAB522DE21301100009EF004 /* UIColor+ComboBoxExtension.h in Headers */,
+				AAB522C621301100009EF004 /* MMMultiItem.h in Headers */,
+				AAB522DC21301100009EF004 /* MMComboBoxHeader.h in Headers */,
+				AAB522B921301100009EF004 /* MMSelectedPath.h in Headers */,
+				AAB52275213010D2009EF004 /* MMComboBox.h in Headers */,
+				AAB522BE21301100009EF004 /* MMItem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AAB5226F213010D2009EF004 /* MMComboBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAB52278213010D2009EF004 /* Build configuration list for PBXNativeTarget "MMComboBox" */;
+			buildPhases = (
+				AAB5226B213010D2009EF004 /* Sources */,
+				AAB5226C213010D2009EF004 /* Frameworks */,
+				AAB5226D213010D2009EF004 /* Headers */,
+				AAB5226E213010D2009EF004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMComboBox;
+			productName = MMComboBox;
+			productReference = AAB52270213010D2009EF004 /* MMComboBox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAB52267213010D2009EF004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "爆炸头的波波安";
+				TargetAttributes = {
+					AAB5226F213010D2009EF004 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = AAB5226A213010D2009EF004 /* Build configuration list for PBXProject "MMComboBox" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AAB52266213010D2009EF004;
+			productRefGroup = AAB52271213010D2009EF004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAB5226F213010D2009EF004 /* MMComboBox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAB5226E213010D2009EF004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAB522E121301100009EF004 /* pulldown.png in Resources */,
+				AAB522E321301100009EF004 /* pullup.png in Resources */,
+				AAB522E221301100009EF004 /* list_selected@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAB5226B213010D2009EF004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAB522BD21301100009EF004 /* MMItem.m in Sources */,
+				AAB522BB21301100009EF004 /* MMSingleItem.m in Sources */,
+				AAB522D121301100009EF004 /* MMLeftCell.m in Sources */,
+				AAB522C921301100009EF004 /* MMCombineCell.m in Sources */,
+				AAB522CD21301100009EF004 /* MMHeaderView.m in Sources */,
+				AAB522D021301100009EF004 /* MMNormalCell.m in Sources */,
+				AAB522BF21301100009EF004 /* MMCombinationItem.m in Sources */,
+				AAB522E021301100009EF004 /* UIColor+ComboBoxExtension.m in Sources */,
+				AAB522CE21301100009EF004 /* MMCombinationFitlerView.m in Sources */,
+				AAB522D321301100009EF004 /* MMMultiFitlerView.m in Sources */,
+				AAB522DD21301100009EF004 /* UIView+ComboBoxExtension.m in Sources */,
+				AAB522BA21301100009EF004 /* MMSelectedPath.m in Sources */,
+				AAB522D721301100009EF004 /* MMDropDownBox.m in Sources */,
+				AAB522DA21301100009EF004 /* MMComBoBoxView.m in Sources */,
+				AAB522C821301100009EF004 /* MMSingleFitlerView.m in Sources */,
+				AAB522C521301100009EF004 /* MMMultiItem.m in Sources */,
+				AAB522C421301100009EF004 /* MMAlternativeItem.m in Sources */,
+				AAB522D521301100009EF004 /* MMBasePopupView.m in Sources */,
+				AAB522C321301100009EF004 /* MMLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AAB52276213010D2009EF004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AAB52277213010D2009EF004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AAB52279213010D2009EF004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MMComboBox/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyy.MMComboBox;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AAB5227A213010D2009EF004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MMComboBox/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyy.MMComboBox;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAB5226A213010D2009EF004 /* Build configuration list for PBXProject "MMComboBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAB52276213010D2009EF004 /* Debug */,
+				AAB52277213010D2009EF004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAB52278213010D2009EF004 /* Build configuration list for PBXNativeTarget "MMComboBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAB52279213010D2009EF004 /* Debug */,
+				AAB5227A213010D2009EF004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAB52267213010D2009EF004 /* Project object */;
+}

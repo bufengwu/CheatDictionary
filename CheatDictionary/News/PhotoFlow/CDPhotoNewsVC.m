@@ -1,0 +1,143 @@
+//
+//  CDPhotoNewsVC.m
+//  CheatDictionary
+//
+//  Created by zzy on 2018/8/21.
+//  Copyright © 2018年 朱正毅. All rights reserved.
+//
+
+#import "CDPhotoNewsVC.h"
+#import "WSLWaterFlowLayout.h"
+
+#import "CDPhotoDetailVC.h"
+
+#import "CDSectionHeaderShowMoreView.h"
+#import "CDPhotoFlowNewsCell.h"
+#import "CDPhotoFlowNewsModel.h"
+#import "CDSectionModel.h"
+#import "CDPhotoNewsVM.h"
+
+#import "CDFlowEditView.h"
+
+@interface CDPhotoNewsVC () <UICollectionViewDelegate, UICollectionViewDataSource, WSLWaterFlowLayoutDelegate>
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+
+@property (nonatomic, strong) CDPhotoNewsVM *viewModel;
+
+@end
+
+@implementation CDPhotoNewsVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.viewModel = [CDPhotoNewsVM new];
+    [self.viewModel loadData];
+    
+    [self.view addSubview:self.collectionView];
+    [self.collectionView registerClass:[CDPhotoFlowNewsCell class] forCellWithReuseIdentifier:@"CDPhotoFlowNewsCell"];
+    [self.collectionView registerClass:[CDSectionHeaderShowMoreView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CDSectionHeaderShowMoreView"];
+    
+    CDFlowEditView *flowEditView = [CDFlowEditView new];
+    [self.view addSubview:flowEditView];
+    [flowEditView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).offset(-10);
+        make.bottom.equalTo(self.view).offset(-60);
+        make.width.height.mas_equalTo(60);
+    }];
+}
+
+#pragma mark -
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        WSLWaterFlowLayout *layout = [[WSLWaterFlowLayout alloc] init];
+        layout.delegate = self;
+        layout.flowLayoutStyle = WSLWaterFlowVerticalEqualWidth;
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+        _collectionView.backgroundColor = CollectViewBG;
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    }
+    return _collectionView;
+}
+
+#pragma mark - WSLWaterFlowLayoutDelegate
+
+- (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    id model = self.viewModel.objects[indexPath.section];
+    if ([model isKindOfClass:[CDSectionModel class]]) {
+        CDPhotoFlowNewsModel *innerModel = ((CDSectionModel *)model).objects[indexPath.row];
+        return [CDPhotoFlowNewsCell getSizeWithObject:innerModel];
+    }
+    return CGSizeZero;
+}
+
+-(CGSize )waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForHeaderViewInSection:(NSInteger)section {
+    return [CDSectionHeaderShowMoreView getSizeWithObject:nil];
+}
+
+-(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return 2;
+}
+
+-(CGFloat)columnMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return 5;
+}
+
+-(UIEdgeInsets)edgeInsetInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
+    return UIEdgeInsetsMake(0, 10, 0, 10);
+}
+
+#pragma mark - UICollectionView数据源
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return self.viewModel.objects.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    id model = self.viewModel.objects[section];
+    if ([model isKindOfClass:[CDSectionModel class]]) {
+        return ((CDSectionModel *)model).objects.count;
+    } else {
+        return 1;
+    }
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CDPhotoFlowNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CDPhotoFlowNewsCell" forIndexPath:indexPath];
+    
+    id model = self.viewModel.objects[indexPath.section];
+    if ([model isKindOfClass:[CDSectionModel class]]) {
+        CDPhotoFlowNewsModel *innerModel = ((CDSectionModel *)model).objects[indexPath.row];
+        [cell installWithObject:innerModel];
+    }
+    
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        id model = self.viewModel.objects[indexPath.section];
+//        if ([model isKindOfClass:[CDSectionModel class]]) {
+//            CDSectionModel *sectionModel = (CDSectionModel *)model;
+//            NSString *reuseIdentifier = NSStringFromClass([sectionModel.headerModel viewClass]);
+            CDSectionHeaderShowMoreView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CDSectionHeaderShowMoreView" forIndexPath:indexPath];
+//            [headerView installWithObject:sectionModel.headerModel ];
+        headerView.titleLabel.text = @"精选推荐";
+            return headerView;
+//        }
+    }
+    return [UICollectionReusableView new];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CDPhotoDetailVC *vc = [CDPhotoDetailVC new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+@end

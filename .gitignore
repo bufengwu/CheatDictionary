@@ -1,0 +1,10 @@
+Podfile.lock
+Pods
+
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate 
