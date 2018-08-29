@@ -9,9 +9,6 @@
 #import "CDBigAlertView.h"
 #import <BlocksKit/BlocksKit+UIKit.h>
 
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-#define ScreenH [UIScreen mainScreen].bounds.size.height
-
 @implementation CDBigAlertView
 
 #pragma mark - 显示只有确定按钮的弹窗
@@ -23,7 +20,7 @@
     
     CDBigAlertView *backView = [[CDBigAlertView alloc] init];
     backView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.6];
-    backView.frame = CGRectMake(0, 0, ScreenW, ScreenH);
+    backView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH);
     
     UIImage *whiteImage = [UIImage imageNamed:@"big_alert_bg"];
     CGFloat P = whiteImage.size.width/whiteImage.size.height;
@@ -33,7 +30,7 @@
     whiteImg.userInteractionEnabled = YES;
     [backView addSubview:whiteImg];
     [whiteImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(ScreenW * 0.75, ScreenW * 0.75/P));
+        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH * 0.75, SCREEN_WIDTH * 0.75/P));
         make.centerY.equalTo(backView.mas_centerY).multipliedBy(0.9);
         make.centerX.equalTo(backView.mas_centerX);
     }];
@@ -70,7 +67,7 @@
     button.layer.masksToBounds = YES;
     [whiteImg addSubview:button];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(ScreenW * 0.6, ScreenW * 0.6/btnP));
+        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH * 0.6, SCREEN_WIDTH * 0.6/btnP));
         make.bottom.equalTo(whiteImg.mas_bottom).offset(-30);
         make.centerX.equalTo(whiteImg.mas_centerX);
     }];

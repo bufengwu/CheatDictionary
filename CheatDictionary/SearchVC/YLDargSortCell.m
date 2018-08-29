@@ -11,10 +11,13 @@
 #define kDeleteBtnWH 10 * SCREEN_WIDTH_RATIO
 
 @interface YLDargSortCell ()<UIGestureRecognizerDelegate>
+
 @property (nonatomic,strong)  UILabel *label;
 
 @property (nonatomic,strong) UIButton * deleteBtn;
+
 @end
+
 @implementation YLDargSortCell
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -24,13 +27,13 @@
         
         self.layer.cornerRadius = 4 * SCREEN_WIDTH_RATIO;
         self.layer.masksToBounds = YES;
-        self.layer.borderColor = RGBColorMake(110, 110, 110, 1).CGColor;
+        self.layer.borderColor = RGBA(110, 110, 110, 1).CGColor;
         self.layer.borderWidth = kLineHeight;
         
         
         _label = [[UILabel alloc] init];
         _label.font = [UIFont systemFontOfSize:13];
-        _label.textColor = RGBColorMake(110, 110, 110, 1);
+        _label.textColor = RGBA(110, 110, 110, 1);
         _label.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_label];
         

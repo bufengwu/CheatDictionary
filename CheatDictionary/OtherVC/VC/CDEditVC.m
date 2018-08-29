@@ -11,7 +11,7 @@
 #import <Photos/Photos.h>
 #import <YYKit/YYKit.h>
 #import "TZImagePickerController.h"
-#import "BlocksKit+UIKit.h"
+#import <BlocksKit/BlocksKit+UIKit.h>
 
 #define getRectNavAndStatusHight  (self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height)
 

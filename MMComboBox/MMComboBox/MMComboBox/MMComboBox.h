@@ -18,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char MMComboBoxVersionString[];
 
 #ifndef MMComboBox_h
 #define MMComboBox_h
+#import "MMHeaderView.h"
 #import "MMComBoBoxView.h"
 #import "MMComboBoxHeader.h"
 #import "MMAlternativeItem.h"

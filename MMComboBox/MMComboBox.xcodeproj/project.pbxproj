@@ -22,25 +22,25 @@
 		AAB522C421301100009EF004 /* MMAlternativeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5228E21301100009EF004 /* MMAlternativeItem.m */; };
 		AAB522C521301100009EF004 /* MMMultiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229021301100009EF004 /* MMMultiItem.m */; };
 		AAB522C621301100009EF004 /* MMMultiItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229121301100009EF004 /* MMMultiItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAB522C721301100009EF004 /* MMSingleFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229521301100009EF004 /* MMSingleFitlerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522C721301100009EF004 /* MMSingleFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229521301100009EF004 /* MMSingleFitlerView.h */; };
 		AAB522C821301100009EF004 /* MMSingleFitlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229621301100009EF004 /* MMSingleFitlerView.m */; };
 		AAB522C921301100009EF004 /* MMCombineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229821301100009EF004 /* MMCombineCell.m */; };
 		AAB522CA21301100009EF004 /* MMHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229921301100009EF004 /* MMHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAB522CB21301100009EF004 /* MMCombinationFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229A21301100009EF004 /* MMCombinationFitlerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAB522CC21301100009EF004 /* MMCombineCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229B21301100009EF004 /* MMCombineCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522CB21301100009EF004 /* MMCombinationFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229A21301100009EF004 /* MMCombinationFitlerView.h */; };
+		AAB522CC21301100009EF004 /* MMCombineCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229B21301100009EF004 /* MMCombineCell.h */; };
 		AAB522CD21301100009EF004 /* MMHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229C21301100009EF004 /* MMHeaderView.m */; };
 		AAB522CE21301100009EF004 /* MMCombinationFitlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5229D21301100009EF004 /* MMCombinationFitlerView.m */; };
-		AAB522CF21301100009EF004 /* MMMultiFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229F21301100009EF004 /* MMMultiFitlerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522CF21301100009EF004 /* MMMultiFitlerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB5229F21301100009EF004 /* MMMultiFitlerView.h */; };
 		AAB522D021301100009EF004 /* MMNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A021301100009EF004 /* MMNormalCell.m */; };
 		AAB522D121301100009EF004 /* MMLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A121301100009EF004 /* MMLeftCell.m */; };
-		AAB522D221301100009EF004 /* MMNormalCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A221301100009EF004 /* MMNormalCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D221301100009EF004 /* MMNormalCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A221301100009EF004 /* MMNormalCell.h */; };
 		AAB522D321301100009EF004 /* MMMultiFitlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A321301100009EF004 /* MMMultiFitlerView.m */; };
-		AAB522D421301100009EF004 /* MMLeftCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A421301100009EF004 /* MMLeftCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D421301100009EF004 /* MMLeftCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A421301100009EF004 /* MMLeftCell.h */; };
 		AAB522D521301100009EF004 /* MMBasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A621301100009EF004 /* MMBasePopupView.m */; };
-		AAB522D621301100009EF004 /* MMBasePopupView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A721301100009EF004 /* MMBasePopupView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D621301100009EF004 /* MMBasePopupView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522A721301100009EF004 /* MMBasePopupView.h */; };
 		AAB522D721301100009EF004 /* MMDropDownBox.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522A921301100009EF004 /* MMDropDownBox.m */; };
 		AAB522D821301100009EF004 /* MMComBoBoxView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AA21301100009EF004 /* MMComBoBoxView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAB522D921301100009EF004 /* MMDropDownBox.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AB21301100009EF004 /* MMDropDownBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB522D921301100009EF004 /* MMDropDownBox.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AB21301100009EF004 /* MMDropDownBox.h */; };
 		AAB522DA21301100009EF004 /* MMComBoBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522AC21301100009EF004 /* MMComBoBoxView.m */; };
 		AAB522DC21301100009EF004 /* MMComboBoxHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB522AF21301100009EF004 /* MMComboBoxHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAB522DD21301100009EF004 /* UIView+ComboBoxExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522B121301100009EF004 /* UIView+ComboBoxExtension.m */; };
@@ -337,27 +337,27 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB522C121301100009EF004 /* MMLayout.h in Headers */,
+				AAB52275213010D2009EF004 /* MMComboBox.h in Headers */,
 				AAB522D821301100009EF004 /* MMComBoBoxView.h in Headers */,
-				AAB522DF21301100009EF004 /* UIView+ComboBoxExtension.h in Headers */,
-				AAB522D221301100009EF004 /* MMNormalCell.h in Headers */,
+				AAB522B921301100009EF004 /* MMSelectedPath.h in Headers */,
+				AAB522CA21301100009EF004 /* MMHeaderView.h in Headers */,
+				AAB522C021301100009EF004 /* MMAlternativeItem.h in Headers */,
+				AAB522BE21301100009EF004 /* MMItem.h in Headers */,
+				AAB522C121301100009EF004 /* MMLayout.h in Headers */,
 				AAB522BC21301100009EF004 /* MMSingleItem.h in Headers */,
-				AAB522C721301100009EF004 /* MMSingleFitlerView.h in Headers */,
+				AAB522C621301100009EF004 /* MMMultiItem.h in Headers */,
+				AAB522DE21301100009EF004 /* UIColor+ComboBoxExtension.h in Headers */,
+				AAB522DF21301100009EF004 /* UIView+ComboBoxExtension.h in Headers */,
 				AAB522C221301100009EF004 /* MMCombinationItem.h in Headers */,
+				AAB522DC21301100009EF004 /* MMComboBoxHeader.h in Headers */,
+				AAB522D221301100009EF004 /* MMNormalCell.h in Headers */,
+				AAB522C721301100009EF004 /* MMSingleFitlerView.h in Headers */,
 				AAB522CF21301100009EF004 /* MMMultiFitlerView.h in Headers */,
 				AAB522D921301100009EF004 /* MMDropDownBox.h in Headers */,
 				AAB522D421301100009EF004 /* MMLeftCell.h in Headers */,
 				AAB522CB21301100009EF004 /* MMCombinationFitlerView.h in Headers */,
 				AAB522D621301100009EF004 /* MMBasePopupView.h in Headers */,
 				AAB522CC21301100009EF004 /* MMCombineCell.h in Headers */,
-				AAB522C021301100009EF004 /* MMAlternativeItem.h in Headers */,
-				AAB522CA21301100009EF004 /* MMHeaderView.h in Headers */,
-				AAB522DE21301100009EF004 /* UIColor+ComboBoxExtension.h in Headers */,
-				AAB522C621301100009EF004 /* MMMultiItem.h in Headers */,
-				AAB522DC21301100009EF004 /* MMComboBoxHeader.h in Headers */,
-				AAB522B921301100009EF004 /* MMSelectedPath.h in Headers */,
-				AAB52275213010D2009EF004 /* MMComboBox.h in Headers */,
-				AAB522BE21301100009EF004 /* MMItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

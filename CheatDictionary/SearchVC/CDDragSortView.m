@@ -202,7 +202,7 @@
         titleLabel.font = kFont(13);
         titleLabel.text = @"发现";
         [titleLabel sizeToFit];
-        titleLabel.textColor = RGBColorMake(110, 110, 110, 1);
+        titleLabel.textColor = RGBA(110, 110, 110, 1);
         [_topView addSubview:titleLabel];
         titleLabel.tz_centerY = (kTopViewHeight) * 0.5;
         titleLabel.tz_left = kContentLeftAndRightSpace;
@@ -225,7 +225,7 @@
         _sortDeleteBtn = finshBtn;
         
         UIView * bottomLine = [[UIView alloc] initWithFrame:CGRectMake(20 * SCREEN_WIDTH_RATIO, kTopViewHeight - kLineHeight, SCREEN_WIDTH - 40 * SCREEN_WIDTH_RATIO, kLineHeight)];
-        bottomLine.backgroundColor = RGBColorMake(110, 110, 110, 1);
+        bottomLine.backgroundColor = RGBA(110, 110, 110, 1);
         [_topView addSubview:bottomLine];
     }
     return _topView;

@@ -9,7 +9,6 @@
 #import "LLFullScreenAdView.h"
 #import "SDWebImageManager.h"
 
-#define MainScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface LLFullScreenAdView ()
 
 @property (nonatomic, strong) UIButton *skipButton;         //跳过按钮
@@ -36,7 +35,7 @@
 {
     if (!_skipButton) {
         _skipButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _skipButton.frame = CGRectMake(MainScreenWidth - 70, 30, 60, 30);
+        _skipButton.frame = CGRectMake(SCREEN_WIDTH - 70, 30, 60, 30);
         _skipButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
         _skipButton.layer.cornerRadius = 15;
         _skipButton.layer.masksToBounds = YES;
@@ -68,7 +67,7 @@
 - (UIView *)timerView
 {
     if (!_timerView) {
-        self.timerView = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth - 62, 32, 40, 40)];
+        self.timerView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 62, 32, 40, 40)];
         CAShapeLayer *layer = [CAShapeLayer layer];
         layer.fillColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4].CGColor;    // 填充颜色
         layer.strokeColor = [UIColor redColor].CGColor;                                 // 绘制颜色

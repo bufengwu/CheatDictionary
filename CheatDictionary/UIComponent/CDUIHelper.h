@@ -7,6 +7,35 @@
 //
 
 #import <Foundation/Foundation.h>
+
+//颜色
+#define RGBA(r, g, b, a)    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r, g, b)        RGBA(r, g, b, 1.0f)
+
+
+#define HEXCOLOR(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define HEXACOLOR(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
+
+
+#define mainThemeColor HEXCOLOR(0x333)
+
+#define FontBlack HEXCOLOR(0x101010)
+#define FontLightGray HEXCOLOR(0x757575)
+#define FontDarkGray HEXCOLOR(0x4D4F53)
+#define FontWhite HEXCOLOR(0xFFFFFF)
+
+#define BorderLineGray HEXCOLOR(0xe5e9ef)
+
+#define mainBgColor  HEXCOLOR(0xF4F4F4)
+
+#define mainThemeColor2 RGB(59, 55, 97)
+
+#define navigationBarColor RGB(51, 0, 102)
+
+#define separaterColor RGB(200, 199, 204)
+
+
 #define SecondaryNavbarTitleNormal RGB(144, 125, 82)
 #define SecondaryNavbarTitleSelected RGB(255, 223, 142)
 #define SecondaryNavbarSelectedRed  RGB(173, 34, 10)
