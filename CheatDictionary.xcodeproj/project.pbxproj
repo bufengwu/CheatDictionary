@@ -129,6 +129,7 @@
 		AA7DF9FA2134162D00E18954 /* CDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF9F92134162D00E18954 /* CDNavigationController.m */; };
 		AA8C032A2119B1800048C5A6 /* CDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C03292119B1800048C5A6 /* CDLabel.m */; };
 		AA8C032D2119BB360048C5A6 /* CDHotTopicDiscussionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C032C2119BB360048C5A6 /* CDHotTopicDiscussionCell.m */; };
+		AA922B7F2136ABE700A57194 /* CDSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA922B7E2136ABE700A57194 /* CDSegmentControl.m */; };
 		AA977B9B20FC959600B8E826 /* CDDiscussionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA977B9A20FC959600B8E826 /* CDDiscussionDetailVC.m */; };
 		AA977B9E20FC980E00B8E826 /* CDDiscussionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA977B9D20FC980E00B8E826 /* CDDiscussionDetailCell.m */; };
 		AA977BA120FC984400B8E826 /* CDDiscussionDetailUpperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA977BA020FC984400B8E826 /* CDDiscussionDetailUpperCell.m */; };
@@ -397,6 +398,8 @@
 		AA8C03292119B1800048C5A6 /* CDLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDLabel.m; sourceTree = "<group>"; };
 		AA8C032B2119BB360048C5A6 /* CDHotTopicDiscussionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDHotTopicDiscussionCell.h; sourceTree = "<group>"; };
 		AA8C032C2119BB360048C5A6 /* CDHotTopicDiscussionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDHotTopicDiscussionCell.m; sourceTree = "<group>"; };
+		AA922B7D2136ABE700A57194 /* CDSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDSegmentControl.h; sourceTree = "<group>"; };
+		AA922B7E2136ABE700A57194 /* CDSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDSegmentControl.m; sourceTree = "<group>"; };
 		AA977B9920FC959600B8E826 /* CDDiscussionDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDDiscussionDetailVC.h; sourceTree = "<group>"; };
 		AA977B9A20FC959600B8E826 /* CDDiscussionDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDDiscussionDetailVC.m; sourceTree = "<group>"; };
 		AA977B9C20FC980E00B8E826 /* CDDiscussionDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDDiscussionDetailCell.h; sourceTree = "<group>"; };
@@ -507,6 +510,7 @@
 				AA6332F92134FF3200DE3B09 /* News */,
 				AA4D5118212EA82F0071DD4E /* SearchVC */,
 				AA378248212D6372007A520C /* LeftVC */,
+				AABB00FD21368FE0007CDB4B /* UserProfile */,
 				3722C14C20E731DC00D4E993 /* OtherVC */,
 				AA977BBE20FD811B00B8E826 /* Helper */,
 				AA8C03272119B1570048C5A6 /* UIComponent */,
@@ -527,7 +531,6 @@
 				37C677B320FA57CC002D210C /* SubView */,
 				37C677B220FA5603002D210C /* Model */,
 				37C677B120FA55BC002D210C /* CollectionCell */,
-				37C677B020FA55AF002D210C /* TableCell */,
 				37C677AF20FA559E002D210C /* VM */,
 			);
 			path = OtherVC;
@@ -610,25 +613,14 @@
 		37C677AE20FA5597002D210C /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				37499CBB20F784F100C8354F /* CDNoticeVC.h */,
-				37499CBC20F784F100C8354F /* CDNoticeVC.m */,
 				37D9A8C020F105C600A91CFE /* CDWebViewController.h */,
 				37D9A8C120F105C600A91CFE /* CDWebViewController.m */,
-				AA977B9920FC959600B8E826 /* CDDiscussionDetailVC.h */,
-				AA977B9A20FC959600B8E826 /* CDDiscussionDetailVC.m */,
-				37C677A720FA5201002D210C /* CDPersonListVC.h */,
-				37C677A820FA5201002D210C /* CDPersonListVC.m */,
 				372D70E120EBCC7800168172 /* CDArticleListVC.h */,
 				372D70E220EBCC7800168172 /* CDArticleListVC.m */,
 				37BC66DF20FABD5A0054D9D0 /* CDArticleDetailVC.h */,
 				37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */,
 				37C677A320FA4763002D210C /* CDEditVC.h */,
 				37C677A420FA4763002D210C /* CDEditVC.m */,
-				3722C16120E7643D00D4E993 /* CDUserCenterVC.h */,
-				3722C16220E7643D00D4E993 /* CDUserCenterVC.m */,
-				3798EA1D20FCEB5F00DCD7C0 /* CDLoginVC.h */,
-				3798EA1E20FCEB5F00DCD7C0 /* CDLoginVC.m */,
-				3798EA1F20FCEB5F00DCD7C0 /* CDLoginVC.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -636,80 +628,17 @@
 		37C677AF20FA559E002D210C /* VM */ = {
 			isa = PBXGroup;
 			children = (
-				AAE974A320F8583E00BE100E /* CDRecVM.h */,
-				AAE974A420F8583E00BE100E /* CDRecVM.m */,
-				37392784211DBF5C000DDE44 /* hottopic.json */,
-				AAE974D720F897D500BE100E /* CDAttentionVM.h */,
-				AAE974D820F897D500BE100E /* CDAttentionVM.m */,
-				37499CC220F78F3800C8354F /* CDChannelVM.h */,
-				37499CC320F78F3800C8354F /* CDChannelVM.m */,
-				3793297F210B7E5900BF1176 /* channel.json */,
-				AA306375211C2D2C00FD6F53 /* CDChannelDetailVM.h */,
-				AA306376211C2D2C00FD6F53 /* CDChannelDetailVM.m */,
-				AA306378211C2D3D00FD6F53 /* post_list.json */,
-				AA3063A2211D95B000FD6F53 /* CDDiscussionDetailVM.h */,
-				AA3063A3211D95B000FD6F53 /* CDDiscussionDetailVM.m */,
-				AA3063A5211D9C6D00FD6F53 /* discussion_detail_00932.json */,
-				37D3DD90210AA0A500D4DC03 /* CDNewsVM.h */,
-				37D3DD91210AA0A500D4DC03 /* CDNewsVM.m */,
-				37C677AA20FA5225002D210C /* CDPersonListVM.h */,
-				37C677AB20FA5225002D210C /* CDPersonListVM.m */,
 				372D70E520EBCCF900168172 /* CDArticleListVM.h */,
 				372D70E620EBCCF900168172 /* CDArticleListVM.m */,
-				37392A1320F96E71002A14A4 /* CDNoticeListVM.h */,
-				37392A1420F96E71002A14A4 /* CDNoticeListVM.m */,
-				AA63F30D20EDBF6F00A9CBDF /* CDMineVM.h */,
-				AA63F30E20EDBF6F00A9CBDF /* CDMineVM.m */,
 			);
 			path = VM;
-			sourceTree = "<group>";
-		};
-		37C677B020FA55AF002D210C /* TableCell */ = {
-			isa = PBXGroup;
-			children = (
-				AAE974B720F8894F00BE100E /* CDFeedBannerCell.h */,
-				AAE974B820F8894F00BE100E /* CDFeedBannerCell.m */,
-				372D70AF20EBAE0B00168172 /* CDTopActivityCell.h */,
-				372D70AA20EBAE0B00168172 /* CDTopActivityCell.m */,
-				AA8C032B2119BB360048C5A6 /* CDHotTopicDiscussionCell.h */,
-				AA8C032C2119BB360048C5A6 /* CDHotTopicDiscussionCell.m */,
-				3729963B20F82C5A00E1F5BF /* CDArticleCell.h */,
-				3729963C20F82C5A00E1F5BF /* CDArticleCell.m */,
-				37392A1720F96E72002A14A4 /* CDNoticeCell.h */,
-				37392A1820F96E72002A14A4 /* CDNoticeCell.m */,
-				AAE974DE20F8999000BE100E /* CDCovergeItemCell.h */,
-				AAE974DF20F8999000BE100E /* CDCovergeItemCell.m */,
-				AAE974E820F8B08B00BE100E /* CDMomentCell.h */,
-				AAE974E920F8B08C00BE100E /* CDMomentCell.m */,
-				AA30637A211C2EDC00FD6F53 /* CDStickyPostCell.h */,
-				AA30637B211C2EDC00FD6F53 /* CDStickyPostCell.m */,
-				AA306370211C210300FD6F53 /* CDBarHeaderCell.h */,
-				AA306371211C210300FD6F53 /* CDBarHeaderCell.m */,
-				AA306372211C210300FD6F53 /* CDBarHeaderCell.xib */,
-				37C6779D20F9FF4A002D210C /* CDDiscussionCell.h */,
-				37C6779E20F9FF4A002D210C /* CDDiscussionCell.m */,
-				AA977B9F20FC984400B8E826 /* CDDiscussionDetailUpperCell.h */,
-				AA977BA020FC984400B8E826 /* CDDiscussionDetailUpperCell.m */,
-				AA977B9C20FC980E00B8E826 /* CDDiscussionDetailCell.h */,
-				AA977B9D20FC980E00B8E826 /* CDDiscussionDetailCell.m */,
-			);
-			path = TableCell;
 			sourceTree = "<group>";
 		};
 		37C677B120FA55BC002D210C /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				AA63F31720EDC36D00A9CBDF /* CDUserInfoCell.h */,
-				AA63F31820EDC36D00A9CBDF /* CDUserInfoCell.m */,
-				AA63F31920EDC36D00A9CBDF /* CDUserInfoCell.xib */,
-				37392A4220F97ECA002A14A4 /* CDUserInfoBoardCell.h */,
-				37392A4320F97ECA002A14A4 /* CDUserInfoBoardCell.m */,
 				372D70D820EBB6F300168172 /* CDArticleCoverCell.h */,
 				372D70D920EBB6F300168172 /* CDArticleCoverCell.m */,
-				372D70AC20EBAE0B00168172 /* CDChannelCoverCell.h */,
-				372D70B020EBAE0B00168172 /* CDChannelCoverCell.m */,
-				37499CC620F791A900C8354F /* CDPersonRecCell.h */,
-				37499CC720F791A900C8354F /* CDPersonRecCell.m */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -717,40 +646,8 @@
 		37C677B220FA5603002D210C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAE974D120F88D0B00BE100E /* CDFeedBannerModel.h */,
-				AAE974D220F88D0B00BE100E /* CDFeedBannerModel.m */,
-				372D70A720EBAE0B00168172 /* CDTopActivityModel.h */,
-				372D70A220EBAE0B00168172 /* CDTopActivityModel.m */,
-				37D7B48A2119CF0E0090E774 /* CDHotTopicDiscussionModel.h */,
-				37D7B48B2119CF0E0090E774 /* CDHotTopicDiscussionModel.m */,
-				3729963E20F82D5100E1F5BF /* CDArticleModel.h */,
-				3729963F20F82D5100E1F5BF /* CDArticleModel.m */,
-				AAE974E120F89F6800BE100E /* CDCovergeItemModel.h */,
-				AAE974E220F89F6800BE100E /* CDCovergeItemModel.m */,
-				AAE974EB20F8B14000BE100E /* CDMomentModel.h */,
-				AAE974EC20F8B14000BE100E /* CDMomentModel.m */,
-				37392A1620F96E71002A14A4 /* CDNoticeModel.h */,
-				37392A1520F96E71002A14A4 /* CDNoticeModel.m */,
-				AA63F32920EDC89700A9CBDF /* CDUserInfoModel.h */,
-				AA63F32A20EDC89700A9CBDF /* CDUserInfoModel.m */,
-				37392A4520F9812D002A14A4 /* CDUserBoardModel.h */,
-				37392A4620F9812D002A14A4 /* CDUserBoardModel.m */,
 				372D70A020EBAE0B00168172 /* CDArticleCoverModel.h */,
 				372D70A620EBAE0B00168172 /* CDArticleCoverModel.m */,
-				372D70A420EBAE0B00168172 /* CDChannelCoverModel.h */,
-				372D709F20EBAE0B00168172 /* CDChannelCoverModel.m */,
-				37499CC920F7925500C8354F /* CDPersonRecModel.h */,
-				37499CCA20F7925500C8354F /* CDPersonRecModel.m */,
-				AA306380211C341000FD6F53 /* CDBarHeaderModel.h */,
-				AA306381211C341000FD6F53 /* CDBarHeaderModel.m */,
-				AA30637D211C334100FD6F53 /* CDStickyPostModel.h */,
-				AA30637E211C334100FD6F53 /* CDStickyPostModel.m */,
-				37C6779A20F9F59D002D210C /* CDDiscussionModel.h */,
-				37C6779B20F9F59D002D210C /* CDDiscussionModel.m */,
-				AA977BA220FC9A0F00B8E826 /* CDDiscussionDetailUpperModel.h */,
-				AA977BA320FC9A0F00B8E826 /* CDDiscussionDetailUpperModel.m */,
-				AA977BA820FC9A7100B8E826 /* CDDiscussionDetailModel.h */,
-				AA977BA920FC9A7100B8E826 /* CDDiscussionDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -906,14 +803,10 @@
 			children = (
 				AAD0EAD420F7622300D97792 /* CDHomeVC.h */,
 				AAD0EAD520F7622300D97792 /* CDHomeVC.m */,
-				372D70C420EBAE0B00168172 /* CDRecVC.h */,
-				372D70BF20EBAE0B00168172 /* CDRecVC.m */,
-				AAD0EAD720F7632400D97792 /* CDAttentionVC.h */,
-				AAD0EAD820F7632400D97792 /* CDAttentionVC.m */,
-				37499CBF20F78EF500C8354F /* CDChannelVC.h */,
-				37499CC020F78EF500C8354F /* CDChannelVC.m */,
-				37C6779720F9F3A5002D210C /* CDChannelDetailVC.h */,
-				37C6779820F9F3A5002D210C /* CDChannelDetailVC.m */,
+				AABB00F721368CCC007CDB4B /* Message */,
+				AABB00F621368CB8007CDB4B /* Channel */,
+				AABB00F521368C7B007CDB4B /* Attention */,
+				AABB00F321368BAC007CDB4B /* HotRcmd */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -925,6 +818,8 @@
 				37D3DD8E210A9F6B00D4DC03 /* CDNewsContainerVC.m */,
 				37932981210B841E00BF1176 /* CDGeneralNewsVC.h */,
 				37932982210B841E00BF1176 /* CDGeneralNewsVC.m */,
+				37D3DD90210AA0A500D4DC03 /* CDNewsVM.h */,
+				37D3DD91210AA0A500D4DC03 /* CDNewsVM.m */,
 				AAF4E671212BFC5F00AD0219 /* PhotoFlow */,
 			);
 			path = News;
@@ -963,6 +858,50 @@
 			path = UIComponent;
 			sourceTree = "<group>";
 		};
+		AA922B7C2136AB7700A57194 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AA922B7D2136ABE700A57194 /* CDSegmentControl.h */,
+				AA922B7E2136ABE700A57194 /* CDSegmentControl.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		AA922B972136CF0900A57194 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				AAE974DE20F8999000BE100E /* CDCovergeItemCell.h */,
+				AAE974DF20F8999000BE100E /* CDCovergeItemCell.m */,
+				AAE974E820F8B08B00BE100E /* CDMomentCell.h */,
+				AAE974E920F8B08C00BE100E /* CDMomentCell.m */,
+				AAE974E120F89F6800BE100E /* CDCovergeItemModel.h */,
+				AAE974E220F89F6800BE100E /* CDCovergeItemModel.m */,
+				AAE974EB20F8B14000BE100E /* CDMomentModel.h */,
+				AAE974EC20F8B14000BE100E /* CDMomentModel.m */,
+				37499CC920F7925500C8354F /* CDPersonRecModel.h */,
+				37499CCA20F7925500C8354F /* CDPersonRecModel.m */,
+				37499CC620F791A900C8354F /* CDPersonRecCell.h */,
+				37499CC720F791A900C8354F /* CDPersonRecCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AA922B982136D03F00A57194 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AA63F32920EDC89700A9CBDF /* CDUserInfoModel.h */,
+				AA63F32A20EDC89700A9CBDF /* CDUserInfoModel.m */,
+				37392A4520F9812D002A14A4 /* CDUserBoardModel.h */,
+				37392A4620F9812D002A14A4 /* CDUserBoardModel.m */,
+				AA63F31720EDC36D00A9CBDF /* CDUserInfoCell.h */,
+				AA63F31820EDC36D00A9CBDF /* CDUserInfoCell.m */,
+				AA63F31920EDC36D00A9CBDF /* CDUserInfoCell.xib */,
+				37392A4220F97ECA002A14A4 /* CDUserInfoBoardCell.h */,
+				37392A4320F97ECA002A14A4 /* CDUserInfoBoardCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		AA977BBD20FD80ED00B8E826 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +937,184 @@
 				AAB522E721301242009EF004 /* CDComboBoxViewController.m */,
 			);
 			path = CDComboBoxVC;
+			sourceTree = "<group>";
+		};
+		AABB00F321368BAC007CDB4B /* HotRcmd */ = {
+			isa = PBXGroup;
+			children = (
+				372D70C420EBAE0B00168172 /* CDRecVC.h */,
+				372D70BF20EBAE0B00168172 /* CDRecVC.m */,
+				AAE974A320F8583E00BE100E /* CDRecVM.h */,
+				AAE974A420F8583E00BE100E /* CDRecVM.m */,
+				37392784211DBF5C000DDE44 /* hottopic.json */,
+				AABB00F421368C55007CDB4B /* cell */,
+			);
+			path = HotRcmd;
+			sourceTree = "<group>";
+		};
+		AABB00F421368C55007CDB4B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				37D7B48A2119CF0E0090E774 /* CDHotTopicDiscussionModel.h */,
+				37D7B48B2119CF0E0090E774 /* CDHotTopicDiscussionModel.m */,
+				AA8C032B2119BB360048C5A6 /* CDHotTopicDiscussionCell.h */,
+				AA8C032C2119BB360048C5A6 /* CDHotTopicDiscussionCell.m */,
+				AAE974D120F88D0B00BE100E /* CDFeedBannerModel.h */,
+				AAE974D220F88D0B00BE100E /* CDFeedBannerModel.m */,
+				AAE974B720F8894F00BE100E /* CDFeedBannerCell.h */,
+				AAE974B820F8894F00BE100E /* CDFeedBannerCell.m */,
+				372D70AF20EBAE0B00168172 /* CDTopActivityCell.h */,
+				372D70AA20EBAE0B00168172 /* CDTopActivityCell.m */,
+				372D70A720EBAE0B00168172 /* CDTopActivityModel.h */,
+				372D70A220EBAE0B00168172 /* CDTopActivityModel.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AABB00F521368C7B007CDB4B /* Attention */ = {
+			isa = PBXGroup;
+			children = (
+				AAD0EAD720F7632400D97792 /* CDAttentionVC.h */,
+				AAD0EAD820F7632400D97792 /* CDAttentionVC.m */,
+				AAE974D720F897D500BE100E /* CDAttentionVM.h */,
+				AAE974D820F897D500BE100E /* CDAttentionVM.m */,
+				37C677A720FA5201002D210C /* CDPersonListVC.h */,
+				37C677A820FA5201002D210C /* CDPersonListVC.m */,
+				37C677AA20FA5225002D210C /* CDPersonListVM.h */,
+				37C677AB20FA5225002D210C /* CDPersonListVM.m */,
+				AA922B972136CF0900A57194 /* cell */,
+			);
+			path = Attention;
+			sourceTree = "<group>";
+		};
+		AABB00F621368CB8007CDB4B /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				37499CBF20F78EF500C8354F /* CDChannelVC.h */,
+				37499CC020F78EF500C8354F /* CDChannelVC.m */,
+				37499CC220F78F3800C8354F /* CDChannelVM.h */,
+				37499CC320F78F3800C8354F /* CDChannelVM.m */,
+				3793297F210B7E5900BF1176 /* channel.json */,
+				AABB00F821368D24007CDB4B /* cell */,
+				AABB00F921368E94007CDB4B /* ChannelDetail */,
+				AABB00FA21368EA2007CDB4B /* TieDetail */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		AABB00F721368CCC007CDB4B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				37499CBB20F784F100C8354F /* CDNoticeVC.h */,
+				37499CBC20F784F100C8354F /* CDNoticeVC.m */,
+				37392A1320F96E71002A14A4 /* CDNoticeListVM.h */,
+				37392A1420F96E71002A14A4 /* CDNoticeListVM.m */,
+				AABB00FE21369056007CDB4B /* cell */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		AABB00F821368D24007CDB4B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				372D70AC20EBAE0B00168172 /* CDChannelCoverCell.h */,
+				372D70B020EBAE0B00168172 /* CDChannelCoverCell.m */,
+				372D70A420EBAE0B00168172 /* CDChannelCoverModel.h */,
+				372D709F20EBAE0B00168172 /* CDChannelCoverModel.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AABB00F921368E94007CDB4B /* ChannelDetail */ = {
+			isa = PBXGroup;
+			children = (
+				37C6779720F9F3A5002D210C /* CDChannelDetailVC.h */,
+				37C6779820F9F3A5002D210C /* CDChannelDetailVC.m */,
+				AA306375211C2D2C00FD6F53 /* CDChannelDetailVM.h */,
+				AA306376211C2D2C00FD6F53 /* CDChannelDetailVM.m */,
+				AA306378211C2D3D00FD6F53 /* post_list.json */,
+				AA922B7C2136AB7700A57194 /* view */,
+				AABB00FB21368EF1007CDB4B /* cell */,
+			);
+			path = ChannelDetail;
+			sourceTree = "<group>";
+		};
+		AABB00FA21368EA2007CDB4B /* TieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AA977B9920FC959600B8E826 /* CDDiscussionDetailVC.h */,
+				AA977B9A20FC959600B8E826 /* CDDiscussionDetailVC.m */,
+				AA3063A2211D95B000FD6F53 /* CDDiscussionDetailVM.h */,
+				AA3063A3211D95B000FD6F53 /* CDDiscussionDetailVM.m */,
+				AA3063A5211D9C6D00FD6F53 /* discussion_detail_00932.json */,
+				AABB00FC21368F2C007CDB4B /* cell */,
+			);
+			path = TieDetail;
+			sourceTree = "<group>";
+		};
+		AABB00FB21368EF1007CDB4B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				3729963E20F82D5100E1F5BF /* CDArticleModel.h */,
+				3729963F20F82D5100E1F5BF /* CDArticleModel.m */,
+				3729963B20F82C5A00E1F5BF /* CDArticleCell.h */,
+				3729963C20F82C5A00E1F5BF /* CDArticleCell.m */,
+				AA306370211C210300FD6F53 /* CDBarHeaderCell.h */,
+				AA306371211C210300FD6F53 /* CDBarHeaderCell.m */,
+				AA306372211C210300FD6F53 /* CDBarHeaderCell.xib */,
+				AA30637A211C2EDC00FD6F53 /* CDStickyPostCell.h */,
+				AA30637B211C2EDC00FD6F53 /* CDStickyPostCell.m */,
+				37C6779D20F9FF4A002D210C /* CDDiscussionCell.h */,
+				37C6779E20F9FF4A002D210C /* CDDiscussionCell.m */,
+				AA306380211C341000FD6F53 /* CDBarHeaderModel.h */,
+				AA306381211C341000FD6F53 /* CDBarHeaderModel.m */,
+				AA30637D211C334100FD6F53 /* CDStickyPostModel.h */,
+				AA30637E211C334100FD6F53 /* CDStickyPostModel.m */,
+				37C6779A20F9F59D002D210C /* CDDiscussionModel.h */,
+				37C6779B20F9F59D002D210C /* CDDiscussionModel.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AABB00FC21368F2C007CDB4B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				AA977B9F20FC984400B8E826 /* CDDiscussionDetailUpperCell.h */,
+				AA977BA020FC984400B8E826 /* CDDiscussionDetailUpperCell.m */,
+				AA977B9C20FC980E00B8E826 /* CDDiscussionDetailCell.h */,
+				AA977B9D20FC980E00B8E826 /* CDDiscussionDetailCell.m */,
+				AA977BA220FC9A0F00B8E826 /* CDDiscussionDetailUpperModel.h */,
+				AA977BA320FC9A0F00B8E826 /* CDDiscussionDetailUpperModel.m */,
+				AA977BA820FC9A7100B8E826 /* CDDiscussionDetailModel.h */,
+				AA977BA920FC9A7100B8E826 /* CDDiscussionDetailModel.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AABB00FD21368FE0007CDB4B /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				3722C16120E7643D00D4E993 /* CDUserCenterVC.h */,
+				3722C16220E7643D00D4E993 /* CDUserCenterVC.m */,
+				AA63F30D20EDBF6F00A9CBDF /* CDMineVM.h */,
+				AA63F30E20EDBF6F00A9CBDF /* CDMineVM.m */,
+				3798EA1D20FCEB5F00DCD7C0 /* CDLoginVC.h */,
+				3798EA1E20FCEB5F00DCD7C0 /* CDLoginVC.m */,
+				AA922B982136D03F00A57194 /* view */,
+				3798EA1F20FCEB5F00DCD7C0 /* CDLoginVC.xib */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		AABB00FE21369056007CDB4B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				37392A1620F96E71002A14A4 /* CDNoticeModel.h */,
+				37392A1520F96E71002A14A4 /* CDNoticeModel.m */,
+				37392A1720F96E72002A14A4 /* CDNoticeCell.h */,
+				37392A1820F96E72002A14A4 /* CDNoticeCell.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		AAF4E671212BFC5F00AD0219 /* PhotoFlow */ = {
@@ -1230,6 +1347,7 @@
 				3793297B210B585C00BF1176 /* CDUIHelper.m in Sources */,
 				AA63F32B20EDC89700A9CBDF /* CDUserInfoModel.m in Sources */,
 				AA37824F212D6BC5007A520C /* CDLeftItemModel.m in Sources */,
+				AA922B7F2136ABE700A57194 /* CDSegmentControl.m in Sources */,
 				AAE974EA20F8B08C00BE100E /* CDMomentCell.m in Sources */,
 				372D70CD20EBAE0B00168172 /* CDChannelCoverCell.m in Sources */,
 				AA977BC120FD822F00B8E826 /* CDApiClient.m in Sources */,

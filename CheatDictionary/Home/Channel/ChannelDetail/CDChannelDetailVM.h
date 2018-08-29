@@ -10,4 +10,6 @@
 
 @interface CDChannelDetailVM : CDListBaseVM
 
+@property (nonatomic, strong) NSArray *articles;
+
 @end

@@ -14,13 +14,20 @@
 
 #import "CDChannelDetailVM.h"
 
+#import "CDShowMoreHeaderView.h"
+#import "CDSegmentControl.h"
+
 @interface CDChannelDetailVC ()
 
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) CDChannelDetailVM *viewModel;
 
 @end
 
-@implementation CDChannelDetailVC
+@implementation CDChannelDetailVC {
+    NSUInteger _currentIndex;
+}
+@dynamic viewModel;
 
 - (instancetype)init
 {
@@ -57,7 +64,35 @@
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    CDSectionModel *model = self.viewModel.objects[section];
+    if ([model isKindOfClass:[CDSectionModel class]]) {
+        if ([model headerModel]) {
+            return 44;
+        }
+    }
     return 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    CDSectionModel *model = self.viewModel.objects[section];
+    if ([model isKindOfClass:[CDSectionModel class]]) {
+        if ([model headerModel]) {
+            
+            CDSegmentControl *view = [[CDSegmentControl alloc] initWithFrame:CGRectMake(0, 0, 160, 44) titleArray:@[@"帖子", @"博文"]];
+            [view setSelectIndex:_currentIndex];
+            
+            view.selectedHandler = ^(NSUInteger index) {
+                if (index != self->_currentIndex) {
+                    self->_currentIndex = index;
+                    NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:section];
+                    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+                }
+            };
+            return view;
+        }
+    }
+    return nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -83,6 +118,14 @@
     }
     CDBaseTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([curModel cellClass]) forIndexPath:indexPath];
     [cell installWithObject:curModel];
+    
+    //TODO: 切换帖子/博文，需要优化
+    if (indexPath.section == 2 && _currentIndex == 1) {
+        CDBaseCellModel *curModel = self.viewModel.articles[indexPath.row];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([curModel cellClass]) forIndexPath:indexPath];
+        [cell installWithObject:curModel];
+    }
+    
     return cell;
 }
 
@@ -94,7 +137,12 @@
     } else {
         curModel = model;
     }
-        
+    
+    //TODO: 切换帖子/博文，需要优化
+    if (indexPath.section == 2 && _currentIndex == 1) {
+        curModel = self.viewModel.articles[indexPath.row];
+    }
+    
     [[CDRouter shared] pushUrl:curModel.uri animated:YES];
 }
 

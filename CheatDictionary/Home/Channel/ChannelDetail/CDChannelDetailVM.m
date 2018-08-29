@@ -17,6 +17,8 @@
 #import "CDStickyPostCell.h"
 #import "CDDiscussionCell.h"
 
+#import "CDArticleCell.h"
+#import "CDArticleModel.h"
 
 @implementation CDChannelDetailVM
 
@@ -46,6 +48,11 @@
     
     {
         CDSectionModel *sectionModel = [CDSectionModel new];
+        
+        CDShowMoreHeaderModel *headerModel = [CDShowMoreHeaderModel new];
+        headerModel.title = @"帖子";
+        sectionModel.headerModel = headerModel;
+        
         sectionModel.objects = [NSMutableArray array];
         for (NSDictionary *item in items) {
             CDDiscussionModel *channelModel = [CDDiscussionModel modelWithJSON:item];
@@ -57,6 +64,23 @@
     //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
     self.objects = mutableArray;
     
+    {
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        
+        for (int i = 0; i < 15; i++) {
+            CDArticleModel *model = [CDArticleModel new];
+            model.icon = @"";
+            model.title = @"iOS6的系统API结合autolayout";
+            model.desc = @"控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的";
+            model.icon = @"article_image_default";
+            
+            model.uri = @"CDArticleDetailVC";
+            [mutableArray addObject:model];
+        }
+        
+        self.articles = mutableArray;
+    }
+    
     if (self.completeLoadDataBlock) {
         self.completeLoadDataBlock();
     }
@@ -67,7 +91,8 @@
     return @{
              @"CDBarHeaderCell"   : [CDBarHeaderCell class],
              @"CDStickyPostCell"  : [CDStickyPostCell class],
-             @"CDDiscussionCell"  : [CDDiscussionCell class]
+             @"CDDiscussionCell"  : [CDDiscussionCell class],
+             @"CDArticleCell"     : [CDArticleCell class],
              };
 }
 
