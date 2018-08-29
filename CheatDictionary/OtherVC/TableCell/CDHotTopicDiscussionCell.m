@@ -25,6 +25,22 @@
     return self;
 }
 
+- (void)configSubviews {
+    [self.contentView addSubview:self.rankLabel];
+    [self.contentView addSubview:self.authorLabel];
+    [self.contentView addSubview:self.coverImageView];
+    [self.contentView addSubview:self.titleLabel];
+    
+    [self.contentView addSubview:self.contentLabel];
+    
+    [self.contentView addSubview:self.replyContainer];
+    [self.replyContainer addSubview:self.replyLabel1];
+    [self.replyContainer addSubview:self.replyLabel2];
+    [self.replyContainer addSubview:self.replyLabel3];
+    
+    MASAttachKeys(self.contentView, self.replyContainer, self.replyLabel1,self.replyLabel2,self.replyLabel3,self.titleLabel,self.contentLabel,self.coverImageView,self.authorLabel);
+}
+
 - (void)installWithObject:(CDHotTopicDiscussionModel *)object {
 
     self.rankLabel.hidden = YES;
@@ -32,11 +48,11 @@
     self.contentLabel.hidden = YES;
     self.replyContainer.hidden = YES;
     
-    self.rankLabel.text = [NSString stringWithFormat:@"%02lu", (unsigned long)object.rank];
-    self.authorLabel.text = object.author;
-    
+    //顶部 作者
+    self.authorLabel.text = object.author;    
     if (object.rank > 0) {
         self.rankLabel.hidden = NO;
+        self.rankLabel.text = [NSString stringWithFormat:@"%02lu", (unsigned long)object.rank];
         [self.rankLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.left.equalTo(self.contentView).offset(10);
             make.width.equalTo(@22);
@@ -52,43 +68,11 @@
         }];
     }
     
-    self.titleLabel.text = object.title;
-    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.authorLabel.mas_bottom).offset(10);
-        make.left.equalTo(self.contentView).offset(10);
-        
-        make.right.equalTo( object.cover ? self.coverImageView.mas_left :  self.contentView.mas_right).offset(-10);
-        
-        if (object.content) {
-            make.bottom.equalTo(self.contentLabel.mas_top).offset(-5);
-        } else if (object.replys.count > 0) {
-            make.bottom.equalTo(self.replyContainer.mas_top).offset(-5);
-        } else {
-            make.bottom.equalTo(self.contentView).offset(-10);
-            make.bottom.greaterThanOrEqualTo(self.coverImageView);
-        }
-    }];
-    
-    
-    if ([object.content length]) {
-        self.contentLabel.hidden = NO;
-        self.contentLabel.text = object.content;
-        [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(10);
-            
-            make.right.equalTo( object.cover ? self.coverImageView.mas_left :  self.contentView.mas_right).offset(-10);
-            
-            if (object.replys.count > 0) {
-                make.bottom.equalTo(self.replyContainer.mas_top).offset(-5);
-            } else {
-                make.bottom.equalTo(self.contentView).offset(-10);
-                make.bottom.greaterThanOrEqualTo(self.coverImageView);
-            }
-        }];
-    }
-    
+    //右侧 封面图 可选的
+    CGFloat titleRightMargin = 10;
     if ([object.cover length]) {
-        self.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
+        titleRightMargin = 115;
+        
         [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:object.cover] placeholderImage:[UIImage imageNamed:@"placeholder"]];
         self.coverImageView.hidden = NO;
         [self.coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -98,7 +82,43 @@
             make.height.mas_equalTo(60);
         }];
     }
-
+    
+    //标题
+    self.titleLabel.text = object.title;
+    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.authorLabel.mas_bottom).offset(10);
+        make.left.equalTo(self.contentView).offset(10);
+        make.right.offset(-titleRightMargin);
+        
+        if ([object.content length]) {
+            make.bottom.equalTo(self.contentLabel.mas_top).offset(-5);
+        } else if (object.replys.count) {
+            make.bottom.equalTo(self.replyContainer.mas_top).offset(-5);
+        } else {
+            make.bottom.equalTo(self.contentView).offset(-10);
+            make.bottom.greaterThanOrEqualTo(self.coverImageView).offset(10).priorityHigh();
+        }
+        
+    }];
+    
+    //内容缩略
+    if ([object.content length]) {
+        self.contentLabel.hidden = NO;
+        self.contentLabel.text = object.content;
+        [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(10);
+            make.right.offset(-titleRightMargin);
+            
+            if (object.replys.count) {
+                make.bottom.equalTo(self.replyContainer.mas_top).offset(-5);
+            } else {
+                make.bottom.equalTo(self.contentView).offset(-10);
+                make.bottom.greaterThanOrEqualTo(self.coverImageView).offset(10).priorityHigh();
+            }
+        }];
+    }
+    
+    //评论缩略
     if (object.replys.count > 0) {
         self.replyContainer.hidden = NO;
         switch (object.replys.count) {
@@ -115,7 +135,28 @@
         [self.replyContainer mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView).offset(-10);
             make.left.equalTo(self.contentView).offset(10);
+            
+            make.height.equalTo(@(10*2 + 15 * object.replys.count));
+            
             make.bottom.equalTo(self.contentView).offset(-10);
+        }];
+        
+        [self.replyLabel1 mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.replyContainer).offset(-10);
+            make.left.equalTo(self.replyContainer).offset(10);
+            make.top.equalTo(self.replyContainer).offset(10);
+        }];
+        
+        [self.replyLabel2 mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.replyContainer).offset(-10);
+            make.left.equalTo(self.replyContainer).offset(10);
+            make.top.equalTo(self.replyLabel1.mas_bottom);
+        }];
+        
+        [self.replyLabel3 mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.replyContainer).offset(-10);
+            make.left.equalTo(self.replyContainer).offset(10);
+            make.top.equalTo(self.replyLabel2.mas_bottom);
         }];
     }
 }
@@ -138,40 +179,6 @@
 
 #pragma mark -
 
-- (void)configSubviews {
-    [self.contentView addSubview:self.rankLabel];
-    [self.contentView addSubview:self.authorLabel];
-    [self.contentView addSubview:self.coverImageView];
-    [self.contentView addSubview:self.titleLabel];
-    
-    [self.contentView addSubview:self.contentLabel];
-    
-    [self.contentView addSubview:self.replyContainer];
-    [self.replyContainer addSubview:self.replyLabel1];
-    [self.replyContainer addSubview:self.replyLabel2];
-    [self.replyContainer addSubview:self.replyLabel3];
-    
-    [self.replyLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.replyContainer).offset(-10);
-        make.left.equalTo(self.replyContainer).offset(10);
-        make.top.equalTo(self.replyContainer).offset(10);
-    }];
-
-    [self.replyLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.replyContainer).offset(-10);
-        make.left.equalTo(self.replyContainer).offset(10);
-        make.top.equalTo(self.replyLabel1.mas_bottom);
-    }];
-
-    [self.replyLabel3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.replyContainer).offset(-10);
-        make.left.equalTo(self.replyContainer).offset(10);
-        make.top.equalTo(self.replyLabel2.mas_bottom);
-        make.bottom.equalTo(self.replyContainer).offset(-10);
-    }];
-    
-}
-
 - (UILabel *)rankLabel {
     if (!_rankLabel) {
         _rankLabel = [[UILabel alloc] init];
@@ -193,6 +200,7 @@
 
 - (UIImageView *)coverImageView {
     if (!_coverImageView) {
+        _coverImageView.contentMode = UIViewContentModeScaleAspectFit;
         _coverImageView = [UIImageView new];
     }
     return _coverImageView;

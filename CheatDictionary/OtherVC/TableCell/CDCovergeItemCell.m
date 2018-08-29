@@ -53,7 +53,7 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         CGFloat height = [CDPersonRecCell getSizeWithObject:nil].height + kCollectionViewMargin * 2;
         make.height.mas_equalTo(height);
-        make.edges.equalTo(self.contentView);
+        make.edges.equalTo(self.contentView).priorityHigh();
     }];
 }
 
