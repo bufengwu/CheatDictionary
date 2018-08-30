@@ -115,6 +115,8 @@
 		AA58640620ECA6F900364CBE /* CDBaseSectionHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640520ECA6F900364CBE /* CDBaseSectionHeaderModel.m */; };
 		AA58640920ECA7FB00364CBE /* CDShowMoreHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */; };
 		AA58640C20ECAE6A00364CBE /* CDBaseCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640B20ECAE6A00364CBE /* CDBaseCollectionHeaderView.m */; };
+		AA6226D92137DDEF004028F6 /* UIImageView+AddCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6226D62137DDEF004028F6 /* UIImageView+AddCornerRadius.m */; };
+		AA6226DA2137DDEF004028F6 /* UIView+AddCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6226D82137DDEF004028F6 /* UIView+AddCornerRadius.m */; };
 		AA6332F12134F34E00DE3B09 /* AppDelegate+Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6332F02134F34E00DE3B09 /* AppDelegate+Fetcher.m */; };
 		AA6332F42134F35D00DE3B09 /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6332F32134F35D00DE3B09 /* AppDelegate+PushService.m */; };
 		AA6332F72134F36F00DE3B09 /* AppDelegate+UrlHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6332F62134F36F00DE3B09 /* AppDelegate+UrlHandler.m */; };
@@ -371,6 +373,10 @@
 		AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDShowMoreHeaderModel.m; sourceTree = "<group>"; };
 		AA58640A20ECAE6A00364CBE /* CDBaseCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDBaseCollectionHeaderView.h; sourceTree = "<group>"; };
 		AA58640B20ECAE6A00364CBE /* CDBaseCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDBaseCollectionHeaderView.m; sourceTree = "<group>"; };
+		AA6226D52137DDEF004028F6 /* UIImageView+AddCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AddCornerRadius.h"; sourceTree = "<group>"; };
+		AA6226D62137DDEF004028F6 /* UIImageView+AddCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AddCornerRadius.m"; sourceTree = "<group>"; };
+		AA6226D72137DDEF004028F6 /* UIView+AddCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AddCornerRadius.h"; sourceTree = "<group>"; };
+		AA6226D82137DDEF004028F6 /* UIView+AddCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AddCornerRadius.m"; sourceTree = "<group>"; };
 		AA6332EF2134F34E00DE3B09 /* AppDelegate+Fetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Fetcher.h"; sourceTree = "<group>"; };
 		AA6332F02134F34E00DE3B09 /* AppDelegate+Fetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Fetcher.m"; sourceTree = "<group>"; };
 		AA6332F22134F35D00DE3B09 /* AppDelegate+PushService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushService.h"; sourceTree = "<group>"; };
@@ -817,6 +823,10 @@
 				AA08C61F210F1DF600D31FB0 /* UIView+Border.m */,
 				37A8C2C5210BEE7500292CD0 /* UIImage+CDImage.h */,
 				37A8C2C6210BEE7500292CD0 /* UIImage+CDImage.m */,
+				AA6226D52137DDEF004028F6 /* UIImageView+AddCornerRadius.h */,
+				AA6226D62137DDEF004028F6 /* UIImageView+AddCornerRadius.m */,
+				AA6226D72137DDEF004028F6 /* UIView+AddCornerRadius.h */,
+				AA6226D82137DDEF004028F6 /* UIView+AddCornerRadius.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1426,6 +1436,7 @@
 				372D70E720EBCCF900168172 /* CDArticleListVM.m in Sources */,
 				37D7B48C2119CF0E0090E774 /* CDHotTopicDiscussionModel.m in Sources */,
 				3729963D20F82C5A00E1F5BF /* CDArticleCell.m in Sources */,
+				AA6226DA2137DDEF004028F6 /* UIView+AddCornerRadius.m in Sources */,
 				AA378265212D799B007A520C /* XLSphereView.m in Sources */,
 				AA977BA120FC984400B8E826 /* CDDiscussionDetailUpperCell.m in Sources */,
 				37392A1B20F96E72002A14A4 /* CDNoticeCell.m in Sources */,
@@ -1436,6 +1447,7 @@
 				37392A3F20F97D60002A14A4 /* HASortButton.m in Sources */,
 				AAE974E020F8999000BE100E /* CDCovergeItemCell.m in Sources */,
 				AA54441E212D380100590733 /* CDDevice.m in Sources */,
+				AA6226D92137DDEF004028F6 /* UIImageView+AddCornerRadius.m in Sources */,
 				AA30637F211C334100FD6F53 /* CDStickyPostModel.m in Sources */,
 				AA63F34320EF037900A9CBDF /* CDBaseTableVC.m in Sources */,
 				37C677A920FA5201002D210C /* CDPersonListVC.m in Sources */,
