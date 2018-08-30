@@ -39,6 +39,7 @@
         self.progressColor = SecondaryNavbarSelectedRed;
         self.titleColorNormal = SecondaryNavbarTitleNormal;
         self.titleColorSelected = SecondaryNavbarTitleSelected;
+        self.titleSizeSelected = 15;
     }
     return self;
 }

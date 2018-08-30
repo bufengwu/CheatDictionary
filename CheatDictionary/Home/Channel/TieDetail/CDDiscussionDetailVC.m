@@ -18,6 +18,8 @@
 
 #import "CDDiscussionDetailVM.h"
 
+#define kTextViewHeight 35
+
 @interface CDDiscussionDetailVC ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) CDDiscussionDetailVM *viewModel;
@@ -52,11 +54,8 @@
     [self.bottomBar addSubview:self.textView];
     
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.bottomBar).offset(10);
-        make.right.equalTo(self.bottomBar).offset(-100);
-        make.height.offset(34);
-        make.top.equalTo(self.bottomBar).offset(5);
-        make.bottom.equalTo(self.bottomBar).offset(-5);
+        make.height.mas_greaterThanOrEqualTo(kTextViewHeight).priorityHigh();
+        make.edges.equalTo(self.bottomBar).insets(UIEdgeInsetsMake(5, 10, 5, 100));
     }];
     [self.bottomBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
@@ -80,13 +79,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     @weakify(self);
-    self.textView.yz_textHeightChangeBlock = ^(NSString *text,CGFloat textHeight){
-        // 文本框文字高度改变会自动执行这个【block】，可以在这【修改底部View的高度】
-        // 设置底部条的高度 = 文字高度 + textView距离上下间距约束
-        // 为什么添加10 ？（10 = 底部View距离上（5）底部View距离下（5）间距总和
+    self.textView.yz_textHeightChangeBlock = ^(NSString *text, CGFloat textHeight){
         @strongify(self);
         [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(textHeight + 10);
+            make.height.mas_equalTo(textHeight);
         }];
     };
 }
@@ -111,7 +107,7 @@
 
 - (YZInputView *)textView {
     if (!_textView) {
-        _textView = [[YZInputView alloc] initWithFrame:CGRectMake(10, 2, SCREEN_WIDTH - 100, 40)];
+        _textView = [[YZInputView alloc] initWithFrame:CGRectMake(10, 2, SCREEN_WIDTH - 100, kTextViewHeight)];
         _textView.placeholder = @"写下你的评论...";
         _textView.placeholderColor = [UIColor grayColor];
         _textView.maxNumberOfLines = 4;
@@ -126,7 +122,7 @@
 
 - (UIView *)bottomBar {
     if (!_bottomBar) {
-        _bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
+        _bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kTextViewHeight + 10)];
         _bottomBar.backgroundColor = TabBarColor;
     }
     return _bottomBar;

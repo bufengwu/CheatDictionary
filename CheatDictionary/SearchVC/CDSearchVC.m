@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 100, 24)];
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 302, 35)];
 
     self.cancelBtn = [UIButton new];
     [self.cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];

@@ -260,7 +260,6 @@
 /** 消失广告图 */
 - (void)dismiss
 {
-    NSLog(@"dismiss");
     [UIView animateWithDuration:0.5 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
 
         self.transform = CGAffineTransformMakeScale(1.2, 1.2);
@@ -311,7 +310,8 @@
 
 - (void)dealloc
 {
-    NSLog(@"销毁");
+    _adImageTapBlock = nil;
+    _timer = nil;
 }
 
 

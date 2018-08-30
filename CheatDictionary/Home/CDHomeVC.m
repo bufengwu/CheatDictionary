@@ -87,7 +87,7 @@
         self.navigationItem.rightBarButtonItem = barButtonItem;
     }
     {
-        UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 100, 24)];
+        UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 302, 35)];
 
         searchBar.delegate = self;
 
