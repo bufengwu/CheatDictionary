@@ -7,7 +7,7 @@
 //
 
 #import "CDNewsContainerVC.h"
-#import "CDGeneralNewsVC.h"
+#import "CDAttentionVC.h"
 #import "CDPhotoNewsVC.h"
 
 #define kTitleKey   @"kTitleKey"
@@ -25,8 +25,8 @@
     if (self = [super init]) {
         self.childItemsArray = @[
                                  @{
-                                     kClassKey  : [CDGeneralNewsVC class],
-                                     kTitleKey  : @"综合"
+                                     kClassKey  : [CDAttentionVC class],
+                                     kTitleKey  : @"关注"
                                      },
                                  @{
                                      kClassKey  : [CDPhotoNewsVC class],
@@ -36,7 +36,7 @@
         self.menuViewStyle = WMMenuViewStyleTriangle;
         self.progressWidth = 10;
         self.progressHeight = 5;
-        self.progressColor = SecondaryNavbarTitleNormal;
+        self.progressColor = SecondaryNavbarSelectedRed;
         self.titleColorNormal = SecondaryNavbarTitleNormal;
         self.titleColorSelected = SecondaryNavbarTitleSelected;
     }

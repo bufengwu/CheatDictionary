@@ -54,12 +54,11 @@
     [self.contentView addSubview:self.actionLabel];
     
     
-    UIView *NoticeBgView = [[UIView alloc] init];
-    NoticeBgView.backgroundColor = mainBgColor;
-    NoticeBgView.layer.borderWidth = 0.5;
-    NoticeBgView.layer.borderColor = BorderLineGray.CGColor;
-    [self.contentView addSubview:NoticeBgView];
-    [NoticeBgView addSubview:self.noticeTitleLabel];
+    UIView *noticeBgView = [[UIView alloc] init];
+    noticeBgView.layer.borderWidth = 0.5;
+    noticeBgView.layer.borderColor = BorderLineGray.CGColor;
+    [self.contentView addSubview:noticeBgView];
+    [noticeBgView addSubview:self.noticeTitleLabel];
     
     [self.contentView addSubview:self.myMomentTitleLabel];
     
@@ -89,14 +88,14 @@
         make.right.equalTo(self.contentView).offset(-10);
     }];
     
-    [NoticeBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [noticeBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.avatarImageView);
         make.top.equalTo(self.noticeTitleLabel.mas_bottom).offset(10);
         make.right.bottom.equalTo(self.contentView).offset(-10);
     }];
     
     [self.myMomentTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(NoticeBgView).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+        make.edges.equalTo(noticeBgView).insets(UIEdgeInsetsMake(10, 10, 10, 10));
     }];
 }
 

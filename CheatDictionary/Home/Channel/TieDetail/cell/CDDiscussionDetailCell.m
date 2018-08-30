@@ -139,7 +139,6 @@
     
 //    self.replyTableView = ({
 //        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-//        tableView.backgroundColor = mainBgColor;
 //        tableView.delegate = self;
 //        tableView.dataSource = self;
 ////        [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];

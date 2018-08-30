@@ -27,7 +27,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self = [[NSBundle mainBundle] loadNibNamed:@"CDUserInfoCell" owner:self options:nil].lastObject;
-//        self.contentView.backgroundColor = mainBgColor;
     }
     return self;
 }

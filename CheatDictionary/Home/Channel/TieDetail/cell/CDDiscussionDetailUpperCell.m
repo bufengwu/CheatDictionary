@@ -81,7 +81,6 @@
     [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.watchIcon];
     [self.contentView addSubview:self.watchNumLabel];
-    //    self.backgroundColor = mainBgColor;
     
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(self.contentView).offset(10);

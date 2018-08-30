@@ -8,7 +8,6 @@
 
 #import "CDHomeVC.h"
 #import "CDRecVC.h"
-#import "CDAttentionVC.h"
 #import "CDUserCenterVC.h"
 #import "CDNoticeVC.h"
 #import "CDChannelVC.h"
@@ -34,10 +33,6 @@
     if (self = [super init]) {
         self.childItemsArray = @[
                                  @{
-                                     kClassKey  : [CDAttentionVC class],
-                                     kTitleKey  : @"动态"
-                                     },
-                                 @{
                                      kClassKey  : [CDRecVC class],
                                      kTitleKey  : @"热门"
                                      },
@@ -52,6 +47,7 @@
         self.progressColor = SecondaryNavbarSelectedRed;
         self.titleColorNormal = SecondaryNavbarTitleNormal;
         self.titleColorSelected = SecondaryNavbarTitleSelected;
+        self.titleSizeSelected = 15;
     }
     return self;
 }
@@ -70,7 +66,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.menuView.backgroundColor = SecondaryNavbarColor;
-    self.selectIndex = 1;
     
     {
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
