@@ -528,9 +528,12 @@
 		3722C14C20E731DC00D4E993 /* OtherVC */ = {
 			isa = PBXGroup;
 			children = (
-				AA6226CA213785FC004028F6 /* deprecated */,
-				37C677AE20FA5597002D210C /* VC */,
+				37C677A320FA4763002D210C /* CDEditVC.h */,
+				37C677A420FA4763002D210C /* CDEditVC.m */,
+				37D9A8C020F105C600A91CFE /* CDWebViewController.h */,
+				37D9A8C120F105C600A91CFE /* CDWebViewController.m */,
 				37C677B320FA57CC002D210C /* SubView */,
+				AA6226CA213785FC004028F6 /* deprecated */,
 			);
 			path = OtherVC;
 			sourceTree = "<group>";
@@ -609,19 +612,6 @@
 			path = RadarChart;
 			sourceTree = "<group>";
 		};
-		37C677AE20FA5597002D210C /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				37D9A8C020F105C600A91CFE /* CDWebViewController.h */,
-				37D9A8C120F105C600A91CFE /* CDWebViewController.m */,
-				37BC66DF20FABD5A0054D9D0 /* CDArticleDetailVC.h */,
-				37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */,
-				37C677A320FA4763002D210C /* CDEditVC.h */,
-				37C677A420FA4763002D210C /* CDEditVC.m */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
 		37C677B320FA57CC002D210C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,12 +619,12 @@
 				AA977BAC20FCA17800B8E826 /* CDFlowEditView.m */,
 				372D70A320EBAE0B00168172 /* CDSectionModel.h */,
 				372D709E20EBAE0B00168172 /* CDSectionModel.m */,
+				AA58640720ECA7FB00364CBE /* CDShowMoreHeaderModel.h */,
+				AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */,
 				AAE974E520F8A13B00BE100E /* CDShowMoreHeaderView.h */,
 				AAE974E620F8A13B00BE100E /* CDShowMoreHeaderView.m */,
 				372D70A920EBAE0B00168172 /* CDSectionHeaderShowMoreView.h */,
 				372D70AD20EBAE0B00168172 /* CDSectionHeaderShowMoreView.m */,
-				AA58640720ECA7FB00364CBE /* CDShowMoreHeaderModel.h */,
-				AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -785,6 +775,15 @@
 				372D70E620EBCCF900168172 /* CDArticleListVM.m */,
 			);
 			path = deprecated;
+			sourceTree = "<group>";
+		};
+		AA6226D42137DCD6004028F6 /* articleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				37BC66DF20FABD5A0054D9D0 /* CDArticleDetailVC.h */,
+				37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */,
+			);
+			path = articleDetail;
 			sourceTree = "<group>";
 		};
 		AA6332F82134FF2700DE3B09 /* Home */ = {
@@ -979,6 +978,7 @@
 				37499CC220F78F3800C8354F /* CDChannelVM.h */,
 				37499CC320F78F3800C8354F /* CDChannelVM.m */,
 				3793297F210B7E5900BF1176 /* channel.json */,
+				AA6226D42137DCD6004028F6 /* articleDetail */,
 				AABB00F821368D24007CDB4B /* cell */,
 				AABB00F921368E94007CDB4B /* ChannelDetail */,
 				AABB00FA21368EA2007CDB4B /* TieDetail */,
