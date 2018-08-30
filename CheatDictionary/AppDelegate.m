@@ -169,9 +169,7 @@
     
     [[CDRouter shared] map:@"/CDNoticeVC" toControllerClass:[NSClassFromString(@"CDNoticeVC") class]];
     
-    [[CDRouter shared] map:@"/CDArticleDetailVC" toControllerClass:[NSClassFromString(@"CDArticleDetailVC") class]];
-    [[CDRouter shared] map:@"/CDArticleListVC" toControllerClass:[NSClassFromString(@"CDArticleListVC") class]];
-    
+    [[CDRouter shared] map:@"/CDArticleDetailVC" toControllerClass:[NSClassFromString(@"CDArticleDetailVC") class]];    
     
     [[CDRouter shared] map:@"/CDChannelDetailVC/:type" toControllerClass:[NSClassFromString(@"CDChannelDetailVC") class]];
     [[CDRouter shared] map:@"/CDPersonListVC" toControllerClass:[NSClassFromString(@"CDPersonListVC") class]];

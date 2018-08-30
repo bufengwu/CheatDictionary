@@ -527,11 +527,9 @@
 		3722C14C20E731DC00D4E993 /* OtherVC */ = {
 			isa = PBXGroup;
 			children = (
+				AA6226CA213785FC004028F6 /* deprecated */,
 				37C677AE20FA5597002D210C /* VC */,
 				37C677B320FA57CC002D210C /* SubView */,
-				37C677B220FA5603002D210C /* Model */,
-				37C677B120FA55BC002D210C /* CollectionCell */,
-				37C677AF20FA559E002D210C /* VM */,
 			);
 			path = OtherVC;
 			sourceTree = "<group>";
@@ -615,8 +613,6 @@
 			children = (
 				37D9A8C020F105C600A91CFE /* CDWebViewController.h */,
 				37D9A8C120F105C600A91CFE /* CDWebViewController.m */,
-				372D70E120EBCC7800168172 /* CDArticleListVC.h */,
-				372D70E220EBCC7800168172 /* CDArticleListVC.m */,
 				37BC66DF20FABD5A0054D9D0 /* CDArticleDetailVC.h */,
 				37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */,
 				37C677A320FA4763002D210C /* CDEditVC.h */,
@@ -625,42 +621,11 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		37C677AF20FA559E002D210C /* VM */ = {
-			isa = PBXGroup;
-			children = (
-				372D70E520EBCCF900168172 /* CDArticleListVM.h */,
-				372D70E620EBCCF900168172 /* CDArticleListVM.m */,
-			);
-			path = VM;
-			sourceTree = "<group>";
-		};
-		37C677B120FA55BC002D210C /* CollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-				372D70D820EBB6F300168172 /* CDArticleCoverCell.h */,
-				372D70D920EBB6F300168172 /* CDArticleCoverCell.m */,
-			);
-			path = CollectionCell;
-			sourceTree = "<group>";
-		};
-		37C677B220FA5603002D210C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				372D70A020EBAE0B00168172 /* CDArticleCoverModel.h */,
-				372D70A620EBAE0B00168172 /* CDArticleCoverModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		37C677B320FA57CC002D210C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
 				AA977BAB20FCA17800B8E826 /* CDFlowEditView.h */,
 				AA977BAC20FCA17800B8E826 /* CDFlowEditView.m */,
-				372D70AE20EBAE0B00168172 /* CDBigImageCell.h */,
-				372D70AB20EBAE0B00168172 /* CDBigImageCell.m */,
-				372D70A520EBAE0B00168172 /* CDBigImageModel.h */,
-				372D70A120EBAE0B00168172 /* CDBigImageModel.m */,
 				372D70A320EBAE0B00168172 /* CDSectionModel.h */,
 				372D709E20EBAE0B00168172 /* CDSectionModel.m */,
 				AAE974E520F8A13B00BE100E /* CDShowMoreHeaderView.h */,
@@ -796,6 +761,25 @@
 				AA544438212D435400590733 /* GuidePage.xcassets */,
 			);
 			path = CCPageControl;
+			sourceTree = "<group>";
+		};
+		AA6226CA213785FC004028F6 /* deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				372D70E120EBCC7800168172 /* CDArticleListVC.h */,
+				372D70E220EBCC7800168172 /* CDArticleListVC.m */,
+				372D70A520EBAE0B00168172 /* CDBigImageModel.h */,
+				372D70A120EBAE0B00168172 /* CDBigImageModel.m */,
+				372D70AE20EBAE0B00168172 /* CDBigImageCell.h */,
+				372D70AB20EBAE0B00168172 /* CDBigImageCell.m */,
+				372D70A020EBAE0B00168172 /* CDArticleCoverModel.h */,
+				372D70A620EBAE0B00168172 /* CDArticleCoverModel.m */,
+				372D70D820EBB6F300168172 /* CDArticleCoverCell.h */,
+				372D70D920EBB6F300168172 /* CDArticleCoverCell.m */,
+				372D70E520EBCCF900168172 /* CDArticleListVM.h */,
+				372D70E620EBCCF900168172 /* CDArticleListVM.m */,
+			);
+			path = deprecated;
 			sourceTree = "<group>";
 		};
 		AA6332F82134FF2700DE3B09 /* Home */ = {

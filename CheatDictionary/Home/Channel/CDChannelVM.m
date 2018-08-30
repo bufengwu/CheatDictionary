@@ -7,21 +7,14 @@
 //
 
 #import "CDChannelVM.h"
-#import "CDChannelCoverModel.h"
+
 #import "CDSectionModel.h"
+
 #import "CDShowMoreHeaderModel.h"
-#import "CDArticleCoverModel.h"
-#import "CDPersonRecModel.h"
-
-
-
 #import "CDSectionHeaderShowMoreView.h"
 
-#import "CDBigImageCell.h"
+#import "CDChannelCoverModel.h"
 #import "CDChannelCoverCell.h"
-#import "CDArticleCoverCell.h"
-#import "CDPersonRecCell.h"
-
 
 @implementation CDChannelVM
 
@@ -66,8 +59,6 @@
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {
     return @{
              @"CDChannelCoverCell"     : [CDChannelCoverCell class],
-             @"CDArticleCoverCell"      : [CDArticleCoverCell class],
-             @"CDPersonRecCell" : [CDPersonRecCell class]
              };
 }
 
