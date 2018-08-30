@@ -109,13 +109,13 @@
     if (!_textView) {
         _textView = [[YZInputView alloc] initWithFrame:CGRectMake(10, 2, SCREEN_WIDTH - 100, kTextViewHeight)];
         _textView.placeholder = @"写下你的评论...";
-        _textView.placeholderColor = [UIColor grayColor];
         _textView.maxNumberOfLines = 4;
         _textView.textColor = [UIColor whiteColor];
         _textView.backgroundColor = RGB(23, 19, 13);
         _textView.layer.borderColor = RGB(97, 82, 63).CGColor;
         _textView.layer.borderWidth = 2;
-
+        
+        _textView.inputAccessoryView = [UIView new];    //空view 隐藏inputAccessoryView
     }
     return _textView;
 }

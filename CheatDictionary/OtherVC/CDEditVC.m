@@ -396,7 +396,8 @@
         _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _publishBtn.bounds = CGRectMake(0, 0, 40, 44);
         [_publishBtn setTitle:@"发布" forState:UIControlStateNormal];
-        [_publishBtn setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+        [_publishBtn setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
+        [_publishBtn setTitleColor:SecondaryNavbarTitleSelected forState:UIControlStateNormal];
         _publishBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_publishBtn bk_addEventHandler:^(id sender) {
             [self clickToPublish];
