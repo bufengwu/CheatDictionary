@@ -787,10 +787,10 @@
 			children = (
 				AAD0EAD420F7622300D97792 /* CDHomeVC.h */,
 				AAD0EAD520F7622300D97792 /* CDHomeVC.m */,
-				AABB00F721368CCC007CDB4B /* Message */,
+				AABB00F321368BAC007CDB4B /* HotRcmd */,
 				AABB00F621368CB8007CDB4B /* Channel */,
 				AABB00F521368C7B007CDB4B /* Attention */,
-				AABB00F321368BAC007CDB4B /* HotRcmd */,
+				AABB00F721368CCC007CDB4B /* Message */,
 			);
 			path = Home;
 			sourceTree = "<group>";

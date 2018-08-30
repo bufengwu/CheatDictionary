@@ -96,10 +96,14 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.viewModel.objects.count;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 2 && _currentIndex == 1) {
+        return self.viewModel.articles.count;
+    }
+    
     id model = self.viewModel.objects[section];
     if ([model isKindOfClass:[CDSectionModel class]]) {
         return ((CDSectionModel *)model).objects.count;

@@ -20,9 +20,10 @@
 }
 
 - (void)installWithObject:(CDArticleModel *)object {
-    self.coverImageView.image = [UIImage imageNamed:object.icon];
     self.titleLabel.text = object.title;
     self.contentLabel.text = object.desc;
+    
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:object.cover] placeholderImage:[UIImage imageNamed:@"article_image_default"]];
 }
 
 + (CGSize)getSizeWithObject:(id)object {
@@ -39,7 +40,7 @@
     [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.right.equalTo(self.contentView).offset(-10);
-        make.width.height.mas_equalTo(45);
+        make.width.height.mas_equalTo(60);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(self.contentView).offset(10);
@@ -57,6 +58,7 @@
 - (UIImageView *)coverImageView {
     if (_coverImageView == nil) {
         _coverImageView = [[UIImageView alloc] init];
+        _coverImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _coverImageView;
 }
