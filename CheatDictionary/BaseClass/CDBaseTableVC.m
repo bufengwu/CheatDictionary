@@ -30,7 +30,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         
-        _tableView.backgroundColor = CollectViewBG;
+        _tableView.backgroundColor = MainLightBrownColor;
         _tableView.separatorColor = MainSeparatorColor;
         _tableView.tableFooterView = [UIView new];
         _tableView.showsVerticalScrollIndicator = NO;

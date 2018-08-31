@@ -42,8 +42,8 @@
     if (self) {
         [self addSubview:self.topView];
         [self addSubview:self.dragSortView];
-        self.topView.backgroundColor = CollectViewBG;
-        self.dragSortView.backgroundColor = CollectViewBG;
+        self.topView.backgroundColor = MainLightBrownColor;
+        self.dragSortView.backgroundColor = MainLightBrownColor;
         
         [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.equalTo(self);

@@ -25,6 +25,7 @@
         self.stickyLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
+            label.font = [UIFont systemFontOfSize:11];
             label.layer.borderColor = [UIColor blackColor].CGColor;
             label.layer.borderWidth = 1;
             label.text = @"置顶";
@@ -32,6 +33,7 @@
         });
         
         self.titleLabel = [[UILabel alloc] init];
+        self.titleLabel.font = [UIFont systemFontOfSize:14];
         self.titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
         
         [self.contentView addSubview:self.stickyLabel];
@@ -40,15 +42,16 @@
         [self.stickyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(10);
             make.centerY.equalTo(self.contentView);
-            make.width.equalTo(@40);
-            make.top.equalTo(self.contentView).offset(10);
-            make.bottom.equalTo(self.contentView).offset(-10);
+            make.width.equalTo(@32);
+            make.height.equalTo(@15);
         }];
         
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.contentView);
             make.left.equalTo(self.stickyLabel.mas_right).offset(6);
             make.right.equalTo(self.contentView.mas_right).offset(-20);
+            make.top.equalTo(self.contentView).offset(10);
+            make.bottom.equalTo(self.contentView).offset(-10);
         }];
         
     }

@@ -189,7 +189,7 @@
 - (TYAttributedLabel *)contentLabel {
     if (!_contentLabel) {
         _contentLabel = [[TYAttributedLabel alloc] init];
-        _contentLabel.textColor = [UIColor grayColor];
+        _contentLabel.textColor = FontBlack;
         _contentLabel.font = [UIFont systemFontOfSize:13];
         _contentLabel.textAlignment = NSTextAlignmentLeft;
         _contentLabel.numberOfLines = 0;

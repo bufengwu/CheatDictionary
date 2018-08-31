@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = CollectViewBG;
+    self.view.backgroundColor = MainLightBrownColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

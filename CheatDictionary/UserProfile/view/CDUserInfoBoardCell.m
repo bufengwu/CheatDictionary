@@ -59,7 +59,7 @@
         tableView.alwaysBounceVertical = YES;
         tableView.estimatedRowHeight = 80.0f;
         tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.backgroundColor = CollectViewBG;
+        tableView.backgroundColor = MainLightBrownColor;
         tableView.separatorColor = MainSeparatorColor;
         tableView;
     });
@@ -75,7 +75,7 @@
         tableView.alwaysBounceVertical = YES;
         tableView.estimatedRowHeight = 80.0f;
         tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.backgroundColor = CollectViewBG;
+        tableView.backgroundColor = MainLightBrownColor;
         tableView.separatorColor = MainSeparatorColor;
         tableView;
     });
@@ -91,7 +91,7 @@
         tableView.alwaysBounceVertical = YES;
         tableView.estimatedRowHeight = 80.0f;
         tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.backgroundColor = CollectViewBG;
+        tableView.backgroundColor = MainLightBrownColor;
         tableView.separatorColor = MainSeparatorColor;
         tableView;
     });
@@ -144,7 +144,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-            cell.backgroundColor = CollectViewBG;
+            cell.backgroundColor = MainLightBrownColor;
         }
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
         cell.textLabel.text = @"打铁 10🌟";

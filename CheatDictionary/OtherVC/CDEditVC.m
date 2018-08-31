@@ -288,7 +288,7 @@
 - (YYTextView *)titleTextView {
     if (!_titleTextView) {
         YYTextView *textView = [[YYTextView alloc] initWithFrame:CGRectMake(0, getRectNavAndStatusHight, self.view.width, 38)];
-        textView.backgroundColor = CollectViewBG;
+        textView.backgroundColor = MainLightBrownColor;
         textView.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 10);
         textView.contentInset = UIEdgeInsetsZero;
         textView.scrollIndicatorInsets = textView.contentInset;
@@ -312,7 +312,7 @@
 - (YYTextView *)contentTextView {
     if (!_contentTextView) {
         YYTextView *textView = [[YYTextView alloc] initWithFrame:CGRectMake(0, getRectNavAndStatusHight + 45, self.view.width, self.view.height - 45)];
-        textView.backgroundColor = CollectViewBG;
+        textView.backgroundColor = MainLightBrownColor;
         textView.tag = 1000;
         textView.textContainerInset = UIEdgeInsetsMake(20, 16, 20, 16);
         textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);

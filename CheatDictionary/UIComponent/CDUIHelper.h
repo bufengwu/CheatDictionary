@@ -33,8 +33,8 @@
 #define NavbarTitleColor RGB(254, 226, 154)
 #define TabBarTitleColorNormal RGB(181, 155, 116)
 
-#define CollectViewBG RGB(213, 201, 176)
-#define CollectCellBG RGB(198, 182, 151)
+#define MainLightBrownColor RGB(213, 201, 176)
+#define MainDarkBrownColor RGB(198, 182, 151)
 #define MainSeparatorColor RGB(186, 175, 155)
 
 #define CollectCellBorderColor RGB(181, 168, 145)

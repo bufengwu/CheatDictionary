@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.contentView.backgroundColor = CollectCellBG;
+        self.contentView.backgroundColor = MainDarkBrownColor;
     }
     return self;
 }

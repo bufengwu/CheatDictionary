@@ -187,7 +187,7 @@
 - (UILabel *)contentLabel {
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
-        _contentLabel.textColor = [UIColor grayColor];
+        _contentLabel.textColor = FontBlack;
         _contentLabel.font = [UIFont systemFontOfSize:13];
         _contentLabel.textAlignment = NSTextAlignmentLeft;
         _contentLabel.numberOfLines = 0;
@@ -200,7 +200,7 @@
         _floorLabel = [UILabel new];
         _floorLabel.text = @"1#";
         _floorLabel.font = [UIFont systemFontOfSize:10];
-        _floorLabel.textColor = [UIColor grayColor];
+        _floorLabel.textColor = FontDarkGray;
     }
     return _floorLabel;
 }
@@ -210,7 +210,7 @@
         _commentsLabel = [[UITextView alloc] init];
         _commentsLabel.editable = NO;
         _commentsLabel.scrollEnabled = NO;
-        _commentsLabel.backgroundColor = [UIColor lightGrayColor];
+        _commentsLabel.backgroundColor = MainDarkBrownColor;
         
         _commentsLabel.delegate = self;
     }
@@ -275,7 +275,7 @@
 //    cell.textLabel.attributedText = string;
 //    cell.textLabel.numberOfLines = 0;
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.backgroundColor = CollectViewBG;
+//    cell.backgroundColor = MainLightBrownColor;
 //    return cell;
 //}
 //
@@ -289,7 +289,7 @@
 //
 //- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
 //
-//    ((UITableViewHeaderFooterView *)view).contentView.backgroundColor = CollectViewBG;
+//    ((UITableViewHeaderFooterView *)view).contentView.backgroundColor = MainLightBrownColor;
 //    ((UITableViewHeaderFooterView *)view).textLabel.font = [UIFont systemFontOfSize:12];
 //
 //}

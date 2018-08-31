@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
-    self.tableView.backgroundColor = CollectViewBG;
+    self.tableView.backgroundColor = MainLightBrownColor;
     self.tableView.separatorColor = MainSeparatorColor;
     
     NSArray *groups = @[
@@ -117,7 +117,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-        cell.backgroundColor = CollectViewBG;
+        cell.backgroundColor = MainLightBrownColor;
     }
     
     CDLeftItemModel *item = _dataArray[indexPath.section];

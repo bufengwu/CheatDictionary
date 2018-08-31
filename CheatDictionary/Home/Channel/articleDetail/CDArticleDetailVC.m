@@ -33,8 +33,7 @@
     
     self.scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-        scrollView.backgroundColor = CollectCellBG;
-        scrollView.bounces = NO;
+        scrollView.backgroundColor = MainLightBrownColor;
         scrollView;
     });
     [self.view addSubview:self.scrollView];
@@ -43,7 +42,7 @@
     }];
     
     self.label = [[TYAttributedLabel alloc] initWithFrame:CGRectMake(10, 0, SCREEN_WIDTH - 20, 100)];
-    self.label.backgroundColor = CollectCellBG;
+    self.label.backgroundColor = MainLightBrownColor;
     [_scrollView addSubview:self.label];
     
     self.atricleSourceArray = @[
@@ -57,7 +56,7 @@
     
     self.replyTableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.label.frame.size.height, SCREEN_WIDTH, 400) style:UITableViewStylePlain];
-        tableView.backgroundColor = CollectCellBG;
+        tableView.backgroundColor = MainLightBrownColor;
         tableView.estimatedRowHeight = 80;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.delegate = self;
@@ -77,7 +76,10 @@
         NSLog(@"出错了诶～");
         return;
     }
-    NSMutableAttributedString *mutableString = [[NSMutableAttributedString alloc] initWithString:[source[0] stringByAppendingString:@"\n\n"]
+    
+    NSString *title = [NSString stringWithFormat:@"\n%@\n\n", source[0]];
+    
+    NSMutableAttributedString *mutableString = [[NSMutableAttributedString alloc] initWithString:title
                                                                                       attributes:@{
                                                                                                    NSFontAttributeName : [UIFont boldSystemFontOfSize:17]
                                                                                                    }];
@@ -135,12 +137,12 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     
-    ((UITableViewHeaderFooterView *)view).contentView.backgroundColor = CollectCellBG;
+    ((UITableViewHeaderFooterView *)view).contentView.backgroundColor = MainDarkBrownColor;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
     ((UITableViewHeaderFooterView *)view).textLabel.font = [UIFont systemFontOfSize:12];
-    ((UITableViewHeaderFooterView *)view).contentView.backgroundColor = CollectCellBG;
+    ((UITableViewHeaderFooterView *)view).contentView.backgroundColor = MainDarkBrownColor;
 }
 
 @end

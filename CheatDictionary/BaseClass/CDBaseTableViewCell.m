@@ -13,7 +13,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.contentView.backgroundColor = CollectViewBG;
+    self.contentView.backgroundColor = MainLightBrownColor;
     self.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.layoutMargins = UIEdgeInsetsMake(0, 0, 0, 0);
     return self;

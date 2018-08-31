@@ -232,7 +232,7 @@
 - (UIView *)replyContainer {
     if (!_replyContainer) {
         _replyContainer = [UIView new];
-        _replyContainer.backgroundColor = CollectCellBG;
+        _replyContainer.backgroundColor = MainDarkBrownColor;
     }
     return _replyContainer;
 }

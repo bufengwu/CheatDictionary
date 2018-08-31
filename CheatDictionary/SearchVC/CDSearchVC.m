@@ -66,7 +66,7 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
     
-    self.tableView.backgroundColor = CollectViewBG;
+    self.tableView.backgroundColor = MainLightBrownColor;
     self.tableView.separatorColor = MainSeparatorColor;
     self.tableView.tableFooterView = [UIView new];
     self.tableView.showsVerticalScrollIndicator = NO;

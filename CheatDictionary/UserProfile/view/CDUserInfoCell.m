@@ -34,7 +34,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.backgroundColor = CollectCellBG;
+    self.backgroundColor = MainDarkBrownColor;
 //    [self.contentView addSubview:self.itemView1 = [CDUserFaceItemView new]];
 //    [self.contentView addSubview:self.itemView2 = [CDUserFaceItemView new]];
 //    [self.contentView addSubview:self.itemView3 = [CDUserFaceItemView new]];

@@ -56,7 +56,7 @@
         layout.delegate = self;
         layout.flowLayoutStyle = WSLWaterFlowVerticalEqualWidth;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-        _collectionView.backgroundColor = CollectViewBG;
+        _collectionView.backgroundColor = MainLightBrownColor;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;

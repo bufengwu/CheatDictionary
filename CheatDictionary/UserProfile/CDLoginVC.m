@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = NavbarColor;
-    self.containerView.backgroundColor = CollectViewBG;
+    self.containerView.backgroundColor = MainLightBrownColor;
 }
 
 - (IBAction)closeLoginView:(id)sender {
