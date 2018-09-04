@@ -78,7 +78,6 @@
 		AA0C4DFA212C237E001E0A45 /* CDPhotoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4DF9212C237E001E0A45 /* CDPhotoDetailVC.m */; };
 		AA0C4E05212C2419001E0A45 /* SXImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4DFC212C2418001E0A45 /* SXImageCell.m */; };
 		AA0C4E06212C2419001E0A45 /* SXStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4DFE212C2418001E0A45 /* SXStackLayout.m */; };
-		AA0C4E07212C2419001E0A45 /* SXImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0C4E01212C2418001E0A45 /* SXImageCell.xib */; };
 		AA0C4E08212C2419001E0A45 /* SXCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E02212C2419001E0A45 /* SXCircleLayout.m */; };
 		AA0C4E09212C2419001E0A45 /* SXLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E04212C2419001E0A45 /* SXLineLayout.m */; };
 		AA0C4E0B212C244C001E0A45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0C4E0A212C244C001E0A45 /* Images.xcassets */; };
@@ -306,7 +305,6 @@
 		AA0C4DFE212C2418001E0A45 /* SXStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXStackLayout.m; sourceTree = "<group>"; };
 		AA0C4DFF212C2418001E0A45 /* SXLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXLineLayout.h; sourceTree = "<group>"; };
 		AA0C4E00212C2418001E0A45 /* SXCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXCircleLayout.h; sourceTree = "<group>"; };
-		AA0C4E01212C2418001E0A45 /* SXImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXImageCell.xib; sourceTree = "<group>"; };
 		AA0C4E02212C2419001E0A45 /* SXCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXCircleLayout.m; sourceTree = "<group>"; };
 		AA0C4E03212C2419001E0A45 /* SXImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXImageCell.h; sourceTree = "<group>"; };
 		AA0C4E04212C2419001E0A45 /* SXLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXLineLayout.m; sourceTree = "<group>"; };
@@ -643,7 +641,6 @@
 				AA0C4E02212C2419001E0A45 /* SXCircleLayout.m */,
 				AA0C4E03212C2419001E0A45 /* SXImageCell.h */,
 				AA0C4DFC212C2418001E0A45 /* SXImageCell.m */,
-				AA0C4E01212C2418001E0A45 /* SXImageCell.xib */,
 				AA0C4DFF212C2418001E0A45 /* SXLineLayout.h */,
 				AA0C4E04212C2419001E0A45 /* SXLineLayout.m */,
 				AA0C4DFD212C2418001E0A45 /* SXStackLayout.h */,
@@ -1211,7 +1208,6 @@
 				37932980210B7E5900BF1176 /* channel.json in Resources */,
 				AA306374211C210300FD6F53 /* CDBarHeaderCell.xib in Resources */,
 				37392A4020F97D60002A14A4 /* icons.bundle in Resources */,
-				AA0C4E07212C2419001E0A45 /* SXImageCell.xib in Resources */,
 				AA63F31B20EDC36D00A9CBDF /* CDUserInfoCell.xib in Resources */,
 				3722C13C20E7209300D4E993 /* LaunchScreen.storyboard in Resources */,
 				37392785211DBF5C000DDE44 /* hottopic.json in Resources */,

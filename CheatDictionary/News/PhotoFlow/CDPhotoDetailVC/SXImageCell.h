@@ -10,6 +10,6 @@
 
 @interface SXImageCell : UICollectionViewCell
 
-@property (nonatomic, copy) NSString *image;
+@property (strong, nonatomic, readonly) UIImageView *imageView;
 
 @end

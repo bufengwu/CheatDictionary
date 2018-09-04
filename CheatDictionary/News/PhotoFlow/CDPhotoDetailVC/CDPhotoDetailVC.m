@@ -44,8 +44,7 @@ static NSString *const ID = @"image";
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.tz_width, 250) collectionViewLayout:layout];
     collectionView.dataSource = self;
     collectionView.delegate = self;
-    [collectionView registerNib:[UINib nibWithNibName:@"SXImageCell" bundle:nil] forCellWithReuseIdentifier:ID];
-    
+    [collectionView registerClass:[SXImageCell class] forCellWithReuseIdentifier:ID];
 //    collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     [self.view addSubview:collectionView];
@@ -61,7 +60,8 @@ static NSString *const ID = @"image";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SXImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    cell.image = self.images[indexPath.row%(self.images.count)];
+    NSString *image = self.images[indexPath.row%(self.images.count)];
+    cell.imageView.image = [UIImage imageNamed:image];
     return cell;
 }
 
