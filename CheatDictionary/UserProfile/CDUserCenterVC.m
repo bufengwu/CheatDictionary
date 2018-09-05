@@ -47,7 +47,7 @@
     [self.viewModel loadData];
     
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 30, 30)];
-    UIImage *backImg = [[UIImage imageNamed:@"icon_back"] tintImageWithColor:SecondaryNavbarTitleSelected];
+    UIImage *backImg = [[UIImage imageNamed:@"icon_back"] cd_imageWithTintColor:SecondaryNavbarTitleSelected];
     [backBtn setImage:backImg forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.navBar addSubview:backBtn];

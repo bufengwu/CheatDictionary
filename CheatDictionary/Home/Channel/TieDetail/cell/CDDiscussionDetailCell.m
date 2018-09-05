@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIImageView *avatarImageView; //头像
 @property (nonatomic, strong) UILabel *nameLabel;           //作者
+@property (nonatomic, strong) UIImageView *avatarBorderImageView;
 
 @property (nonatomic, strong) UILabel *timeLabel;           //时间
 
@@ -118,6 +119,8 @@
 - (void)configSubviews {
     
     self.avatarImageView = [[UIImageView alloc] init];
+    _avatarImageView.layer.cornerRadius = 8;
+    _avatarImageView.clipsToBounds = YES;
     
     self.nameLabel = ({
         UILabel *label = [[UILabel alloc] init];
@@ -155,19 +158,26 @@
     
     [self.contentView addSubview:self.commentsLabel];
     
+    [self.contentView addSubview:self.avatarBorderImageView];
+    
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.width.mas_equalTo(18);
+        make.center.equalTo(self.avatarBorderImageView);
+    }];
+    
+    [self.avatarBorderImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(self.contentView).offset(10);
-        make.height.width.mas_equalTo(25);
+        make.height.width.mas_equalTo(24);
     }];
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.avatarImageView.mas_right).offset(5);
-        make.top.equalTo(self.avatarImageView);
+        make.left.equalTo(self.avatarBorderImageView.mas_right).offset(5);
+        make.top.equalTo(self.avatarBorderImageView);
     }];
     
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.avatarImageView.mas_right).offset(5);
-        make.bottom.equalTo(self.avatarImageView);
+        make.left.equalTo(self.avatarBorderImageView.mas_right).offset(5);
+        make.bottom.equalTo(self.avatarBorderImageView);
     }];
     
     [self.floorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -182,6 +192,14 @@
         make.width.equalTo(@51);
         make.height.equalTo(@18);
     }];
+}
+
+- (UIImageView *)avatarBorderImageView {
+    if (!_avatarBorderImageView) {
+        _avatarBorderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+        _avatarBorderImageView.image = [UIImage imageNamed:@"list_header_bg_34x34_"];
+    }
+    return _avatarBorderImageView;
 }
 
 - (UILabel *)contentLabel {

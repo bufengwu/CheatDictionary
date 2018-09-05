@@ -81,7 +81,7 @@
             NSString *normalFilePath = dict[kImgKey];
             NSString *selectedFilePath = dict[kSelImgKey];
             
-            vc.tabBarItem.image = [[[UIImage imageNamed:normalFilePath] tintImageWithColor:TabBarTitleColorNormal] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            vc.tabBarItem.image = [[[UIImage imageNamed:normalFilePath] cd_imageWithTintColor:TabBarTitleColorNormal] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedFilePath];
             vc.tabBarItem.title = vc.title = dict[kNavTitleKey];;
             vc.tabBarItem.imageInsets = UIEdgeInsetsZero;
@@ -154,7 +154,7 @@
  
     //searchBar颜色
     [[UISearchBar appearance] setBackgroundColor:[UIColor clearColor]];
-    UIImage *clearImg = [UIImage imageWithColor:[UIColor clearColor] height:1.0f];
+    UIImage *clearImg = [UIImage cd_imageWithColor:[UIColor clearColor]];
     [[UISearchBar appearance] setBackgroundImage:clearImg];
     [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"img_search_bg_302x35_"] forState:UIControlStateNormal];
 }

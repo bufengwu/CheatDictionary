@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIImageView *avatarImageView; //头像
 @property (nonatomic, strong) UILabel *nameLabel;           //作者
+@property (nonatomic, strong) UIImageView *avatarBorderImageView;
 
 @property (nonatomic, strong) UIButton *onlyWatchUpperButton;
 @property (nonatomic, strong) UILabel *floorLabel;
@@ -82,29 +83,37 @@
     [self.contentView addSubview:self.watchIcon];
     [self.contentView addSubview:self.watchNumLabel];
     
+    [self.contentView addSubview:self.avatarBorderImageView];
+    
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.equalTo(self.contentView).offset(10);
-        make.height.width.mas_equalTo(25);
+        make.height.width.mas_equalTo(18);
+        make.center.equalTo(self.avatarBorderImageView);
     }];
     
+    [self.avatarBorderImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.equalTo(self.contentView).offset(10);
+        make.height.width.mas_equalTo(24);
+    }];
+    
+    
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.avatarImageView.mas_right).offset(5);
-        make.centerY.equalTo(self.avatarImageView);
+        make.left.equalTo(self.avatarBorderImageView.mas_right).offset(5);
+        make.centerY.equalTo(self.avatarBorderImageView);
     }];
     
     [self.floorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-10);
-        make.centerY.equalTo(self.avatarImageView);
+        make.centerY.equalTo(self.avatarBorderImageView);
     }];
     
     [self.onlyWatchUpperButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.floorLabel.mas_left).offset(-10);
-        make.centerY.equalTo(self.avatarImageView);
+        make.centerY.equalTo(self.avatarBorderImageView);
         make.height.equalTo(@18);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.avatarImageView.mas_bottom).offset(5);
+        make.top.equalTo(self.avatarBorderImageView.mas_bottom).offset(5);
         make.left.equalTo(self.contentView).offset(10);
         make.right.equalTo(self.contentView).offset(-10);
     }];
@@ -134,8 +143,18 @@
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
         _avatarImageView = [UIImageView new];
+        _avatarImageView.layer.cornerRadius = 8;
+        _avatarImageView.clipsToBounds = YES;
     }
     return _avatarImageView;
+}
+
+- (UIImageView *)avatarBorderImageView {
+    if (!_avatarBorderImageView) {
+        _avatarBorderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+        _avatarBorderImageView.image = [UIImage imageNamed:@"list_header_bg_34x34_"];
+    }
+    return _avatarBorderImageView;
 }
 
 - (UILabel *)nameLabel {
@@ -211,7 +230,7 @@
 - (UIImageView *)watchIcon {
     if (!_watchIcon) {
         _watchIcon = [UIImageView new];
-        _watchIcon.image = [[UIImage imageNamed:@"choice_eye_img_16x10_"] tintImageWithColor:[UIColor grayColor]];
+        _watchIcon.image = [[UIImage imageNamed:@"choice_eye_img_16x10_"] cd_imageWithTintColor:[UIColor grayColor]];
     }
     return _watchIcon;
 }
