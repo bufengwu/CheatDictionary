@@ -13,26 +13,13 @@
 
 @interface CDPhotoDetailVC () <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate, MWPhotoBrowserDelegate>
 
-@property (nonatomic, strong) NSMutableArray *images;
+@property (nonatomic, strong) NSArray *images;
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
 
 @implementation CDPhotoDetailVC
 
-static NSString *const ID = @"image";
-
-- (NSMutableArray *)images
-{
-    if (!_images) {
-        self.images = [[NSMutableArray alloc] init];
-        
-        for (int i = 1; i<=12; i++) {
-            [self.images addObject:[NSString stringWithFormat:@"%d", i]];
-        }
-    }
-    return _images;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,22 +31,35 @@ static NSString *const ID = @"image";
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.tz_width, 250) collectionViewLayout:layout];
     collectionView.dataSource = self;
     collectionView.delegate = self;
-    [collectionView registerClass:[SXImageCell class] forCellWithReuseIdentifier:ID];
+    
+    [collectionView registerClass:[SXImageCell class] forCellWithReuseIdentifier:@"SXImageCell"];
 //    collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
+    
+    
+    self.images = @[
+                    @"1",
+                    @"2",
+                    @"3",
+                    @"4",
+                    @"5",
+                    @"6",
+                    @"7",
+                    @"8",
+                    ];
 }
 
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5;
+    return self.images.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SXImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    SXImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SXImageCell" forIndexPath:indexPath];
     NSString *image = self.images[indexPath.row%(self.images.count)];
     cell.imageView.image = [UIImage imageNamed:image];
     return cell;
@@ -86,7 +86,7 @@ static NSString *const ID = @"image";
 
 //返回图片个数
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
-    return 5;
+    return self.images.count;
 }
 
 //返回图片模型

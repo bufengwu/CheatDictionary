@@ -138,6 +138,11 @@
 		AA977BAA20FC9A7100B8E826 /* CDDiscussionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA977BA920FC9A7100B8E826 /* CDDiscussionDetailModel.m */; };
 		AA977BAD20FCA17800B8E826 /* CDFlowEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA977BAC20FCA17800B8E826 /* CDFlowEditView.m */; };
 		AA977BC120FD822F00B8E826 /* CDApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AA977BC020FD822F00B8E826 /* CDApiClient.m */; };
+		AAA4806621411B2900C37322 /* notice.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806521411B2800C37322 /* notice.json */; };
+		AAA480692141215700C37322 /* CDArticleDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA480682141215700C37322 /* CDArticleDetailVM.m */; };
+		AAA4806B2141222000C37322 /* article_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806A2141221F00C37322 /* article_detail.json */; };
+		AAA4806D21412C4500C37322 /* attention.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806C21412C4500C37322 /* attention.json */; };
+		AAA4806F21412C5E00C37322 /* person_list.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806E21412C5E00C37322 /* person_list.json */; };
 		AAB5225F212FFD31009EF004 /* CDShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5225E212FFD30009EF004 /* CDShowView.m */; };
 		AAB52262212FFE59009EF004 /* CDBigAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB52261212FFE59009EF004 /* CDBigAlertView.m */; };
 		AAB5226521300356009EF004 /* CDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5226421300356009EF004 /* CDHelper.m */; };
@@ -419,6 +424,12 @@
 		AA977BAC20FCA17800B8E826 /* CDFlowEditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDFlowEditView.m; sourceTree = "<group>"; };
 		AA977BBF20FD822F00B8E826 /* CDApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDApiClient.h; sourceTree = "<group>"; };
 		AA977BC020FD822F00B8E826 /* CDApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDApiClient.m; sourceTree = "<group>"; };
+		AAA4806521411B2800C37322 /* notice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notice.json; sourceTree = "<group>"; };
+		AAA480672141215700C37322 /* CDArticleDetailVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDArticleDetailVM.h; sourceTree = "<group>"; };
+		AAA480682141215700C37322 /* CDArticleDetailVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDArticleDetailVM.m; sourceTree = "<group>"; };
+		AAA4806A2141221F00C37322 /* article_detail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = article_detail.json; sourceTree = "<group>"; };
+		AAA4806C21412C4500C37322 /* attention.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = attention.json; sourceTree = "<group>"; };
+		AAA4806E21412C5E00C37322 /* person_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_list.json; sourceTree = "<group>"; };
 		AAB5225D212FFD30009EF004 /* CDShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDShowView.h; sourceTree = "<group>"; };
 		AAB5225E212FFD30009EF004 /* CDShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDShowView.m; sourceTree = "<group>"; };
 		AAB52260212FFE59009EF004 /* CDBigAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDBigAlertView.h; sourceTree = "<group>"; };
@@ -788,6 +799,9 @@
 			children = (
 				37BC66DF20FABD5A0054D9D0 /* CDArticleDetailVC.h */,
 				37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */,
+				AAA480672141215700C37322 /* CDArticleDetailVM.h */,
+				AAA480682141215700C37322 /* CDArticleDetailVM.m */,
+				AAA4806A2141221F00C37322 /* article_detail.json */,
 			);
 			path = articleDetail;
 			sourceTree = "<group>";
@@ -973,10 +987,12 @@
 				AAD0EAD820F7632400D97792 /* CDAttentionVC.m */,
 				AAE974D720F897D500BE100E /* CDAttentionVM.h */,
 				AAE974D820F897D500BE100E /* CDAttentionVM.m */,
+				AAA4806C21412C4500C37322 /* attention.json */,
 				37C677A720FA5201002D210C /* CDPersonListVC.h */,
 				37C677A820FA5201002D210C /* CDPersonListVC.m */,
 				37C677AA20FA5225002D210C /* CDPersonListVM.h */,
 				37C677AB20FA5225002D210C /* CDPersonListVM.m */,
+				AAA4806E21412C5E00C37322 /* person_list.json */,
 				AA922B972136CF0900A57194 /* cell */,
 			);
 			path = Attention;
@@ -1005,6 +1021,7 @@
 				37499CBC20F784F100C8354F /* CDNoticeVC.m */,
 				37392A1320F96E71002A14A4 /* CDNoticeListVM.h */,
 				37392A1420F96E71002A14A4 /* CDNoticeListVM.m */,
+				AAA4806521411B2800C37322 /* notice.json */,
 				AABB00FE21369056007CDB4B /* cell */,
 			);
 			path = Message;
@@ -1210,11 +1227,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA4806D21412C4500C37322 /* attention.json in Resources */,
 				37932980210B7E5900BF1176 /* channel.json in Resources */,
 				AA306374211C210300FD6F53 /* CDBarHeaderCell.xib in Resources */,
 				37392A4020F97D60002A14A4 /* icons.bundle in Resources */,
 				AA63F31B20EDC36D00A9CBDF /* CDUserInfoCell.xib in Resources */,
 				3722C13C20E7209300D4E993 /* LaunchScreen.storyboard in Resources */,
+				AAA4806B2141222000C37322 /* article_detail.json in Resources */,
+				AAA4806F21412C5E00C37322 /* person_list.json in Resources */,
+				AAA4806621411B2900C37322 /* notice.json in Resources */,
 				37392785211DBF5C000DDE44 /* hottopic.json in Resources */,
 				AA544439212D435400590733 /* GuidePage.xcassets in Resources */,
 				AA37825F212D7973007A520C /* BTDreamViewController.xib in Resources */,
@@ -1258,6 +1279,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CheatDictionary/Pods-CheatDictionary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/CNPPopupController/CNPPopupController.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
@@ -1276,11 +1298,13 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/TOWebViewController/TOWebViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TYAttributedLabel/TYAttributedLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework",
 				"${BUILT_PRODUCTS_DIR}/UIImage-Resize/UIImage_Resize.framework",
+				"${BUILT_PRODUCTS_DIR}/VPImageCropper/VPImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
@@ -1288,6 +1312,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNPPopupController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -1306,11 +1331,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOWebViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYAttributedLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICKeyChainStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImage_Resize.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VPImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
@@ -1333,6 +1360,7 @@
 				AA306377211C2D2C00FD6F53 /* CDChannelDetailVM.m in Sources */,
 				AAE974E320F89F6800BE100E /* CDCovergeItemModel.m in Sources */,
 				AA58640320EC988700364CBE /* CDCustomTagLabel.m in Sources */,
+				AAA480692141215700C37322 /* CDArticleDetailVM.m in Sources */,
 				AA6332F12134F34E00DE3B09 /* AppDelegate+Fetcher.m in Sources */,
 				AA08C620210F1DF600D31FB0 /* UIView+Border.m in Sources */,
 				37D3DD8F210A9F6B00D4DC03 /* CDNewsContainerVC.m in Sources */,

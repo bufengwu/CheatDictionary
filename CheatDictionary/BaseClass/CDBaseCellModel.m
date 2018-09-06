@@ -14,4 +14,15 @@
     return Nil;
 }
 
++ (NSDictionary *)modelCustomPropertyMapper
+{
+    return @{};
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass
+{
+    // value should be Class or Class name.
+    return @{};
+}
+
 @end

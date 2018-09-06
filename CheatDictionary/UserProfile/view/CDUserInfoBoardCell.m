@@ -172,11 +172,11 @@
             cell = [[CDMomentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CDMomentCell"];
         }
         CDMomentModel *model = [CDMomentModel new];
-        model.avatarImage = @"icon_avatar_default";
+        model.avatar = @"icon_avatar_default";
         model.name = @"窃 格瓦拉";
         model.time = @"7月5日";
         model.action = @"发表文章";
-        model.momentTitle = @"打工这方面......打工是不可能打工的 这辈子不可能打工的，做生意又不会做，就是偷这种东西，才能维持得了生活这样子.";
+        model.title = @"打工这方面......打工是不可能打工的 这辈子不可能打工的，做生意又不会做，就是偷这种东西，才能维持得了生活这样子.";
         [cell installWithObject:model];
         return cell;
     }

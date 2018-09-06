@@ -4,7 +4,19 @@
     "data": {
         "items": [
             {
-                "card_type": "feed_banner"
+                "card_type": "feed_banner",
+                  "images": [
+                             "http://i0.hdslb.com/bfs/archive/69737852c0e5316a2f0e5f81e0100d9156f0ae46.jpg",
+                             "http://i0.hdslb.com/bfs/archive/dce8a95afe99f66ec54b67e8694fe89fffa9cdf8.png",
+                             "http://i0.hdslb.com/bfs/archive/2805e6d3d131d7980cadab237568d98eb78f5dee.jpg"
+                  ],
+                  "titles" : [
+                              "记我在新疆夜里画圈圈的日子",
+                              "夏の落基山班芙二回目",
+                              "欧洲",
+                              "Love Star Sunshine彩虹天堂金秋行摄",
+                              "女汉子与小汉子从东北到西南",
+                  ]
             },
             {
                 "card_type": "challenge",

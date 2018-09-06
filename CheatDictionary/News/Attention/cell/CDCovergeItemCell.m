@@ -11,6 +11,8 @@
 #import "CDPersonRecCell.h"
 #import "CDPersonRecModel.h"
 
+#import "CDCovergeItemModel.h"
+
 #define kCollectionViewMargin 10
 
 @interface CDCovergeItemCell()<UICollectionViewDelegate, UICollectionViewDataSource>
@@ -31,18 +33,8 @@
     return self;
 }
 
-- (void)installWithObject:(id )object {
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    for (int i = 0; i < 13; i++) {
-        CDPersonRecModel *roomModel = [CDPersonRecModel new];
-        roomModel.icon = @"icon_avatar_default";
-        roomModel.name = @"贝爷2号";
-        roomModel.desc1 = @"擅长摸鱼、划水";
-        roomModel.desc2 = @"粉丝 10W+";
-        roomModel.uri = @"CDUserCenterVC";
-        [mutableArray addObject:roomModel];
-    }
-    self.itemModels = mutableArray;
+- (void)installWithObject:(CDCovergeItemModel *)object {
+    self.itemModels = object.items;
     [self.collectionView registerClass:[CDPersonRecCell class] forCellWithReuseIdentifier:@"CDPersonRecCell"];
 }
 

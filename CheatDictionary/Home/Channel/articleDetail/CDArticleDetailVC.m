@@ -13,10 +13,9 @@
 #import "CDDiscussionDetailModel.h"
 #import "CDDiscussionDetailCell.h"
 
+#import "CDArticleDetailVM.h"
 
 @interface CDArticleDetailVC ()<WKNavigationDelegate, UITableViewDataSource, UITableViewDelegate>
-
-@property (nonatomic, strong) NSArray *atricleSourceArray;
 
 @property (nonatomic, strong) TYAttributedLabel *label;
 
@@ -24,12 +23,25 @@
 
 @property (nonatomic, strong) UITableView *replyTableView;    //评论
 
+@property (nonatomic, strong) CDArticleDetailVM *viewModel;
+
 @end
 
 @implementation CDArticleDetailVC
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.viewModel = [CDArticleDetailVM new];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.viewModel loadData];
     
     self.scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -45,13 +57,7 @@
     self.label.backgroundColor = MainLightBrownColor;
     [_scrollView addSubview:self.label];
     
-    self.atricleSourceArray = @[
-                                @"孤岛生存最重要的三种装备",
-                                @"一、刀\n\n刀，无论在什么样的环境中，都是最常见也是最重要的生存装备。我们可以利用刀做很多事情，比如获取食物做饭、保护自身的安全、建造庇护所，或者是利用刀做成我们想要的工具：把木棍削成带尖的长矛、做成孤岛上用得到的捕鱼工具鱼叉等等。",
-                                @"![image]http://i0.hdslb.com/bfs/archive/69737852c0e5316a2f0e5f81e0100d9156f0ae46.jpg",
-                                @"二、打火器材\n\n说到火，这是我们人类进化的起点，在很久很久以前，人类还没有发现火的时候过着茹毛饮血、担惊受怕的生活，后来人类发现了火就像拥有了一切，他们从此可以利用火来取暖，烘焙食物，驱赶生物等等。所以，打火器材是孤岛生存装备中的保命必需品。在孤岛上，很难找到非流动的淡水资源，不怕饿死而怕是会渴死，就算找到积水洼之类的水源，也必须过滤加热消毒，因此，火既能帮助对海水进行加热蒸馏成淡水，又能对水进行消毒，可以极大程度的降低感染几率。可以直接点击文字参考：野外取火的方法。"
-                                ];
-    [self transactionAttributedString:self.atricleSourceArray];
+    [self transactionAttributedString:self.viewModel.atricleSourceArray];
     
     
     self.replyTableView = ({
@@ -105,7 +111,7 @@
 #pragma mark -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.viewModel.commentArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,11 +119,7 @@
     if (!cell) {
         cell = [[CDDiscussionDetailCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CDDiscussionDetailCell"];
     }
-    CDDiscussionDetailModel *model = [CDDiscussionDetailModel new];
-    model.avatar = @"icon_avatar_default";
-    model.name = @"食草驴之神";
-    model.time = @"14:23";
-    model.content = @"颤抖吧！僵尸来临之时，本座君临世界";
+    CDDiscussionDetailModel *model = self.viewModel.commentArray[indexPath.row];
     [cell installWithObject:model];
     return cell;
 }

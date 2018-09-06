@@ -10,4 +10,8 @@
 
 @interface CDFeedBannerModel : CDBaseCellModel
 
+@property (nonatomic, strong) NSArray<NSString *> *images;
+
+@property (nonatomic, strong) NSArray<NSString *> *titles;
+
 @end

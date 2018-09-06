@@ -7,7 +7,10 @@
 //
 
 #import "CDBaseCellModel.h"
+#import "CDPersonRecModel.h"
 
 @interface CDCovergeItemModel : CDBaseCellModel
+
+@property (nonatomic, strong) NSArray<CDPersonRecModel *> *items;
 
 @end

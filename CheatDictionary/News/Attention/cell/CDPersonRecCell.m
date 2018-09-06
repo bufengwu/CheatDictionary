@@ -31,7 +31,8 @@
 }
 
 - (void)installWithObject:(CDPersonRecModel *)object {
-    self.avatarView.image = [UIImage imageNamed:object.icon];
+    [self.avatarView sd_setImageWithURL:[NSURL URLWithString:object.avatar] placeholderImage:[UIImage imageNamed:@"icon_avatar_default"]];
+    
     self.nameLabel.text = object.name;
     self.descLabel1.text = object.desc1;
     self.descLabel2.text = object.desc2;
@@ -79,6 +80,8 @@
 - (UIImageView *)avatarView {
     if (_avatarView == nil) {
         _avatarView = [[UIImageView alloc] init];
+        _avatarView.layer.cornerRadius = 22;
+        _avatarView.clipsToBounds = YES;
     }
     return _avatarView;
 }

@@ -10,9 +10,9 @@
 
 @interface CDPersonRecModel : CDBaseCellModel
 
-@property(nonatomic, copy) NSString *icon;
-@property(nonatomic, copy) NSString *name;
-@property(nonatomic, copy) NSString *desc1;
-@property(nonatomic, copy) NSString *desc2;
+@property (nonatomic, copy) NSString *avatar;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *desc1;
+@property (nonatomic, copy) NSString *desc2;
 
 @end

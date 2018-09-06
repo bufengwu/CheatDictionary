@@ -11,8 +11,14 @@
 
 @interface CDBaseCellModel : NSObject
 
+@property (nonatomic, strong) NSString *card_type;  //卡片类型
+
 @property (nonatomic, strong) NSString  *uri;   //跳转链接
 
 - (Class)cellClass;
+
++ (NSDictionary *)modelCustomPropertyMapper;
+
++ (NSDictionary *)modelContainerPropertyGenericClass;
 
 @end

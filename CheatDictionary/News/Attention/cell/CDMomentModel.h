@@ -10,7 +10,7 @@
 
 @interface CDMomentModel : CDBaseCellModel
 
-@property (nonatomic, copy) NSString *avatarImage;
+@property (nonatomic, copy) NSString *avatar;
 
 @property (nonatomic, copy) NSString *name;
 
@@ -18,6 +18,6 @@
 
 @property (nonatomic, copy) NSString *action;
 
-@property (nonatomic, copy) NSString *momentTitle;
+@property (nonatomic, copy) NSString *title;
 
 @end

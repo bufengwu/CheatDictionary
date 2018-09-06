@@ -14,19 +14,15 @@
 
 
 - (void)loadData {
+    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"notice" ofType:@"json"];
+    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
+    NSDictionary *data = [jDic objectForKey:@"data"];
+    NSArray *items = [data objectForKey:@"items"];
     
     NSMutableArray *mutableArray = [NSMutableArray array];
-    
-    for (int i = 0; i < 10; i++) {
-        CDNoticeModel *notice = [CDNoticeModel new];
-        notice.avatarImage = @"icon_avatar_default";
-        notice.name = @"窃 格瓦拉";
-        notice.time = @"7月5日";
-        notice.action = @"回复了你的文章";
-        notice.noticeTitle = @"海关统计数据显示，我国货物贸易顺差自2016年第三季度起，已连续8个季度呈现同比收窄态势。";
-        notice.myMomentTitle = @"打工这方面......打工是不可能打工的 这辈子不可能打工的，做生意又不会做，就是偷这种东西，才能维持得了生活这样子.";
-        notice.uri = @"CDArticleDetailVC";
-        [mutableArray addObject:notice];
+    for (NSDictionary *item in items) {
+        CDNoticeModel *model = [CDNoticeModel modelWithJSON:item];
+        [mutableArray addObject:model];
     }
     
     self.objects = mutableArray;

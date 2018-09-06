@@ -11,6 +11,12 @@
 
 @implementation CDCovergeItemModel
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"items" : [CDPersonRecModel class]
+             };
+}
+
 - (Class)cellClass {
     return [CDCovergeItemCell class];
 }

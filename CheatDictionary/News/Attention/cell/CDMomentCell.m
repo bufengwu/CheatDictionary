@@ -34,11 +34,12 @@
 }
 
 - (void)installWithObject:(CDMomentModel *)object {
-    self.avatarImageView.image = [UIImage imageNamed:object.avatarImage];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:object.avatar] placeholderImage:[UIImage imageNamed:@"icon_avatar_default"]];
+    
     self.nameLabel.text = object.name;
     self.timeLabel.text = object.time;
     self.actionLabel.text = object.action;
-    self.momentTitleLabel.text = object.momentTitle;
+    self.momentTitleLabel.text = object.title;
 }
 
 #pragma mark -
@@ -91,6 +92,8 @@
 - (UIImageView *)avatarImageView {
     if (_avatarImageView == nil) {
         _avatarImageView = [[UIImageView alloc] init];
+        _avatarImageView.layer.cornerRadius = 15;
+        _avatarImageView.clipsToBounds = YES;
     }
     return _avatarImageView;
 }

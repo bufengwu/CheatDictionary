@@ -19,8 +19,6 @@
 @implementation CDChannelVM
 
 - (void)loadData {
-    
-    
     NSString *jPath = [[NSBundle mainBundle] pathForResource:@"channel" ofType:@"json"];
     NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
     NSArray *items = [[jDic objectForKey:@"data"] objectForKey:@"items"];
@@ -35,12 +33,8 @@
         sectionModel.objects = [NSMutableArray array];
         NSArray *channels = item[@"items"];
         for (NSDictionary *channel in channels) {
-            CDChannelCoverModel *channelModel = [CDChannelCoverModel new];
-            channelModel.icon = channel[@"icon"];
-            channelModel.title = channel[@"title"];
-            channelModel.subtitle = channel[@"subtitle"];
-            channelModel.badge = [channel[@"badge"] intValue];
-            channelModel.uri = channel[@"uri"];
+            
+            CDChannelCoverModel *channelModel = [CDChannelCoverModel modelWithJSON:channel];
             [sectionModel.objects addObject:channelModel];
         }
         [mutableArray addObject:sectionModel];

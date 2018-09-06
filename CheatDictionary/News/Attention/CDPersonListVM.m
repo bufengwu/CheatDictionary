@@ -13,18 +13,17 @@
 @implementation CDPersonListVM
 
 - (void)loadData {
+    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"person_list" ofType:@"json"];
+    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
+    NSDictionary *data = [jDic objectForKey:@"data"];
+    NSArray *items = [data objectForKey:@"items"];
     
     NSMutableArray *mutableArray = [NSMutableArray array];
-    
-    for (int i = 0; i < 13; i++) {
-        CDPersonRecModel *roomModel = [CDPersonRecModel new];
-        roomModel.icon = @"icon_avatar_default";
-        roomModel.name = @"贝爷2号";
-        roomModel.desc1 = @"擅长摸鱼、划水";
-        roomModel.desc2 = @"粉丝 10W+";
-        roomModel.uri = @"CDUserCenterVC";
-        [mutableArray addObject:roomModel];
+    for (NSDictionary *item in items) {
+        CDPersonRecModel *model = [CDPersonRecModel modelWithJSON:item];
+        [mutableArray addObject:model];
     }
+    
     self.objects = mutableArray;
 }
 

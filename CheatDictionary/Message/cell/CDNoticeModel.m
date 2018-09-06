@@ -11,6 +11,21 @@
 
 @implementation CDNoticeModel
 
++ (NSDictionary *)modelCustomPropertyMapper
+{
+    NSMutableDictionary *tempDict = [NSMutableDictionary dictionaryWithDictionary:[super modelCustomPropertyMapper]];
+    NSDictionary *dict = @{
+                           @"avatarImage"   : @"avatar",
+                           @"name"          : @"name",
+                           @"time"          : @"time",
+                           @"action"        : @"action",
+                           @"noticeTitle"   : @"content",
+                           @"myMomentTitle" : @"from",
+                           };
+    [tempDict addEntriesFromDictionary:dict];
+    return [NSDictionary dictionaryWithDictionary:tempDict];
+}
+
 - (Class)cellClass {
     return [CDNoticeCell class];
 }
