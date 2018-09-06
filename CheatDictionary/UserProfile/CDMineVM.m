@@ -36,6 +36,7 @@
     
     CDUserInfoModel *userInfoModel = [CDUserInfoModel modelWithJSON:data];
     
+    self.userInfoModel = userInfoModel;
     
     CDUserBoardModel *board = [CDUserBoardModel new];
     

@@ -12,45 +12,57 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CDUserInfoCell" id="gTV-IL-0wX" customClass="CDUserInfoCell">
-            <rect key="frame" x="0.0" y="0.0" width="491" height="254"/>
+            <rect key="frame" x="0.0" y="0.0" width="402" height="270"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="491" height="254"/>
+                <rect key="frame" x="0.0" y="0.0" width="402" height="270"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="牧野狼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-bk-kYx">
-                        <rect key="frame" x="29" y="121" width="61.5" height="24"/>
+                        <rect key="frame" x="29" y="132" width="61.5" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trt-SJ-hFH">
-                        <rect key="frame" x="29" y="160" width="39" height="16"/>
+                        <rect key="frame" x="29" y="171" width="39" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-uT-Vi0">
-                        <rect key="frame" x="79" y="160" width="53" height="16"/>
+                        <rect key="frame" x="79" y="171" width="53" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="擅长捕鱼、打铁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayw-aC-0od">
-                        <rect key="frame" x="29" y="191" width="108" height="18"/>
+                        <rect key="frame" x="29" y="202" width="108" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_avatar_default2" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-ag-VNc">
-                        <rect key="frame" x="29" y="49" width="60" height="60"/>
+                        <rect key="frame" x="29" y="60" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="7Gb-wP-YUj"/>
                             <constraint firstAttribute="width" constant="60" id="QQp-tD-qva"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" red="0.94169372320175171" green="0.82481414079666138" blue="0.74920350313186646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21r-Sl-hlO">
-                        <rect key="frame" x="73" y="163" width="1" height="10"/>
+                        <rect key="frame" x="73" y="174" width="1" height="10"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="0cX-N4-TA4"/>
@@ -58,7 +70,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVM-SQ-w34">
-                        <rect key="frame" x="107" y="64" width="45" height="30"/>
+                        <rect key="frame" x="107" y="75" width="45" height="30"/>
                         <state key="normal" title="+ 关注">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -71,7 +83,7 @@
                 <constraint firstItem="ayw-aC-0od" firstAttribute="top" secondItem="trt-SJ-hFH" secondAttribute="bottom" constant="15" id="9z5-8Z-RNO"/>
                 <constraint firstItem="6UT-bk-kYx" firstAttribute="top" secondItem="arQ-ag-VNc" secondAttribute="bottom" constant="12" id="AaV-53-Ihf"/>
                 <constraint firstItem="iP2-uT-Vi0" firstAttribute="centerY" secondItem="trt-SJ-hFH" secondAttribute="centerY" id="F33-jc-JTI"/>
-                <constraint firstItem="arQ-ag-VNc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="49" id="GER-vh-4NS"/>
+                <constraint firstItem="arQ-ag-VNc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="GER-vh-4NS"/>
                 <constraint firstItem="trt-SJ-hFH" firstAttribute="leading" secondItem="arQ-ag-VNc" secondAttribute="leading" id="JCE-QP-Jk7"/>
                 <constraint firstItem="6UT-bk-kYx" firstAttribute="leading" secondItem="arQ-ag-VNc" secondAttribute="leading" id="LSp-6E-XPU"/>
                 <constraint firstItem="trt-SJ-hFH" firstAttribute="top" secondItem="6UT-bk-kYx" secondAttribute="bottom" constant="15" id="Zzs-fd-yt5"/>
@@ -82,7 +94,7 @@
                 <constraint firstItem="QVM-SQ-w34" firstAttribute="leading" secondItem="arQ-ag-VNc" secondAttribute="trailing" constant="18" id="ufH-i9-bOL"/>
                 <constraint firstItem="iP2-uT-Vi0" firstAttribute="leading" secondItem="21r-Sl-hlO" secondAttribute="trailing" constant="5" id="yC8-hy-zdC"/>
             </constraints>
-            <size key="customSize" width="491" height="254"/>
+            <size key="customSize" width="402" height="270"/>
             <connections>
                 <outlet property="attentionBtn" destination="QVM-SQ-w34" id="lXP-kn-alz"/>
                 <outlet property="avatarView" destination="arQ-ag-VNc" id="NIb-Mo-HfN"/>
@@ -91,7 +103,7 @@
                 <outlet property="nameLabel" destination="6UT-bk-kYx" id="MXz-k3-UtL"/>
                 <outlet property="pointsLabel" destination="iP2-uT-Vi0" id="oZz-jE-GrE"/>
             </connections>
-            <point key="canvasLocation" x="-237.5" y="38"/>
+            <point key="canvasLocation" x="-570" y="74"/>
         </collectionViewCell>
     </objects>
     <resources>

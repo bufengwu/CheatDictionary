@@ -14,6 +14,8 @@
 #import "CDArticleModel.h"
 #import "CDMomentModel.h"
 
+#import "CDUserInfoModel.h"
+
 @interface CDUserInfoBoardCell() <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *titles;
@@ -21,6 +23,8 @@
 @property (nonatomic, strong) UITableView *tableView1;
 @property (nonatomic, strong) UITableView *tableView2;
 @property (nonatomic, strong) UITableView *tableView3;
+
+@property (nonatomic, strong) CDUserInfoModel *userInfoModel;
 
 @end
 
@@ -36,8 +40,8 @@
     return self;
 }
 
-- (void)installWithObject:(id)object {
-    
+- (void)installWithObject:(CDUserInfoModel *)object {
+    self.userInfoModel = object;
 }
 
 + (CGSize)getSizeWithObject:(id)object {
@@ -126,13 +130,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == self.tableView1) {
-        return 3;
+        return self.userInfoModel.certificate.count;
     }
     if (tableView == self.tableView2) {
-        return 5;
+        return self.userInfoModel.article.count;
     }
     if (tableView == self.tableView3) {
-        return 4;
+        return self.userInfoModel.dynamic.count;
     }
     return 0;
 }
@@ -147,7 +151,7 @@
             cell.backgroundColor = MainLightBrownColor;
         }
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
-        cell.textLabel.text = @"打铁 10🌟";
+        cell.textLabel.text = self.userInfoModel.certificate[indexPath.row];
         return cell;
     }
     if (tableView == self.tableView2) {
@@ -156,12 +160,7 @@
         if (!cell) {
             cell = [[CDArticleCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CDArticleCell"];
         }
-        CDArticleModel *model = [CDArticleModel new];
-        model.title = @"iOS6的系统API结合autolayout";
-        model.desc = @"控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的";
-        model.cover = @"article_image_default";
-        
-        model.uri = @"CDArticleDetailVC";
+        CDArticleModel *model = self.userInfoModel.article[indexPath.row];
         [cell installWithObject:model];
         return cell;
     }
@@ -171,12 +170,7 @@
         if (!cell) {
             cell = [[CDMomentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CDMomentCell"];
         }
-        CDMomentModel *model = [CDMomentModel new];
-        model.avatar = @"icon_avatar_default";
-        model.name = @"窃 格瓦拉";
-        model.time = @"7月5日";
-        model.action = @"发表文章";
-        model.title = @"打工这方面......打工是不可能打工的 这辈子不可能打工的，做生意又不会做，就是偷这种东西，才能维持得了生活这样子.";
+        CDMomentModel *model = self.userInfoModel.dynamic[indexPath.row];
         [cell installWithObject:model];
         return cell;
     }

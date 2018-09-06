@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *fansLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *attentionBtn;
 
 @property (nonatomic, strong) JYWaveView *doubleWaveView;
@@ -41,8 +42,10 @@
         _doubleWaveView.directionType = WaveDirectionTypeFoward;
         [self addSubview:_doubleWaveView];
         
-        _radarChartView = [[JYRadarChart alloc] initWithFrame:CGRectMake(0, 0, 140, 140)];
+        _radarChartView = [[JYRadarChart alloc] initWithFrame:CGRectMake(0, 0, 180, 140)];
         _radarChartView.backgroundColor = [UIColor clearColor];
+        _radarChartView.backgroundFillColor = MainLightBrownColor;
+        _radarChartView.backgroundLineColorRadial = MainDarkBrownColor;
         [self addSubview:_radarChartView];
         
         [_doubleWaveView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,7 +56,8 @@
         [_radarChartView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self);
             make.right.equalTo(self).offset(-30);
-            make.width.height.equalTo(@140);
+            make.width.equalTo(@180);
+            make.height.equalTo(@140);
         }];
     }
     return self;
@@ -63,46 +67,35 @@
     [super awakeFromNib];
     
     self.backgroundColor = MainDarkBrownColor;
-//    [self.contentView addSubview:self.itemView1 = [CDUserFaceItemView new]];
-//    [self.contentView addSubview:self.itemView2 = [CDUserFaceItemView new]];
-//    [self.contentView addSubview:self.itemView3 = [CDUserFaceItemView new]];
-//    [self.contentView addSubview:self.itemView4 = [CDUserFaceItemView new]];
-//
-//    [self.itemView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.avatarView.mas_bottom).offset(10);
-//        make.left.equalTo(self.contentView);
-//        make.width.equalTo(self.contentView).dividedBy(4);
-//        make.height.equalTo(@(50));
-//    }];
-//
-//    [self.itemView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.itemView1.mas_right);
-//        make.top.height.width.equalTo(self.itemView1);
-//    }];
-//
-//    [self.itemView3 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.itemView2.mas_right);
-//        make.top.height.width.equalTo(self.itemView1);
-//    }];
-//
-//    [self.itemView4 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.itemView3.mas_right);
-//        make.top.height.width.equalTo(self.itemView1);
-//    }];
-//
 }
 
 - (void)installWithObject:(CDUserInfoModel *)object {
-    self.avatarView.image = [UIImage imageNamed:object.avatar];
+    
+    [self.avatarView sd_setImageWithURL:[NSURL URLWithString:object.avatar] placeholderImage:[UIImage imageNamed:@"icon_avatar_default"]];
+    
     self.nameLabel.text = object.name;
+    
+    self.fansLabel.text = object.fans;
+    self.pointsLabel.text = object.coins;
+    
     self.descLabel.text = object.desc;
     
     
-    [self.radarChartView setTitles:@[@"上次", @"现在" ]];
-    self.radarChartView.attributes = @[@"魅力 100", @"口才", @"领导力", @"文笔", @"财富"];
-    NSArray *b1 = @[@(30), @(14), @(27), @(10), @(35)];
-    NSArray *b2 = @[@(69), @(54), @(43), @(37), @(48)];
-    self.radarChartView.dataSeries = @[b1, b2];
+    [self.radarChartView setTitles:@[@"当前技能" ]];
+    self.radarChartView.attributes = @[
+                                       object.ponit1_desc,
+                                       object.ponit2_desc,
+                                       object.ponit3_desc,
+                                       object.ponit4_desc,
+                                       object.ponit5_desc,
+                                       ];
+    NSArray *b1 = @[@([object.ponit1 intValue]),
+                    @([object.ponit2 intValue]),
+                    @([object.ponit3 intValue]),
+                    @([object.ponit4 intValue]),
+                    @([object.ponit5 intValue])
+                    ];
+    self.radarChartView.dataSeries = @[b1];
 }
 
 + (CGSize)getSizeWithObject:(id)object {

@@ -7,7 +7,10 @@
 //
 
 #import "CDListBaseVM.h"
+#import "CDUserInfoModel.h"
 
 @interface CDMineVM : CDListBaseVM
+
+@property (nonatomic, strong) CDUserInfoModel *userInfoModel;
 
 @end

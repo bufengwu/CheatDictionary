@@ -7,7 +7,11 @@
 //
 
 #import "CDUserCenterVC.h"
+#import "CDSectionModel.h"
+#import "CDBaseCellModel.h"
 #import "CDMineVM.h"
+
+#import "CDUserInfoModel.h"
 
 @interface CDUserCenterVC ()
 
@@ -69,6 +73,24 @@
     NSLog(@"%f", scrollView.contentOffset.y);
     self.navBar.backgroundColor = [NavbarColor colorWithAlphaComponent:(scrollView.contentOffset.y)/60.f];
 }
+
+#pragma mark -
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    id model = self.viewModel.objects[indexPath.section];
+    CDBaseCellModel *curModel;
+    if ([model isKindOfClass:[CDSectionModel class]]) {
+        curModel = ((CDSectionModel *)model).objects[indexPath.row];
+    } else {
+        curModel = model;
+    }
+    CDBaseCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([curModel cellClass]) forIndexPath:indexPath];
+    
+    [cell installWithObject:self.viewModel.userInfoModel];
+    return cell;
+}
+
+#pragma mark -
 
 - (void)goBack {
     
