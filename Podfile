@@ -26,4 +26,7 @@ target 'CheatDictionary' do
     pod 'LCActionSheet'
     pod 'LFKit/Component/LFPopupMenu'
     pod 'JYRadarChart'
+    pod 'VPImageCropper'
+    pod 'TOWebViewController'
+    pod 'CNPPopupController'
 end

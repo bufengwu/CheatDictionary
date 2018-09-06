@@ -143,6 +143,7 @@
 		AAB5226521300356009EF004 /* CDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5226421300356009EF004 /* CDHelper.m */; };
 		AAB522E521301204009EF004 /* MMComboBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB522E421301204009EF004 /* MMComboBox.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AAB522E821301242009EF004 /* CDComboBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB522E721301242009EF004 /* CDComboBoxViewController.m */; };
+		AAC535C82140D5BE00475694 /* NSString+CDString.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC535C72140D5BE00475694 /* NSString+CDString.m */; };
 		AAD0EAD620F7622300D97792 /* CDHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0EAD520F7622300D97792 /* CDHomeVC.m */; };
 		AAD0EAD920F7632400D97792 /* CDAttentionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0EAD820F7632400D97792 /* CDAttentionVC.m */; };
 		AAE8092E20EF82E000FF559B /* CDRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE8092D20EF82E000FF559B /* CDRouter.m */; };
@@ -427,6 +428,8 @@
 		AAB522E421301204009EF004 /* MMComboBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MMComboBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB522E621301242009EF004 /* CDComboBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDComboBoxViewController.h; sourceTree = "<group>"; };
 		AAB522E721301242009EF004 /* CDComboBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDComboBoxViewController.m; sourceTree = "<group>"; };
+		AAC535C62140D5BE00475694 /* NSString+CDString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CDString.h"; sourceTree = "<group>"; };
+		AAC535C72140D5BE00475694 /* NSString+CDString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CDString.m"; sourceTree = "<group>"; };
 		AAD0EAD420F7622300D97792 /* CDHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDHomeVC.h; sourceTree = "<group>"; };
 		AAD0EAD520F7622300D97792 /* CDHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDHomeVC.m; sourceTree = "<group>"; };
 		AAD0EAD720F7632400D97792 /* CDAttentionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDAttentionVC.h; sourceTree = "<group>"; };
@@ -824,6 +827,8 @@
 				AA6226D62137DDEF004028F6 /* UIImageView+AddCornerRadius.m */,
 				AA6226D72137DDEF004028F6 /* UIView+AddCornerRadius.h */,
 				AA6226D82137DDEF004028F6 /* UIView+AddCornerRadius.m */,
+				AAC535C62140D5BE00475694 /* NSString+CDString.h */,
+				AAC535C72140D5BE00475694 /* NSString+CDString.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1357,6 +1362,7 @@
 				AAD0EAD920F7632400D97792 /* CDAttentionVC.m in Sources */,
 				AAB5226521300356009EF004 /* CDHelper.m in Sources */,
 				AA977BA420FC9A0F00B8E826 /* CDDiscussionDetailUpperModel.m in Sources */,
+				AAC535C82140D5BE00475694 /* NSString+CDString.m in Sources */,
 				37392A1920F96E72002A14A4 /* CDNoticeListVM.m in Sources */,
 				AAF4E67B212C01D100AD0219 /* CDPhotoFlowNewsCell.m in Sources */,
 				37392A3820F97D60002A14A4 /* HARootScrollViewManager.m in Sources */,
