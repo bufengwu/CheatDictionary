@@ -126,6 +126,7 @@
 		AA63F31B20EDC36D00A9CBDF /* CDUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA63F31920EDC36D00A9CBDF /* CDUserInfoCell.xib */; };
 		AA63F32B20EDC89700A9CBDF /* CDUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA63F32A20EDC89700A9CBDF /* CDUserInfoModel.m */; };
 		AA63F34320EF037900A9CBDF /* CDBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA63F34220EF037900A9CBDF /* CDBaseTableVC.m */; };
+		AA725EAC214151E10068260D /* user_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = AA725EAB214151E10068260D /* user_profile.json */; };
 		AA7DF9FA2134162D00E18954 /* CDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF9F92134162D00E18954 /* CDNavigationController.m */; };
 		AA8C032A2119B1800048C5A6 /* CDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C03292119B1800048C5A6 /* CDLabel.m */; };
 		AA8C032D2119BB360048C5A6 /* CDHotTopicDiscussionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C032C2119BB360048C5A6 /* CDHotTopicDiscussionCell.m */; };
@@ -401,6 +402,7 @@
 		AA63F32A20EDC89700A9CBDF /* CDUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDUserInfoModel.m; sourceTree = "<group>"; };
 		AA63F34120EF037900A9CBDF /* CDBaseTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableVC.h; sourceTree = "<group>"; };
 		AA63F34220EF037900A9CBDF /* CDBaseTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableVC.m; sourceTree = "<group>"; };
+		AA725EAB214151E10068260D /* user_profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_profile.json; sourceTree = "<group>"; };
 		AA7DF9F82134162D00E18954 /* CDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNavigationController.h; sourceTree = "<group>"; };
 		AA7DF9F92134162D00E18954 /* CDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDNavigationController.m; sourceTree = "<group>"; };
 		AA8C03282119B1800048C5A6 /* CDLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDLabel.h; sourceTree = "<group>"; };
@@ -891,8 +893,6 @@
 		AA922B982136D03F00A57194 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				AA63F32920EDC89700A9CBDF /* CDUserInfoModel.h */,
-				AA63F32A20EDC89700A9CBDF /* CDUserInfoModel.m */,
 				37392A4520F9812D002A14A4 /* CDUserBoardModel.h */,
 				37392A4620F9812D002A14A4 /* CDUserBoardModel.m */,
 				AA63F31720EDC36D00A9CBDF /* CDUserInfoCell.h */,
@@ -1116,6 +1116,9 @@
 				3722C16220E7643D00D4E993 /* CDUserCenterVC.m */,
 				AA63F30D20EDBF6F00A9CBDF /* CDMineVM.h */,
 				AA63F30E20EDBF6F00A9CBDF /* CDMineVM.m */,
+				AA63F32920EDC89700A9CBDF /* CDUserInfoModel.h */,
+				AA63F32A20EDC89700A9CBDF /* CDUserInfoModel.m */,
+				AA725EAB214151E10068260D /* user_profile.json */,
 				AA922B982136D03F00A57194 /* view */,
 				3798EA1D20FCEB5F00DCD7C0 /* CDLoginVC.h */,
 				3798EA1E20FCEB5F00DCD7C0 /* CDLoginVC.m */,
@@ -1248,6 +1251,7 @@
 				3798EA2120FCEB5F00DCD7C0 /* CDLoginVC.xib in Resources */,
 				AA0C4E0B212C244C001E0A45 /* Images.xcassets in Resources */,
 				AAF4E683212C0EAF00AD0219 /* photo_flow.json in Resources */,
+				AA725EAC214151E10068260D /* user_profile.json in Resources */,
 				AA378271212D7B52007A520C /* FarmLandViewController.xib in Resources */,
 				3722C13920E7209300D4E993 /* Assets.xcassets in Resources */,
 				AA3063A6211D9C6E00FD6F53 /* discussion_detail_00932.json in Resources */,

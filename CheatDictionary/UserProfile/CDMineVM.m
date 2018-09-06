@@ -29,48 +29,13 @@
 
 - (void)loadData {
     
-    CDUserInfoModel *userInfoModel = [CDUserInfoModel new];
-    userInfoModel.avatar = @"icon_avatar_default";
-    userInfoModel.name = @"牧野狼";
-    userInfoModel.desc = @"擅长打铁、捕鱼、设计马桶";
+    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"user_profile" ofType:@"json"];
+    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
+    NSArray *data = [jDic objectForKey:@"data"];
     
-    userInfoModel.itemTitle1 = @"总星数";
-    userInfoModel.itemDesc1 = @"10";
     
-    userInfoModel.itemTitle2 = @"答题数";
-    userInfoModel.itemDesc2 = @"150";
+    CDUserInfoModel *userInfoModel = [CDUserInfoModel modelWithJSON:data];
     
-    userInfoModel.itemTitle3 = @"胜场数";
-    userInfoModel.itemDesc3 = @"22";
-    
-    userInfoModel.itemTitle4 = @"证书";
-    userInfoModel.itemDesc4 = @"0";
-    
-//    // <------> //
-//    CDSectionModel * sectionModel1 = [CDSectionModel new];
-//    {
-//        CDShowMoreHeaderModel *header = [CDShowMoreHeaderModel new];
-//        header.title = @"擅长擂台";
-//        sectionModel1.headerModel = header;
-//
-//        CDUserCenterItemModel *itemModel = [CDUserCenterItemModel new];
-//        sectionModel1.objects = [NSMutableArray arrayWithObjects:itemModel, nil];
-//    }
-//
-//    CDSectionModel * sectionModel2 = [CDSectionModel new];
-//    {
-//        CDShowMoreHeaderModel *header = [CDShowMoreHeaderModel new];
-//        header.title = @"我的证书";
-//        sectionModel2.headerModel = header;
-//
-//        CDUserCenterItemModel *itemModel = [CDUserCenterItemModel new];
-//        sectionModel2.objects = [NSMutableArray arrayWithObjects:itemModel, nil];
-//    }
-//
-//    CDMineEndModel *endModel = [CDMineEndModel new];
-//    endModel.title = @"联系我们";
-//    endModel.icon = @"icon_server";
-//
     
     CDUserBoardModel *board = [CDUserBoardModel new];
     

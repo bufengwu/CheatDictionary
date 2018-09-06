@@ -9,10 +9,21 @@
 #import "CDUserInfoModel.h"
 #import "CDUserInfoCell.h"
 
+#import "CDArticleModel.h"
+#import "CDMomentModel.h"
+
 @implementation CDUserInfoModel
 
 - (Class)cellClass {
     return [CDUserInfoCell class];
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"certificate" : [NSString class],
+             @"article" :[CDArticleModel class],
+             @"dynamic":[CDMomentModel class],
+             };
 }
 
 @end
