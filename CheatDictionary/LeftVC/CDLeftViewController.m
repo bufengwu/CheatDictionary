@@ -64,10 +64,6 @@
                                         @"uri" : @"FarmLandViewController",
                                         },
                                     @{
-                                        @"title" : @"五维",
-                                        @"uri" : @"RadarChartVC",
-                                        },
-                                    @{
                                         @"title" : @"下拉筛选",
                                         @"uri" : @"CDComboBoxViewController",
                                         },

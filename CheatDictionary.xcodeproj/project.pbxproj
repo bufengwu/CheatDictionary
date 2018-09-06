@@ -62,7 +62,6 @@
 		3798EA2120FCEB5F00DCD7C0 /* CDLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3798EA1F20FCEB5F00DCD7C0 /* CDLoginVC.xib */; };
 		37A8C2C7210BEE7500292CD0 /* UIImage+CDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A8C2C6210BEE7500292CD0 /* UIImage+CDImage.m */; };
 		37A91C6D21305290005C7445 /* CDLeftItemSectonHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A91C6C21305290005C7445 /* CDLeftItemSectonHeader.m */; };
-		37A91C7121306713005C7445 /* RadarChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A91C7021306713005C7445 /* RadarChartVC.m */; };
 		37BC66E120FABD5A0054D9D0 /* CDArticleDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */; };
 		37C6779920F9F3A5002D210C /* CDChannelDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C6779820F9F3A5002D210C /* CDChannelDetailVC.m */; };
 		37C6779C20F9F59D002D210C /* CDDiscussionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C6779B20F9F59D002D210C /* CDDiscussionModel.m */; };
@@ -143,6 +142,8 @@
 		AAA4806B2141222000C37322 /* article_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806A2141221F00C37322 /* article_detail.json */; };
 		AAA4806D21412C4500C37322 /* attention.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806C21412C4500C37322 /* attention.json */; };
 		AAA4806F21412C5E00C37322 /* person_list.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA4806E21412C5E00C37322 /* person_list.json */; };
+		AAA48079214141E700C37322 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA48075214141E700C37322 /* WeakProxy.m */; };
+		AAA4807A214141E700C37322 /* JYWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA48078214141E700C37322 /* JYWaveView.m */; };
 		AAB5225F212FFD31009EF004 /* CDShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5225E212FFD30009EF004 /* CDShowView.m */; };
 		AAB52262212FFE59009EF004 /* CDBigAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB52261212FFE59009EF004 /* CDBigAlertView.m */; };
 		AAB5226521300356009EF004 /* CDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB5226421300356009EF004 /* CDHelper.m */; };
@@ -276,8 +277,6 @@
 		37A8C2C6210BEE7500292CD0 /* UIImage+CDImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDImage.m"; sourceTree = "<group>"; };
 		37A91C6B21305290005C7445 /* CDLeftItemSectonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDLeftItemSectonHeader.h; sourceTree = "<group>"; };
 		37A91C6C21305290005C7445 /* CDLeftItemSectonHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDLeftItemSectonHeader.m; sourceTree = "<group>"; };
-		37A91C6F21306713005C7445 /* RadarChartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadarChartVC.h; sourceTree = "<group>"; };
-		37A91C7021306713005C7445 /* RadarChartVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadarChartVC.m; sourceTree = "<group>"; };
 		37BC66DF20FABD5A0054D9D0 /* CDArticleDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDArticleDetailVC.h; sourceTree = "<group>"; };
 		37BC66E020FABD5A0054D9D0 /* CDArticleDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDArticleDetailVC.m; sourceTree = "<group>"; };
 		37C6779720F9F3A5002D210C /* CDChannelDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDChannelDetailVC.h; sourceTree = "<group>"; };
@@ -430,6 +429,10 @@
 		AAA4806A2141221F00C37322 /* article_detail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = article_detail.json; sourceTree = "<group>"; };
 		AAA4806C21412C4500C37322 /* attention.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = attention.json; sourceTree = "<group>"; };
 		AAA4806E21412C5E00C37322 /* person_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_list.json; sourceTree = "<group>"; };
+		AAA48075214141E700C37322 /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
+		AAA48076214141E700C37322 /* JYWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYWaveView.h; sourceTree = "<group>"; };
+		AAA48077214141E700C37322 /* WeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
+		AAA48078214141E700C37322 /* JYWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWaveView.m; sourceTree = "<group>"; };
 		AAB5225D212FFD30009EF004 /* CDShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDShowView.h; sourceTree = "<group>"; };
 		AAB5225E212FFD30009EF004 /* CDShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDShowView.m; sourceTree = "<group>"; };
 		AAB52260212FFE59009EF004 /* CDBigAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDBigAlertView.h; sourceTree = "<group>"; };
@@ -621,15 +624,6 @@
 			path = HARootScrollView;
 			sourceTree = "<group>";
 		};
-		37A91C6E213066FD005C7445 /* RadarChart */ = {
-			isa = PBXGroup;
-			children = (
-				37A91C6F21306713005C7445 /* RadarChartVC.h */,
-				37A91C7021306713005C7445 /* RadarChartVC.m */,
-			);
-			path = RadarChart;
-			sourceTree = "<group>";
-		};
 		37C677B320FA57CC002D210C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,7 +677,6 @@
 				37A91C6C21305290005C7445 /* CDLeftItemSectonHeader.m */,
 				AA37824D212D6BC5007A520C /* CDLeftItemModel.h */,
 				AA37824E212D6BC5007A520C /* CDLeftItemModel.m */,
-				37A91C6E213066FD005C7445 /* RadarChart */,
 				AAB522E921301249009EF004 /* CDComboBoxVC */,
 				AA378266212D7AB2007A520C /* FarmLand */,
 				AA37825A212D7951007A520C /* DreamTree */,
@@ -914,6 +907,7 @@
 		AA977BBD20FD80ED00B8E826 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				AAA48074214141E700C37322 /* JYWaveView */,
 				AA4D50A6212E97720071DD4E /* TopmostView */,
 				AA378260212D799B007A520C /* SphereView */,
 				AA54442D212D400700590733 /* CCPageControl */,
@@ -937,6 +931,17 @@
 				AAB5226421300356009EF004 /* CDHelper.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		AAA48074214141E700C37322 /* JYWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				AAA48075214141E700C37322 /* WeakProxy.m */,
+				AAA48076214141E700C37322 /* JYWaveView.h */,
+				AAA48077214141E700C37322 /* WeakProxy.h */,
+				AAA48078214141E700C37322 /* JYWaveView.m */,
+			);
+			path = JYWaveView;
 			sourceTree = "<group>";
 		};
 		AAB522E921301249009EF004 /* CDComboBoxVC */ = {
@@ -1111,9 +1116,9 @@
 				3722C16220E7643D00D4E993 /* CDUserCenterVC.m */,
 				AA63F30D20EDBF6F00A9CBDF /* CDMineVM.h */,
 				AA63F30E20EDBF6F00A9CBDF /* CDMineVM.m */,
+				AA922B982136D03F00A57194 /* view */,
 				3798EA1D20FCEB5F00DCD7C0 /* CDLoginVC.h */,
 				3798EA1E20FCEB5F00DCD7C0 /* CDLoginVC.m */,
-				AA922B982136D03F00A57194 /* view */,
 				3798EA1F20FCEB5F00DCD7C0 /* CDLoginVC.xib */,
 			);
 			path = UserProfile;
@@ -1356,6 +1361,7 @@
 				37C677A520FA4763002D210C /* CDEditVC.m in Sources */,
 				AA977B9E20FC980E00B8E826 /* CDDiscussionDetailCell.m in Sources */,
 				AA63F31A20EDC36D00A9CBDF /* CDUserInfoCell.m in Sources */,
+				AAA48079214141E700C37322 /* WeakProxy.m in Sources */,
 				3798EA2020FCEB5F00DCD7C0 /* CDLoginVC.m in Sources */,
 				AA306377211C2D2C00FD6F53 /* CDChannelDetailVM.m in Sources */,
 				AAE974E320F89F6800BE100E /* CDCovergeItemModel.m in Sources */,
@@ -1415,7 +1421,6 @@
 				372D70E320EBCC7800168172 /* CDArticleListVC.m in Sources */,
 				372D70DD20EBBA0F00168172 /* CDBaseCellModel.m in Sources */,
 				37392A4420F97ECA002A14A4 /* CDUserInfoBoardCell.m in Sources */,
-				37A91C7121306713005C7445 /* RadarChartVC.m in Sources */,
 				37C6779F20F9FF4A002D210C /* CDDiscussionCell.m in Sources */,
 				AA37825E212D7973007A520C /* BTDreamViewController.m in Sources */,
 				AA37826B212D7AC0007A520C /* FarmlandViewModel.m in Sources */,
@@ -1436,6 +1441,7 @@
 				AA37826F212D7ADD007A520C /* FarmLandViewController.m in Sources */,
 				AAE974ED20F8B14000BE100E /* CDMomentModel.m in Sources */,
 				37D9A8C220F105C600A91CFE /* CDWebViewController.m in Sources */,
+				AAA4807A214141E700C37322 /* JYWaveView.m in Sources */,
 				37499CCB20F7925500C8354F /* CDPersonRecModel.m in Sources */,
 				AA4D50A9212E97720071DD4E /* TopmostView.m in Sources */,
 				AAE974E720F8A13B00BE100E /* CDShowMoreHeaderView.m in Sources */,

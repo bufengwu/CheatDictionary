@@ -7,6 +7,9 @@
 //
 
 #import "CDUserInfoCell.h"
+#import <JYRadarChart/JYRadarChart.h>
+#import "JYWaveView.h"
+
 #import "CDUserInfoModel.h"
 
 @interface CDUserInfoCell()
@@ -19,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *attentionBtn;
 
+@property (nonatomic, strong) JYWaveView *doubleWaveView;
+@property (nonatomic, strong) JYRadarChart *radarChartView;
+
 @end
 
 @implementation CDUserInfoCell
@@ -27,6 +33,28 @@
     self = [super initWithFrame:frame];
     if (self) {
         self = [[NSBundle mainBundle] loadNibNamed:@"CDUserInfoCell" owner:self options:nil].lastObject;
+        
+        
+        _doubleWaveView = [[JYWaveView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 30, self.bounds.size.width, 30)];
+        _doubleWaveView.frontColor = MainDarkBrownColor;
+        _doubleWaveView.insideColor = MainLightBrownColor;
+        _doubleWaveView.directionType = WaveDirectionTypeFoward;
+        [self addSubview:_doubleWaveView];
+        
+        _radarChartView = [[JYRadarChart alloc] initWithFrame:CGRectMake(0, 0, 140, 140)];
+        _radarChartView.backgroundColor = [UIColor clearColor];
+        [self addSubview:_radarChartView];
+        
+        [_doubleWaveView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.bottom.width.equalTo(self);
+            make.height.equalTo(@20);
+        }];
+        
+        [_radarChartView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self);
+            make.right.equalTo(self).offset(-30);
+            make.width.height.equalTo(@140);
+        }];
     }
     return self;
 }
@@ -68,10 +96,17 @@
     self.avatarView.image = [UIImage imageNamed:object.avatar];
     self.nameLabel.text = object.name;
     self.descLabel.text = object.desc;
+    
+    
+    [self.radarChartView setTitles:@[@"上次", @"现在" ]];
+    self.radarChartView.attributes = @[@"魅力 100", @"口才", @"领导力", @"文笔", @"财富"];
+    NSArray *b1 = @[@(30), @(14), @(27), @(10), @(35)];
+    NSArray *b2 = @[@(69), @(54), @(43), @(37), @(48)];
+    self.radarChartView.dataSeries = @[b1, b2];
 }
 
 + (CGSize)getSizeWithObject:(id)object {
-    return CGSizeMake(SCREEN_WIDTH, 130);
+    return CGSizeMake(SCREEN_WIDTH, 250);
 }
 
 @end
