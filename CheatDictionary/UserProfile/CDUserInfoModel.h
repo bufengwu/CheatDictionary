@@ -18,16 +18,10 @@
 
 @property (nonatomic, copy) NSString *desc;
 
-@property (nonatomic, copy) NSString *ponit1_desc;
-@property (nonatomic, copy) NSString *ponit1;
-@property (nonatomic, copy) NSString *ponit2_desc;
-@property (nonatomic, copy) NSString *ponit2;
-@property (nonatomic, copy) NSString *ponit3_desc;
-@property (nonatomic, copy) NSString *ponit3;
-@property (nonatomic, copy) NSString *ponit4_desc;
-@property (nonatomic, copy) NSString *ponit4;
-@property (nonatomic, copy) NSString *ponit5_desc;
-@property (nonatomic, copy) NSString *ponit5;
+//五维雷达图
+@property (nonatomic, strong) NSArray<NSString *> *ponit_attributes;     //属性名
+@property (nonatomic, strong) NSArray<NSNumber *> *ponit_series;     //属性值
+
 
 @property (nonatomic, strong) NSArray *certificate;
 @property (nonatomic, strong) NSArray *article;

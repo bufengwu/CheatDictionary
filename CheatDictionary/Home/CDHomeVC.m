@@ -8,7 +8,7 @@
 
 #import "CDHomeVC.h"
 #import "CDRecVC.h"
-#import "CDUserCenterVC.h"
+#import "CDUserProfileVC.h"
 #import "CDNoticeVC.h"
 #import "CDChannelVC.h"
 

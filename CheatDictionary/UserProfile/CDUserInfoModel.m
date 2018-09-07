@@ -7,7 +7,7 @@
 //
 
 #import "CDUserInfoModel.h"
-#import "CDUserInfoCell.h"
+#import "CDUserBoardTopCell.h"
 
 #import "CDArticleModel.h"
 #import "CDMomentModel.h"
@@ -15,7 +15,7 @@
 @implementation CDUserInfoModel
 
 - (Class)cellClass {
-    return [CDUserInfoCell class];
+    return [CDUserBoardTopCell class];
 }
 
 + (NSDictionary *)modelContainerPropertyGenericClass {

@@ -2,9 +2,11 @@
 	"message": "",
 	"code": 0,
 	"data": {
-		"items": [{
+		"items": [
+			{
 				"title": "综合讨论",
-				"items": [{
+				"items": [
+					{
 						"icon": "maitian",
 						"title": "新大北山",
 						"subtitle": "动物综合讨论",
@@ -26,9 +28,11 @@
 						"uri": "CDChannelDetailVC/分享"
 					}
 				]
-			},{
+			},
+			{
 				"title": "林业",
-				"items": [{
+				"items": [
+					{
 						"icon": "maitian",
 						"title": "新大北山",
 						"subtitle": "动物综合讨论",
@@ -50,9 +54,11 @@
 						"uri": "CDChannelDetailVC/分享"
 					}
 				]
-			},{
+			},
+			{
 				"title": "百草种植",
-				"items": [{
+				"items": [
+					{
 						"icon": "maitian",
 						"title": "新大北山",
 						"subtitle": "动物综合讨论",
@@ -74,9 +80,11 @@
 						"uri": "CDChannelDetailVC/分享"
 					}
 				]
-			},{
+			},
+			{
 				"title": "畜牧养殖",
-				"items": [{
+				"items": [
+					{
 						"icon": "maitian",
 						"title": "新大北山",
 						"subtitle": "动物综合讨论",
@@ -98,9 +106,11 @@
 						"uri": "CDChannelDetailVC/分享"
 					}
 				]
-			},{
+			},
+			{
 				"title": "天空渔场",
-				"items": [{
+				"items": [
+					{
 						"icon": "maitian",
 						"title": "新大北山",
 						"subtitle": "动物综合讨论",

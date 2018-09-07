@@ -8,7 +8,7 @@
 
 #import "CDLoginVC.h"
 
-#import "CDUserCenterVC.h"
+#import "CDUserProfileVC.h"
 
 @interface CDLoginVC ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftCloseButton;
@@ -45,7 +45,7 @@
     [self dismissViewControllerAnimated:NO completion:^{
         
     }];
-    [[CDRouter shared] pushUrl:@"CDUserCenterVC" animated:NO];
+    [[CDRouter shared] pushUrl:@"CDUserProfileVC" animated:NO];
     
 }
 - (IBAction)transPasswordInput:(id)sender {

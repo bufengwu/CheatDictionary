@@ -8,6 +8,6 @@
 
 #import "CDBaseCollectionVC.h"
 
-@interface CDUserCenterVC : CDBaseCollectionVC
+@interface CDUserProfileVC : CDBaseCollectionVC
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 朱正毅. All rights reserved.
 //
 
-#import "CDUserInfoBoardCell.h"
+#import "CDUserBoardBottomCell.h"
 #import "HACursor.h"
 
 #import "CDArticleCell.h"
@@ -16,9 +16,7 @@
 
 #import "CDUserInfoModel.h"
 
-@interface CDUserInfoBoardCell() <UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic, strong) NSArray *titles;
+@interface CDUserBoardBottomCell() <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView1;
 @property (nonatomic, strong) UITableView *tableView2;
@@ -29,7 +27,7 @@
 @end
 
 
-@implementation CDUserInfoBoardCell
+@implementation CDUserBoardBottomCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -52,61 +50,14 @@
 
 - (void)configSubviews {
     
-    self.tableView1 = ({
-        UITableView *tableView = [[UITableView alloc] init];
-        tableView.bounces = NO;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.tableFooterView = [UIView new];
-        tableView.showsVerticalScrollIndicator = NO;
-        tableView.showsHorizontalScrollIndicator = NO;
-        tableView.alwaysBounceVertical = YES;
-        tableView.estimatedRowHeight = 80.0f;
-        tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.backgroundColor = MainLightBrownColor;
-        tableView.separatorColor = MainSeparatorColor;
-        tableView;
-    });
+    self.tableView1 = [self createTableView];
     
-    self.tableView2 = ({
-        UITableView *tableView = [[UITableView alloc] init];
-        tableView.bounces = NO;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.tableFooterView = [UIView new];
-        tableView.showsVerticalScrollIndicator = NO;
-        tableView.showsHorizontalScrollIndicator = NO;
-        tableView.alwaysBounceVertical = YES;
-        tableView.estimatedRowHeight = 80.0f;
-        tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.backgroundColor = MainLightBrownColor;
-        tableView.separatorColor = MainSeparatorColor;
-        tableView;
-    });
+    self.tableView2 = [self createTableView];
     
-    self.tableView3 = ({
-        UITableView *tableView = [[UITableView alloc] init];
-        tableView.bounces = NO;
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.tableFooterView = [UIView new];
-        tableView.showsVerticalScrollIndicator = NO;
-        tableView.showsHorizontalScrollIndicator = NO;
-        tableView.alwaysBounceVertical = YES;
-        tableView.estimatedRowHeight = 80.0f;
-        tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.backgroundColor = MainLightBrownColor;
-        tableView.separatorColor = MainSeparatorColor;
-        tableView;
-    });
+    self.tableView3 = [self createTableView];
     
-    
-    self.titles = @[@"证书",@"文章",@"动态"];
-    HACursor *cursor = [[HACursor alloc]init];
+    HACursor *cursor = [[HACursor alloc] init];
     cursor.frame = CGRectMake(0, 0, SCREEN_WIDTH, 45);
-    cursor.titles = self.titles;
-    //每个子视图显示的内容
-    cursor.pageViews = [self createPageViews];//此方法必需使用，pageView需要展示的内容按按照需求自定义
     //设置根滚动视图的高度
     cursor.rootScrollViewHeight = SCREEN_HEIGHT - 44 - STATUS_BAR_HEIGHT- 45;
     //默认值是白色
@@ -117,13 +68,28 @@
     //默认的最小值是5，小于默认值的话按默认值设置
     cursor.minFontSize = 6;
     [self addSubview:cursor];
+    
+    cursor.titles = @[@"证书",@"文章",@"动态"];
+    //每个子视图显示的内容
+    cursor.pageViews = [NSMutableArray arrayWithArray:@[self.tableView1, self.tableView2, self.tableView3]];//此方法必需使用，pageView需要展示的内容按按照需求自定义
 }
 
+#pragma mark -
 
-- (NSMutableArray *)createPageViews{
-    NSMutableArray *pageViews = [NSMutableArray arrayWithObjects:self.tableView1, self.tableView2, self.tableView3, nil];
-    
-    return pageViews;
+- (UITableView *)createTableView {
+    UITableView *tableView = [[UITableView alloc] init];
+    tableView.bounces = NO;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.tableFooterView = [UIView new];
+    tableView.showsVerticalScrollIndicator = NO;
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.alwaysBounceVertical = YES;
+    tableView.estimatedRowHeight = 80.0f;
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.backgroundColor = MainLightBrownColor;
+    tableView.separatorColor = MainSeparatorColor;
+    return tableView;
 }
 
 #pragma mark -
@@ -149,6 +115,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             cell.backgroundColor = MainLightBrownColor;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
         cell.textLabel.text = self.userInfoModel.certificate[indexPath.row];

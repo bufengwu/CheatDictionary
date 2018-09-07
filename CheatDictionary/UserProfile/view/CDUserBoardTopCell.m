@@ -6,13 +6,13 @@
 //  Copyright © 2018年 朱正毅. All rights reserved.
 //
 
-#import "CDUserInfoCell.h"
+#import "CDUserBoardTopCell.h"
 #import <JYRadarChart/JYRadarChart.h>
 #import "JYWaveView.h"
 
 #import "CDUserInfoModel.h"
 
-@interface CDUserInfoCell()
+@interface CDUserBoardTopCell()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
@@ -28,15 +28,15 @@
 
 @end
 
-@implementation CDUserInfoCell
+@implementation CDUserBoardTopCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"CDUserInfoCell" owner:self options:nil].lastObject;
+        self = [[NSBundle mainBundle] loadNibNamed:@"CDUserBoardTopCell" owner:self options:nil].lastObject;
         
         
-        _doubleWaveView = [[JYWaveView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 30, self.bounds.size.width, 30)];
+        _doubleWaveView = [[JYWaveView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 30, SCREEN_WIDTH, 30)];
         _doubleWaveView.frontColor = MainDarkBrownColor;
         _doubleWaveView.insideColor = MainLightBrownColor;
         _doubleWaveView.directionType = WaveDirectionTypeFoward;
@@ -80,22 +80,9 @@
     
     self.descLabel.text = object.desc;
     
-    
     [self.radarChartView setTitles:@[@"当前技能" ]];
-    self.radarChartView.attributes = @[
-                                       object.ponit1_desc,
-                                       object.ponit2_desc,
-                                       object.ponit3_desc,
-                                       object.ponit4_desc,
-                                       object.ponit5_desc,
-                                       ];
-    NSArray *b1 = @[@([object.ponit1 intValue]),
-                    @([object.ponit2 intValue]),
-                    @([object.ponit3 intValue]),
-                    @([object.ponit4 intValue]),
-                    @([object.ponit5 intValue])
-                    ];
-    self.radarChartView.dataSeries = @[b1];
+    self.radarChartView.attributes = object.ponit_attributes;
+    self.radarChartView.dataSeries = @[object.ponit_series];
 }
 
 + (CGSize)getSizeWithObject:(id)object {

@@ -165,7 +165,7 @@
     [[CDRouter shared] map:@"/web/:url" toControllerClass:[NSClassFromString(@"CDWebViewController") class]];
     
     [[CDRouter shared] map:@"/CDLoginVC" toControllerClass:[NSClassFromString(@"CDLoginVC") class]];
-    [[CDRouter shared] map:@"/CDUserCenterVC" toControllerClass:[NSClassFromString(@"CDUserCenterVC") class]];
+    [[CDRouter shared] map:@"/CDUserProfileVC" toControllerClass:[NSClassFromString(@"CDUserProfileVC") class]];
     
     [[CDRouter shared] map:@"/CDNoticeVC" toControllerClass:[NSClassFromString(@"CDNoticeVC") class]];
     

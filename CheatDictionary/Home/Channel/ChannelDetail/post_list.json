@@ -75,63 +75,63 @@
 				"uri": "CDDiscussionDetailVC/帖子"
 			}
 		],
-        "articles" : [                      
-                      {
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      },
-                      {
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      },
-                      {
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      },
-                      {
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      },
-                      {
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      },
-                      {
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      },{
-                      "title": "iOS6的系统API结合autolayout",
-                      "desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
-                      "cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
-                      "author": "08-09",
-                      "like": "295",
-                      "uri": "CDArticleDetailVC"
-                      }
-        
-        ]
+		"articles": [
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			},
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			},
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			},
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			},
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			},
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			},
+			{
+				"title": "iOS6的系统API结合autolayout",
+				"desc": "控件的约束和第一个方法的一样，下面列出的代码是和第一个方法不同的地方。该方法的demo和第一个方法的demo是同一个，每个方法独立使用到的代码我会特别注明，没有注明就是所有方法共有的",
+				"cover": "https://upload-images.jianshu.io/upload_images/1096130-7f8eb2ce76f7a8b8.jpg",
+				"author": "08-09",
+				"like": "295",
+				"uri": "CDArticleDetailVC"
+			}
+		]
 	}
 }
