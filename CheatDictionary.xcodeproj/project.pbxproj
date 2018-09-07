@@ -101,6 +101,8 @@
 		AA378271212D7B52007A520C /* FarmLandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA378270212D7B52007A520C /* FarmLandViewController.xib */; };
 		AA386ED421427A3300120471 /* CDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA386ED321427A3300120471 /* CDTabBarController.m */; };
 		AA386ED721427D0900120471 /* UIView+CDView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA386ED621427D0900120471 /* UIView+CDView.m */; };
+		AA386EDA214282FF00120471 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = AA386ED9214282FF00120471 /* NSObject+Runtime.m */; };
+		AA386EDD214283E500120471 /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AA386EDC214283E500120471 /* UIButton+Category.m */; };
 		AA4D509D212E96B20071DD4E /* CDToast.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D509C212E96B20071DD4E /* CDToast.m */; };
 		AA4D50A9212E97720071DD4E /* TopmostView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D50A7212E97720071DD4E /* TopmostView.m */; };
 		AA4D511B212EA8CF0071DD4E /* CDSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D511A212EA8CF0071DD4E /* CDSearchVC.m */; };
@@ -354,6 +356,10 @@
 		AA386ED321427A3300120471 /* CDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDTabBarController.m; sourceTree = "<group>"; };
 		AA386ED521427D0900120471 /* UIView+CDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CDView.h"; sourceTree = "<group>"; };
 		AA386ED621427D0900120471 /* UIView+CDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDView.m"; sourceTree = "<group>"; };
+		AA386ED8214282FF00120471 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
+		AA386ED9214282FF00120471 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
+		AA386EDB214283E500120471 /* UIButton+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Category.h"; sourceTree = "<group>"; };
+		AA386EDC214283E500120471 /* UIButton+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Category.m"; sourceTree = "<group>"; };
 		AA4D509B212E96B20071DD4E /* CDToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDToast.h; sourceTree = "<group>"; };
 		AA4D509C212E96B20071DD4E /* CDToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDToast.m; sourceTree = "<group>"; };
 		AA4D50A7212E97720071DD4E /* TopmostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopmostView.m; sourceTree = "<group>"; };
@@ -839,6 +845,10 @@
 				AA6226D82137DDEF004028F6 /* UIView+AddCornerRadius.m */,
 				AAC535C62140D5BE00475694 /* NSString+CDString.h */,
 				AAC535C72140D5BE00475694 /* NSString+CDString.m */,
+				AA386ED8214282FF00120471 /* NSObject+Runtime.h */,
+				AA386ED9214282FF00120471 /* NSObject+Runtime.m */,
+				AA386EDB214283E500120471 /* UIButton+Category.h */,
+				AA386EDC214283E500120471 /* UIButton+Category.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1362,6 +1372,7 @@
 				37C677A520FA4763002D210C /* CDEditVC.m in Sources */,
 				AA977B9E20FC980E00B8E826 /* CDDiscussionDetailCell.m in Sources */,
 				AA63F31A20EDC36D00A9CBDF /* CDUserBoardTopCell.m in Sources */,
+				AA386EDA214282FF00120471 /* NSObject+Runtime.m in Sources */,
 				AAA48079214141E700C37322 /* WeakProxy.m in Sources */,
 				3798EA2020FCEB5F00DCD7C0 /* CDLoginVC.m in Sources */,
 				AA306377211C2D2C00FD6F53 /* CDChannelDetailVM.m in Sources */,
@@ -1487,6 +1498,7 @@
 				AA54441E212D380100590733 /* CDDevice.m in Sources */,
 				AA6226D92137DDEF004028F6 /* UIImageView+AddCornerRadius.m in Sources */,
 				AA30637F211C334100FD6F53 /* CDStickyPostModel.m in Sources */,
+				AA386EDD214283E500120471 /* UIButton+Category.m in Sources */,
 				AA63F34320EF037900A9CBDF /* CDBaseTableVC.m in Sources */,
 				37C677A920FA5201002D210C /* CDPersonListVC.m in Sources */,
 				AAB5225F212FFD31009EF004 /* CDShowView.m in Sources */,
