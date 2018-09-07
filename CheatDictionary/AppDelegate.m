@@ -14,6 +14,7 @@
 #import "CCPageControlView.h"
 #import <MMDrawerController/MMDrawerController.h>
 #import "CDNavigationController.h"
+#import "CDTabBarController.h"
 #import "CDLeftViewController.h"
 
 #define kClassKey   @"rootVCClassString"
@@ -24,7 +25,7 @@
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
-@property(nonatomic,strong) UITabBarController * tabBarController;
+@property(nonatomic,strong) CDTabBarController * tabBarController;
 @property(nonatomic,strong) CDLeftViewController * leftController;
 @property(nonatomic,strong) MMDrawerController * drawerController;
 @end
@@ -60,7 +61,7 @@
 
 - (UITabBarController *)tabBarController {
     if (!_tabBarController) {
-        _tabBarController = [UITabBarController new];
+        _tabBarController = [CDTabBarController new];
         NSArray *childItemsArray = @[
                                      @{kClassKey  : @"CDHomeVC",
                                        kNavTitleKey  : @"首页",

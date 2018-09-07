@@ -99,6 +99,8 @@
 		AA37826C212D7AC0007A520C /* FarmlandView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA378268212D7ABF007A520C /* FarmlandView.m */; };
 		AA37826F212D7ADD007A520C /* FarmLandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA37826E212D7ADD007A520C /* FarmLandViewController.m */; };
 		AA378271212D7B52007A520C /* FarmLandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA378270212D7B52007A520C /* FarmLandViewController.xib */; };
+		AA386ED421427A3300120471 /* CDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA386ED321427A3300120471 /* CDTabBarController.m */; };
+		AA386ED721427D0900120471 /* UIView+CDView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA386ED621427D0900120471 /* UIView+CDView.m */; };
 		AA4D509D212E96B20071DD4E /* CDToast.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D509C212E96B20071DD4E /* CDToast.m */; };
 		AA4D50A9212E97720071DD4E /* TopmostView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D50A7212E97720071DD4E /* TopmostView.m */; };
 		AA4D511B212EA8CF0071DD4E /* CDSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D511A212EA8CF0071DD4E /* CDSearchVC.m */; };
@@ -348,6 +350,10 @@
 		AA37826D212D7ADD007A520C /* FarmLandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FarmLandViewController.h; sourceTree = "<group>"; };
 		AA37826E212D7ADD007A520C /* FarmLandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FarmLandViewController.m; sourceTree = "<group>"; };
 		AA378270212D7B52007A520C /* FarmLandViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FarmLandViewController.xib; sourceTree = "<group>"; };
+		AA386ED221427A3300120471 /* CDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDTabBarController.h; sourceTree = "<group>"; };
+		AA386ED321427A3300120471 /* CDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDTabBarController.m; sourceTree = "<group>"; };
+		AA386ED521427D0900120471 /* UIView+CDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CDView.h"; sourceTree = "<group>"; };
+		AA386ED621427D0900120471 /* UIView+CDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDView.m"; sourceTree = "<group>"; };
 		AA4D509B212E96B20071DD4E /* CDToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDToast.h; sourceTree = "<group>"; };
 		AA4D509C212E96B20071DD4E /* CDToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDToast.m; sourceTree = "<group>"; };
 		AA4D50A7212E97720071DD4E /* TopmostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopmostView.m; sourceTree = "<group>"; };
@@ -561,6 +567,8 @@
 				3722C14720E7270E00D4E993 /* CDBaseViewController.m */,
 				AA7DF9F82134162D00E18954 /* CDNavigationController.h */,
 				AA7DF9F92134162D00E18954 /* CDNavigationController.m */,
+				AA386ED221427A3300120471 /* CDTabBarController.h */,
+				AA386ED321427A3300120471 /* CDTabBarController.m */,
 				AA63F34120EF037900A9CBDF /* CDBaseTableVC.h */,
 				AA63F34220EF037900A9CBDF /* CDBaseTableVC.m */,
 				AAE974A620F85A0300BE100E /* CDBaseTableViewCell.h */,
@@ -819,6 +827,8 @@
 			children = (
 				AA63F31220EDBFE100A9CBDF /* UIColor+CDColor.h */,
 				AA63F31320EDBFE100A9CBDF /* UIColor+CDColor.m */,
+				AA386ED521427D0900120471 /* UIView+CDView.h */,
+				AA386ED621427D0900120471 /* UIView+CDView.m */,
 				AA08C61E210F1DF600D31FB0 /* UIView+Border.h */,
 				AA08C61F210F1DF600D31FB0 /* UIView+Border.m */,
 				37A8C2C5210BEE7500292CD0 /* UIImage+CDImage.h */,
@@ -1399,6 +1409,7 @@
 				AA63F30F20EDBF6F00A9CBDF /* CDUserProfileVM.m in Sources */,
 				AA63F30820EDB24B00A9CBDF /* CDListBaseVM.m in Sources */,
 				372D70D320EBAE0B00168172 /* CDRecVC.m in Sources */,
+				AA386ED721427D0900120471 /* UIView+CDView.m in Sources */,
 				AA977B9B20FC959600B8E826 /* CDDiscussionDetailVC.m in Sources */,
 				AAF4E681212C0AD500AD0219 /* CDPhotoNewsVM.m in Sources */,
 				AA7DF9FA2134162D00E18954 /* CDNavigationController.m in Sources */,
@@ -1442,6 +1453,7 @@
 				37499CC420F78F3800C8354F /* CDChannelVM.m in Sources */,
 				AA306393211C635B00FD6F53 /* YZInputView.m in Sources */,
 				37392A1A20F96E72002A14A4 /* CDNoticeModel.m in Sources */,
+				AA386ED421427A3300120471 /* CDTabBarController.m in Sources */,
 				3722C12E20E7209100D4E993 /* AppDelegate.m in Sources */,
 				37392A3520F97D60002A14A4 /* HACursor.m in Sources */,
 				AA4D511B212EA8CF0071DD4E /* CDSearchVC.m in Sources */,
