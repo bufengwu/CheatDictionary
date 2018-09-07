@@ -78,7 +78,6 @@
 		AA0C4E06212C2419001E0A45 /* SXStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4DFE212C2418001E0A45 /* SXStackLayout.m */; };
 		AA0C4E08212C2419001E0A45 /* SXCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E02212C2419001E0A45 /* SXCircleLayout.m */; };
 		AA0C4E09212C2419001E0A45 /* SXLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E04212C2419001E0A45 /* SXLineLayout.m */; };
-		AA0C4E0B212C244C001E0A45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0C4E0A212C244C001E0A45 /* Images.xcassets */; };
 		AA2647B9212EC0A3004D54FE /* MaximumSpacingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2647B8212EC0A3004D54FE /* MaximumSpacingFlowLayout.m */; };
 		AA2647BC212EC1C1004D54FE /* YLDargSortItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2647BB212EC1C1004D54FE /* YLDargSortItemModel.m */; };
 		AA306373211C210300FD6F53 /* CDBarHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA306371211C210300FD6F53 /* CDBarHeaderCell.m */; };
@@ -107,7 +106,6 @@
 		AA54441E212D380100590733 /* CDDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = AA54441D212D380100590733 /* CDDevice.m */; };
 		AA54442C212D3DAA00590733 /* LLFullScreenAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA54442B212D3DAA00590733 /* LLFullScreenAdView.m */; };
 		AA544434212D401B00590733 /* CCPageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA54442F212D401B00590733 /* CCPageControlView.m */; };
-		AA544439212D435400590733 /* GuidePage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA544438212D435400590733 /* GuidePage.xcassets */; };
 		AA58640320EC988700364CBE /* CDCustomTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640220EC988700364CBE /* CDCustomTagLabel.m */; };
 		AA58640620ECA6F900364CBE /* CDBaseSectionHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640520ECA6F900364CBE /* CDBaseSectionHeaderModel.m */; };
 		AA58640920ECA7FB00364CBE /* CDShowMoreHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */; };
@@ -311,7 +309,6 @@
 		AA0C4E02212C2419001E0A45 /* SXCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXCircleLayout.m; sourceTree = "<group>"; };
 		AA0C4E03212C2419001E0A45 /* SXImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXImageCell.h; sourceTree = "<group>"; };
 		AA0C4E04212C2419001E0A45 /* SXLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXLineLayout.m; sourceTree = "<group>"; };
-		AA0C4E0A212C244C001E0A45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA2647B7212EC0A3004D54FE /* MaximumSpacingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaximumSpacingFlowLayout.h; sourceTree = "<group>"; };
 		AA2647B8212EC0A3004D54FE /* MaximumSpacingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaximumSpacingFlowLayout.m; sourceTree = "<group>"; };
 		AA2647BA212EC1C1004D54FE /* YLDargSortItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDargSortItemModel.h; sourceTree = "<group>"; };
@@ -365,7 +362,6 @@
 		AA54442B212D3DAA00590733 /* LLFullScreenAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLFullScreenAdView.m; sourceTree = "<group>"; };
 		AA54442F212D401B00590733 /* CCPageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPageControlView.m; sourceTree = "<group>"; };
 		AA544432212D401B00590733 /* CCPageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPageControlView.h; sourceTree = "<group>"; };
-		AA544438212D435400590733 /* GuidePage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GuidePage.xcassets; sourceTree = "<group>"; };
 		AA58640120EC988700364CBE /* CDCustomTagLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDCustomTagLabel.h; sourceTree = "<group>"; };
 		AA58640220EC988700364CBE /* CDCustomTagLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDCustomTagLabel.m; sourceTree = "<group>"; };
 		AA58640420ECA6F900364CBE /* CDBaseSectionHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDBaseSectionHeaderModel.h; sourceTree = "<group>"; };
@@ -643,7 +639,6 @@
 		AA0C4DFB212C23D5001E0A45 /* CDPhotoDetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				AA0C4E0A212C244C001E0A45 /* Images.xcassets */,
 				AA0C4E00212C2418001E0A45 /* SXCircleLayout.h */,
 				AA0C4E02212C2419001E0A45 /* SXCircleLayout.m */,
 				AA0C4E03212C2419001E0A45 /* SXImageCell.h */,
@@ -758,7 +753,6 @@
 			children = (
 				AA544432212D401B00590733 /* CCPageControlView.h */,
 				AA54442F212D401B00590733 /* CCPageControlView.m */,
-				AA544438212D435400590733 /* GuidePage.xcassets */,
 			);
 			path = CCPageControl;
 			sourceTree = "<group>";
@@ -1240,11 +1234,9 @@
 				AAA4806F21412C5E00C37322 /* person_list.json in Resources */,
 				AAA4806621411B2900C37322 /* notice.json in Resources */,
 				37392785211DBF5C000DDE44 /* hottopic.json in Resources */,
-				AA544439212D435400590733 /* GuidePage.xcassets in Resources */,
 				AA37825F212D7973007A520C /* BTDreamViewController.xib in Resources */,
 				AA306379211C2D3E00FD6F53 /* post_list.json in Resources */,
 				3798EA2120FCEB5F00DCD7C0 /* CDLoginVC.xib in Resources */,
-				AA0C4E0B212C244C001E0A45 /* Images.xcassets in Resources */,
 				AAF4E683212C0EAF00AD0219 /* photo_flow.json in Resources */,
 				AA725EAC214151E10068260D /* user_profile.json in Resources */,
 				AA378271212D7B52007A520C /* FarmLandViewController.xib in Resources */,
