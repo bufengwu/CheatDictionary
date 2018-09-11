@@ -83,4 +83,29 @@
     return [[NSAttributedString alloc] initWithString:title attributes:attributes];
 }
 
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+    NSString *text = @"网络不给力，请点击重试哦~";
+    
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:text];
+    // 设置所有字体大小为 #15
+    [attStr addAttribute:NSFontAttributeName
+                   value:[UIFont systemFontOfSize:15.0]
+                   range:NSMakeRange(0, text.length)];
+    // 设置所有字体颜色为浅灰色
+    [attStr addAttribute:NSForegroundColorAttributeName
+                   value:[UIColor lightGrayColor]
+                   range:NSMakeRange(0, text.length)];
+    // 设置指定4个字体为蓝色
+    [attStr addAttribute:NSForegroundColorAttributeName
+                   value:HEXCOLOR(0x007EE5)
+                   range:NSMakeRange(7, 4)];
+    return attStr;
+}
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
+    if (self.refreshBlock) {
+        self.refreshBlock();
+    }
+}
+
 @end

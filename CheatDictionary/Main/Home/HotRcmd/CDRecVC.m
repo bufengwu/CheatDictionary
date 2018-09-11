@@ -44,17 +44,32 @@
     [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
     [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
     [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
+    
     @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.tableView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+        [self.tableView.pullToRefreshView stopAnimating];
+    };
+
     [self.tableView addPullToRefreshWithActionHandler:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            @strongify(self)
-            [self.tableView.pullToRefreshView stopAnimating];
-        });
+        @strongify(self)
+        [self.viewModel loadData];
     }];
+    
+    self.refreshBlock = ^{
+        @strongify(self)
+        [self.tableView triggerPullToRefresh];
+    };
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:CDTabBarDidClickNotification object:nil];
 }
 
+//点击tabbar刷新
 - (void)refresh {
     if ([self.view isShowingOnKeyWindow]) { // 判断一个view是否显示在根窗口上
         [self.tableView triggerPullToRefresh];

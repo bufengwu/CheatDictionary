@@ -11,7 +11,7 @@
 
 @interface CDListBaseVM : NSObject
 
-@property (nonatomic, copy) void (^completeLoadDataBlock)(void);
+@property (nonatomic, copy) void (^completeLoadDataBlock)(BOOL);
 
 @property (nonatomic, strong) NSArray *objects;
 

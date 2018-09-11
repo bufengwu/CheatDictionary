@@ -74,9 +74,6 @@
         self.articles = mutableArray;
     }
     
-    if (self.completeLoadDataBlock) {
-        self.completeLoadDataBlock();
-    }
     //    });
 }
 

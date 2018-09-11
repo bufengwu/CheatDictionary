@@ -35,23 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    @weakify(self);
-//    [self.collectionView addPullToRefreshWithActionHandler:^{
-//        @strongify(self);
-        [self.viewModel loadData];
-//    }];
-//
-    self.viewModel.completeLoadDataBlock = ^{
-        @strongify(self);
+    [self.viewModel loadData];
+
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.collectionView reloadData];
+        }
         [self.collectionView.pullToRefreshView stopAnimating];
     };
-    
-    [RACObserve(self.viewModel, objects) subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        [self.collectionView reloadData];
-    }];
-    
-//    [self.collectionView triggerPullToRefresh];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

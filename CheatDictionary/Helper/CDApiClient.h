@@ -10,8 +10,10 @@
 
 @interface CDApiClient : NSObject
 
-+ (void)POST:(NSString *)url  payload:(NSDictionary *)payload success:(void(^)(id))success failure:(void(^)(NSInteger code, NSString *message))failure;
++ (void)POST:(NSString *)url payload:(NSDictionary *)payload success:(void(^)(NSDictionary *data))success failure:(void(^)(NSInteger code, NSString *message))failure;
 
-+ (void)GET:(NSString *)url success:(void (^)(id))success failure:(void (^)(NSInteger, NSString *))failure;
++ (void)GET:(NSString *)url success:(void (^)(NSDictionary *data))success failure:(void (^)(NSInteger code, NSString *message))failure;
+
++ (void)GET:(NSString *)url payload:(NSDictionary *)payload success:(void (^)(NSDictionary *))success failure:(void (^)(NSInteger, NSString *))failure;
 
 @end

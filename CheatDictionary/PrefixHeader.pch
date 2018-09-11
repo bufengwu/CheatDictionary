@@ -18,10 +18,13 @@
 
 #import <UIImage_Resize/UIImage+Resize.h>
 #import "UIColor+CDColor.h"
+#import "NSString+CDString.h"
 #import "UIImage+CDImage.h"
 #import "UIView+CDView.h"
 #import "UIView+Border.h"
 #import "UIView+Layout.h"
+
+#import "CDToast.h"
 
 #import "CDLabel.h"
 

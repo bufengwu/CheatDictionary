@@ -9,11 +9,11 @@
 #import "CDApiClient.h"
 #import <AFNetworking/AFNetworking.h>
 
-static const NSString *const baseURL = @"http://pskd.uusama.com/api/";
+static const NSString *const baseURL = @"http://localhost:8023/api/v1/";
 
 @implementation CDApiClient
 
-+ (void)POST:(NSString *)url payload:(NSDictionary *)payload success:(void (^)(id))success failure:(void (^)(NSInteger, NSString *))failure {
++ (void)POST:(NSString *)url payload:(NSDictionary *)payload success:(void (^)(NSDictionary *data))success failure:(void (^)(NSInteger, NSString *))failure {
     NSString *fillURL = [baseURL stringByAppendingString:url];
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:payload];
@@ -42,8 +42,14 @@ static const NSString *const baseURL = @"http://pskd.uusama.com/api/";
                                      }
                                  }];
 }
-    
-+ (void)GET:(NSString *)url success:(void (^)(id))success failure:(void (^)(NSInteger, NSString *))failure {
+
++ (void)GET:(NSString *)url payload:(NSDictionary *)payload success:(void (^)(NSDictionary *))success failure:(void (^)(NSInteger, NSString *))failure {
+    NSString *path = [url cd_appendParamsWithDictionary:payload];
+    [self GET:path success:success failure:failure];
+}
+
+
++ (void)GET:(NSString *)url success:(void (^)(NSDictionary *))success failure:(void (^)(NSInteger, NSString *))failure {
     NSString *fillURL = [baseURL stringByAppendingString:url];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -54,10 +60,20 @@ static const NSString *const baseURL = @"http://pskd.uusama.com/api/";
     [manager GET:fillURL parameters:nil progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              NSLog(@"%@ ----> %@", fillURL, responseObject);
-             if (success) {
-                 success(responseObject);
-             }
              
+             NSDictionary *data = [responseObject objectForKey:@"data"];
+             NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
+             NSString *message = [responseObject objectForKey:@"message"];
+             
+             if (code == 0) {
+                 if (success) {
+                     success(data);
+                 }
+             } else {
+                 if (failure) {
+                     failure(code, message);
+                 }
+             }
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              
              NSLog(@"%@ ----> %@", fillURL, error.localizedDescription);

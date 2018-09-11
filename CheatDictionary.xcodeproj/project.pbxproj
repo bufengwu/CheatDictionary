@@ -534,15 +534,8 @@
 				AA6332F32134F35D00DE3B09 /* AppDelegate+PushService.m */,
 				AA6332F52134F36F00DE3B09 /* AppDelegate+UrlHandler.h */,
 				AA6332F62134F36F00DE3B09 /* AppDelegate+UrlHandler.m */,
-				AA6332F82134FF2700DE3B09 /* Home */,
-				AA6332F92134FF3200DE3B09 /* News */,
-				AA378248212D6372007A520C /* LeftVC */,
-				AA4D5118212EA82F0071DD4E /* SearchVC */,
-				AABB00F721368CCC007CDB4B /* Message */,
-				AABB00FD21368FE0007CDB4B /* UserProfile */,
-				3722C14C20E731DC00D4E993 /* OtherVC */,
+				AA793154214757AB00A39032 /* Main */,
 				AA977BBE20FD811B00B8E826 /* Helper */,
-				AA8C03272119B1570048C5A6 /* UIComponent */,
 				3722C15420E732B700D4E993 /* BaseClass */,
 				AA977BBD20FD80ED00B8E826 /* 3rd */,
 				3722C13820E7209300D4E993 /* Assets.xcassets */,
@@ -853,12 +846,23 @@
 			path = category;
 			sourceTree = "<group>";
 		};
+		AA793154214757AB00A39032 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AA6332F82134FF2700DE3B09 /* Home */,
+				AA6332F92134FF3200DE3B09 /* News */,
+				AA378248212D6372007A520C /* LeftVC */,
+				AA4D5118212EA82F0071DD4E /* SearchVC */,
+				AABB00F721368CCC007CDB4B /* Message */,
+				AABB00FD21368FE0007CDB4B /* UserProfile */,
+				3722C14C20E731DC00D4E993 /* OtherVC */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		AA8C03272119B1570048C5A6 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				37932979210B585C00BF1176 /* CDUIHelper.h */,
-				3793297A210B585C00BF1176 /* CDUIHelper.m */,
-				AA63F31120EDBFC000A9CBDF /* category */,
 				AA4D509B212E96B20071DD4E /* CDToast.h */,
 				AA4D509C212E96B20071DD4E /* CDToast.m */,
 				AA58640120EC988700364CBE /* CDCustomTagLabel.h */,
@@ -930,6 +934,10 @@
 		AA977BBE20FD811B00B8E826 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				37932979210B585C00BF1176 /* CDUIHelper.h */,
+				3793297A210B585C00BF1176 /* CDUIHelper.m */,
+				AA63F31120EDBFC000A9CBDF /* category */,
+				AA8C03272119B1570048C5A6 /* UIComponent */,
 				AA977BBF20FD822F00B8E826 /* CDApiClient.h */,
 				AA977BC020FD822F00B8E826 /* CDApiClient.m */,
 				AA54441C212D380100590733 /* CDDevice.h */,
