@@ -16,6 +16,7 @@
 
 #import "CDShowMoreHeaderView.h"
 #import "CDSegmentControl.h"
+#import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface CDChannelDetailVC ()
 
@@ -51,6 +52,30 @@
     
     [self.viewModel loadData];
     
+    [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
+    [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
+    [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
+    
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.tableView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+        [self.tableView.pullToRefreshView stopAnimating];
+    };
+    
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        @strongify(self)
+        [self.viewModel loadData];
+    }];
+    
+    self.refreshBlock = ^{
+        @strongify(self)
+        [self.tableView triggerPullToRefresh];
+    };
     
     CDFlowEditView *flowEditView = [CDFlowEditView new];
     [self.view addSubview:flowEditView];
@@ -108,7 +133,7 @@
     if ([model isKindOfClass:[CDSectionModel class]]) {
         return ((CDSectionModel *)model).objects.count;
     } else {
-        return 1;
+        return 0;
     }
 }
 

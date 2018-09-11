@@ -13,18 +13,30 @@
 @implementation CDPersonListVM
 
 - (void)loadData {
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"person_list" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSDictionary *data = [jDic objectForKey:@"data"];
-    NSArray *items = [data objectForKey:@"items"];
     
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    for (NSDictionary *item in items) {
-        CDPersonRecModel *model = [CDPersonRecModel modelWithJSON:item];
-        [mutableArray addObject:model];
-    }
-    
-    self.objects = mutableArray;
+    [CDApiClient GET:@"follows" success:^(NSDictionary *data) {
+        
+        NSArray *items = [data objectForKey:@"items"];
+        
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        for (NSDictionary *item in items) {
+            CDPersonRecModel *model = [CDPersonRecModel modelWithJSON:item];
+            [mutableArray addObject:model];
+        }
+        
+        self.objects = mutableArray;
+
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {

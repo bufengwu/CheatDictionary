@@ -65,7 +65,7 @@ static const NSString *const baseURL = @"http://localhost:8023/api/v1/";
              NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
              NSString *message = [responseObject objectForKey:@"message"];
              
-             if (code == 0) {
+             if (data && code == 0) {
                  if (success) {
                      success(data);
                  }
@@ -76,9 +76,9 @@ static const NSString *const baseURL = @"http://localhost:8023/api/v1/";
              }
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              
-             NSLog(@"%@ ----> %@", fillURL, error.localizedDescription);
+             NSLog(@"%@ ----> %@", fillURL, error.description);
              if (failure) {
-                 failure(error.code, error.localizedDescription);
+                 failure(error.code, error.description);
              }
          }];
 }

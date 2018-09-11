@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <YYKit/NSObject+YYModel.h>
 
+#import "CDCardPool.h"
+
 @interface CDListBaseVM : NSObject
 
 @property (nonatomic, copy) void (^completeLoadDataBlock)(BOOL);

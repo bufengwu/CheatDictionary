@@ -85,6 +85,15 @@
             make.height.mas_equalTo(textHeight);
         }];
     };
+    
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.tableView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+    };
 }
 
 - (void)keyboardWillChangeFrame:(NSNotification *)note

@@ -16,6 +16,7 @@
 #import "CDShowMoreHeaderView.h"
 
 #import "CDFlowEditView.h"
+#import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface CDAttentionVC ()
 
@@ -36,6 +37,11 @@
     [super viewDidLoad];
     self.tableView.sectionFooterHeight = 0;
     
+    [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
+    [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
+    [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
+    
+    
     [self.viewModel loadData];
     
     CDFlowEditView *flowEditView = [CDFlowEditView new];
@@ -45,6 +51,27 @@
         make.bottom.equalTo(self.view).offset(-60);
         make.width.height.mas_equalTo(60);
     }];
+    
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.tableView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+        [self.tableView.pullToRefreshView stopAnimating];
+    };
+    
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        @strongify(self)
+        [self.viewModel loadData];
+    }];
+    
+    self.refreshBlock = ^{
+        @strongify(self)
+        [self.tableView triggerPullToRefresh];
+    };
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -68,7 +95,7 @@
     if ([model isKindOfClass:[CDSectionModel class]]) {
         return ((CDSectionModel *)model).objects.count;
     } else {
-        return 1;
+        return 0;
     }
 }
 

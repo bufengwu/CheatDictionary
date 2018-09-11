@@ -32,7 +32,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"消息";
+    
     [self.viewModel loadData];
+    
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.tableView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+    };
 }
 
 

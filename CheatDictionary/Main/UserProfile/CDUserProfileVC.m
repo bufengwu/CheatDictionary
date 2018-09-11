@@ -49,6 +49,17 @@
     }
     
     [self.viewModel loadData];
+    
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.collectionView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+    };
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -68,7 +79,7 @@
 
 #pragma mark -
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return self.viewModel.userInfoModel ? 2 : 0;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

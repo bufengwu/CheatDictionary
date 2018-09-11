@@ -18,12 +18,17 @@
 #import "CDPhotoNewsVM.h"
 
 #import "CDFlowEditView.h"
+#import <SVPullToRefresh/SVPullToRefresh.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface CDPhotoNewsVC () <UICollectionViewDelegate, UICollectionViewDataSource, WSLWaterFlowLayoutDelegate>
+@interface CDPhotoNewsVC () <UICollectionViewDelegate, UICollectionViewDataSource, WSLWaterFlowLayoutDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) CDPhotoNewsVM *viewModel;
+
+//tableview空白视图的刷新事件，子类赋值
+@property (nonatomic, strong) dispatch_block_t refreshBlock;
 
 @end
 
@@ -39,6 +44,9 @@
     [self.collectionView registerClass:[CDPhotoFlowNewsCell class] forCellWithReuseIdentifier:@"CDPhotoFlowNewsCell"];
     [self.collectionView registerClass:[CDSectionHeaderShowMoreView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CDSectionHeaderShowMoreView"];
     
+    self.collectionView.emptyDataSetSource = self;
+    self.collectionView.emptyDataSetDelegate = self;
+    
     CDFlowEditView *flowEditView = [CDFlowEditView new];
     [self.view addSubview:flowEditView];
     [flowEditView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -46,6 +54,22 @@
         make.bottom.equalTo(self.view).offset(-60);
         make.width.height.mas_equalTo(60);
     }];
+    
+    
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.collectionView reloadData];
+        }
+        [self.collectionView.pullToRefreshView stopAnimating];
+    };
+    
+    
+    self.refreshBlock = ^{
+        @strongify(self)
+        [self.viewModel loadData];
+    };
 }
 
 #pragma mark -
@@ -138,6 +162,48 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CDPhotoDetailVC *vc = [CDPhotoDetailVC new];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark -
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *title = @"什么都没有啊";
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName:[UIColor darkGrayColor]
+                                 };
+    return [[NSAttributedString alloc] initWithString:title attributes:attributes];
+}
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+    NSString *text = @"网络不给力，请点击重试哦~";
+    
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:text];
+    // 设置所有字体大小为 #15
+    [attStr addAttribute:NSFontAttributeName
+                   value:[UIFont systemFontOfSize:15.0]
+                   range:NSMakeRange(0, text.length)];
+    // 设置所有字体颜色为浅灰色
+    [attStr addAttribute:NSForegroundColorAttributeName
+                   value:[UIColor lightGrayColor]
+                   range:NSMakeRange(0, text.length)];
+    // 设置指定4个字体为蓝色
+    [attStr addAttribute:NSForegroundColorAttributeName
+                   value:HEXCOLOR(0x007EE5)
+                   range:NSMakeRange(7, 4)];
+    return attStr;
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return -70.0f;
+}
+
+#pragma mark - DZNEmptyDataSetDelegate
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
+    if (self.refreshBlock) {
+        self.refreshBlock();
+    }
 }
 
 @end

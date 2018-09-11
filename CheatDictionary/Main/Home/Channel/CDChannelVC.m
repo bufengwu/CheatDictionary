@@ -45,6 +45,12 @@
         }
         [self.collectionView.pullToRefreshView stopAnimating];
     };
+    
+    
+    self.refreshBlock = ^{
+        @strongify(self)
+        [self.viewModel loadData];
+    };
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

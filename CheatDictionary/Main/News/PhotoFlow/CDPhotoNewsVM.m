@@ -14,27 +14,38 @@
 
 - (void)loadData {
     
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"photo_flow" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSArray *items = [[jDic objectForKey:@"data"] objectForKey:@"items"];
-    
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    
-    for (NSDictionary *item in items) {
-        CDSectionModel *sectionModel = [CDSectionModel new];
-        CDShowMoreHeaderModel *header = [CDShowMoreHeaderModel new];
-        header.title = item[@"title"];
-        sectionModel.headerModel = header;
-        sectionModel.objects = [NSMutableArray array];
-        NSArray *channels = item[@"items"];
-        for (NSDictionary *channel in channels) {
-            CDPhotoFlowNewsModel *channelModel = [CDPhotoFlowNewsModel modelWithJSON:channel];
-            [sectionModel.objects addObject:channelModel];
+    [CDApiClient GET:@"photo_flow" success:^(NSDictionary *data) {
+        
+        NSArray *items = [data objectForKey:@"items"];
+        
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        
+        for (NSDictionary *item in items) {
+            CDSectionModel *sectionModel = [CDSectionModel new];
+            CDShowMoreHeaderModel *header = [CDShowMoreHeaderModel new];
+            header.title = item[@"title"];
+            sectionModel.headerModel = header;
+            sectionModel.objects = [NSMutableArray array];
+            NSArray *channels = item[@"items"];
+            for (NSDictionary *channel in channels) {
+                CDPhotoFlowNewsModel *channelModel = [CDPhotoFlowNewsModel modelWithJSON:channel];
+                [sectionModel.objects addObject:channelModel];
+            }
+            [mutableArray addObject:sectionModel];
         }
-        [mutableArray addObject:sectionModel];
-    }
-    
-    self.objects = mutableArray;
+        
+        self.objects = mutableArray;
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 @end

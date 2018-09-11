@@ -57,9 +57,6 @@
     self.label.backgroundColor = MainLightBrownColor;
     [_scrollView addSubview:self.label];
     
-    [self transactionAttributedString:self.viewModel.atricleSourceArray];
-    
-    
     self.replyTableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.label.frame.size.height, SCREEN_WIDTH, 400) style:UITableViewStylePlain];
         tableView.backgroundColor = MainLightBrownColor;
@@ -73,8 +70,18 @@
     
     [self.scrollView addSubview:self.replyTableView];
     
-    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.label.bounds.size.height + self.replyTableView.bounds.size.height);
-    
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.replyTableView reloadData];
+            [self transactionAttributedString:self.viewModel.atricleSourceArray];
+            self.replyTableView.frame = CGRectMake(0, self.label.frame.size.height, SCREEN_WIDTH, self.replyTableView.contentSize.height);
+            self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.label.bounds.size.height + self.replyTableView.bounds.size.height);
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+    };
 }
 
 - (void)transactionAttributedString:(NSArray *)source {
@@ -130,7 +137,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return @"共10条评论";
+    return [NSString stringWithFormat:@"共%lu条评论", (unsigned long)self.viewModel.commentArray.count] ;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

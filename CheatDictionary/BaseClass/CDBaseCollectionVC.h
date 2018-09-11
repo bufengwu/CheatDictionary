@@ -13,4 +13,7 @@
 
 @property (nonatomic, strong) CDListBaseVM *viewModel;
 
+//tableview空白视图的刷新事件，子类赋值
+@property (nonatomic, strong) dispatch_block_t refreshBlock;
+
 @end

@@ -36,16 +36,10 @@
         for (NSDictionary *item in items) {
             NSString *card_type = item[@"card_type"];
             
-            if ([card_type isEqualToString:@"feed_banner"]) {
-                CDFeedBannerModel *feed = [CDFeedBannerModel modelWithJSON:item];
-                [mutableArray addObject:feed];
-            } else if ([card_type isEqualToString:@"challenge"]) {
-                CDTopActivityModel *topActivityModel = [CDTopActivityModel modelWithJSON:item];
-                [mutableArray addObject:topActivityModel];
-            } else if ([card_type isEqualToString:@"feed_post"]) {
-                CDHotTopicDiscussionModel *model = [CDHotTopicDiscussionModel modelWithJSON:item];
-                [mutableArray addObject:model];
-            }
+            Class cls = [CDCardPool modelFoyCardType:card_type];
+            
+            CDBaseCellModel *model = [cls modelWithJSON:item];
+            [mutableArray addObject:model];
         }
         self.objects = mutableArray;
         

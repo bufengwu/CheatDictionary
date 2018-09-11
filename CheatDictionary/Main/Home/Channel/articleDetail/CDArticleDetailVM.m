@@ -11,21 +11,30 @@
 @implementation CDArticleDetailVM
 
 - (void)loadData {
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"article_detail" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSDictionary *data = [jDic objectForKey:@"data"];
-    NSArray *comments = [data objectForKey:@"comments"];
-    NSArray *article = [data objectForKey:@"article"];
-    
-    self.atricleSourceArray = article;
-    
-    NSMutableArray *mutableArray = [NSMutableArray array];    
-    for (NSDictionary *comment in comments) {
-        CDDiscussionDetailModel *model = [CDDiscussionDetailModel modelWithJSON:comment];
-        [mutableArray addObject:model];
-    }
-    
-    self.commentArray = mutableArray;
+    [CDApiClient GET:@"article_detail" success:^(NSDictionary *data) {
+        NSArray *comments = [data objectForKey:@"comments"];
+        NSArray *article = [data objectForKey:@"article"];
+        
+        self.atricleSourceArray = article;
+        
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        for (NSDictionary *comment in comments) {
+            CDDiscussionDetailModel *model = [CDDiscussionDetailModel modelWithJSON:comment];
+            [mutableArray addObject:model];
+        }
+        
+        self.commentArray = mutableArray;
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 @end

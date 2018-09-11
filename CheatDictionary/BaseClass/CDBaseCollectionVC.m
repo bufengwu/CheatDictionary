@@ -170,7 +170,9 @@
 #pragma mark - DZNEmptyDataSetDelegate
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
-    // button clicked...
+    if (self.refreshBlock) {
+        self.refreshBlock();
+    }
 }
 
 @end

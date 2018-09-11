@@ -22,59 +22,73 @@
 
 @implementation CDChannelDetailVM
 
-- (void)loadData {    
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"post_list" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSDictionary *data = [jDic objectForKey:@"data"];
-    NSDictionary *header = [data objectForKey:@"header"];
-    NSArray *sticky_post = [data objectForKey:@"sticky_post"];
-    NSArray *items = [data objectForKey:@"items"];
-    NSArray *articles = [data objectForKey:@"articles"];
+- (void)loadData {
     
-    NSMutableArray *mutableArray = [NSMutableArray array];
-
-    CDBarHeaderModel *headModel = [CDBarHeaderModel modelWithJSON:header];
-    [mutableArray addObject:headModel];
-    
-    {
-        CDSectionModel *sectionModel = [CDSectionModel new];
-        sectionModel.objects = [NSMutableArray array];
-        for (NSDictionary *item in sticky_post) {
-            CDStickyPostModel *stickyModel = [CDStickyPostModel modelWithJSON:item];
-            [sectionModel.objects addObject:stickyModel];
-        }
+    [CDApiClient GET:@"channel_detail" success:^(NSDictionary *data) {
         
-        [mutableArray addObject:sectionModel];
-    }
-    
-    {
-        CDSectionModel *sectionModel = [CDSectionModel new];
+        NSDictionary *header = [data objectForKey:@"header"];
+        NSArray *sticky_post = [data objectForKey:@"sticky_post"];
+        NSArray *items = [data objectForKey:@"items"];
+        NSArray *articles = [data objectForKey:@"articles"];
         
-        CDShowMoreHeaderModel *headerModel = [CDShowMoreHeaderModel new];
-        headerModel.title = @"帖子";
-        sectionModel.headerModel = headerModel;
-        
-        sectionModel.objects = [NSMutableArray array];
-        for (NSDictionary *item in items) {
-            CDDiscussionModel *channelModel = [CDDiscussionModel modelWithJSON:item];
-            [sectionModel.objects addObject:channelModel];
-        }
-        [mutableArray addObject:sectionModel];
-    }
-    
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-    self.objects = mutableArray;
-    
-    {
         NSMutableArray *mutableArray = [NSMutableArray array];
-        for (NSDictionary *article in articles) {
-            CDArticleModel *model = [CDArticleModel modelWithJSON:article];
-            [mutableArray addObject:model];
-        }        
-        self.articles = mutableArray;
-    }
-    
-    //    });
+        
+        {
+            CDSectionModel *sectionModel = [CDSectionModel new];
+            sectionModel.objects = [NSMutableArray array];
+            CDBarHeaderModel *headModel = [CDBarHeaderModel modelWithJSON:header];
+            [sectionModel.objects addObject:headModel];
+            
+            [mutableArray addObject:sectionModel];
+        }
+        
+        {
+            CDSectionModel *sectionModel = [CDSectionModel new];
+            sectionModel.objects = [NSMutableArray array];
+            for (NSDictionary *item in sticky_post) {
+                CDStickyPostModel *stickyModel = [CDStickyPostModel modelWithJSON:item];
+                [sectionModel.objects addObject:stickyModel];
+            }
+            
+            [mutableArray addObject:sectionModel];
+        }
+        
+        {
+            CDSectionModel *sectionModel = [CDSectionModel new];
+            
+            CDShowMoreHeaderModel *headerModel = [CDShowMoreHeaderModel new];
+            headerModel.title = @"帖子";
+            sectionModel.headerModel = headerModel;
+            
+            sectionModel.objects = [NSMutableArray array];
+            for (NSDictionary *item in items) {
+                CDDiscussionModel *channelModel = [CDDiscussionModel modelWithJSON:item];
+                [sectionModel.objects addObject:channelModel];
+            }
+            [mutableArray addObject:sectionModel];
+        }
+        
+        self.objects = mutableArray;
+        
+        {
+            NSMutableArray *mutableArray = [NSMutableArray array];
+            for (NSDictionary *article in articles) {
+                CDArticleModel *model = [CDArticleModel modelWithJSON:article];
+                [mutableArray addObject:model];
+            }
+            self.articles = mutableArray;
+        }
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {

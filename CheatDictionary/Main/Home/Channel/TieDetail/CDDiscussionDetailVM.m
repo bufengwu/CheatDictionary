@@ -15,27 +15,34 @@
 
 @implementation CDDiscussionDetailVM
 - (void)loadData {
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"discussion_detail_00932" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSDictionary *data = [jDic objectForKey:@"data"];
-    NSDictionary *asker = [data objectForKey:@"asker"];
-    NSArray *answers = [data objectForKey:@"answers"];
-    
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    {
-        CDDiscussionDetailUpperModel *model = [CDDiscussionDetailUpperModel modelWithJSON:asker];
-        [mutableArray addObject:model];
-    }
+    [CDApiClient GET:@"topic_detail" success:^(NSDictionary *data) {
         
-    for (NSDictionary *answer in answers) {
-        CDDiscussionDetailModel *model = [CDDiscussionDetailModel modelWithJSON:answer];
-        [mutableArray addObject:model];
-    }
-    
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-    self.objects = mutableArray;
-    
-    //    });
+        NSDictionary *asker = [data objectForKey:@"asker"];
+        NSArray *answers = [data objectForKey:@"answers"];
+        
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        {
+            CDDiscussionDetailUpperModel *model = [CDDiscussionDetailUpperModel modelWithJSON:asker];
+            [mutableArray addObject:model];
+        }
+        
+        for (NSDictionary *answer in answers) {
+            CDDiscussionDetailModel *model = [CDDiscussionDetailModel modelWithJSON:answer];
+            [mutableArray addObject:model];
+        }
+        
+        self.objects = mutableArray;
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {

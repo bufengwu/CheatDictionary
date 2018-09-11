@@ -33,6 +33,15 @@
     self.title = @"我关注的";
     [self.viewModel loadData];
     
+    @weakify(self)
+    self.viewModel.completeLoadDataBlock = ^(BOOL success) {
+        @strongify(self)
+        if (success) {
+            [self.collectionView reloadData];
+        } else {
+            [CDToast showBottomToast:@"出错了呀"];
+        }
+    };
 }
 
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource

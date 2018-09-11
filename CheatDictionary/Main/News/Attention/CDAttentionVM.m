@@ -20,38 +20,45 @@
 
 - (void)loadData {
     
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"attention" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSArray *items = [[jDic objectForKey:@"data"] objectForKey:@"items"];
-    
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    
-    for (NSDictionary *item in items) {
-        CDSectionModel *sectionModel = [CDSectionModel new];
-        CDShowMoreHeaderModel *header = [CDShowMoreHeaderModel new];
-        header.title = item[@"title"];
-        header.more = item[@"more"];
-        header.uri = item[@"uri"];
-        sectionModel.headerModel = header;
-        sectionModel.objects = [NSMutableArray array];
-        NSArray *items = item[@"items"];
+    [CDApiClient GET:@"attention" success:^(NSDictionary *data) {
+        
+        NSArray *items = [data objectForKey:@"items"];
+        
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        
         for (NSDictionary *item in items) {
-            
-            NSString *cardType = item[@"card_type"];
-            if ([cardType isEqualToString:@"coverage"]) {
-                CDCovergeItemModel *model = [CDCovergeItemModel modelWithJSON:item];
+            CDSectionModel *sectionModel = [CDSectionModel new];
+            CDShowMoreHeaderModel *header = [CDShowMoreHeaderModel new];
+            header.title = item[@"title"];
+            header.more = item[@"more"];
+            header.uri = item[@"uri"];
+            sectionModel.headerModel = header;
+            sectionModel.objects = [NSMutableArray array];
+            NSArray *items = item[@"items"];
+            for (NSDictionary *item in items) {
+                NSString *card_type = item[@"card_type"];
+                
+                Class cls = [CDCardPool modelFoyCardType:card_type];
+                
+                CDBaseCellModel *model = [cls modelWithJSON:item];
                 [sectionModel.objects addObject:model];
                 
-            } else if ([cardType isEqualToString:@"moment"]) {
-                CDMomentModel *model = [CDMomentModel modelWithJSON:item];
-                [sectionModel.objects addObject:model];
             }
-            
+            [mutableArray addObject:sectionModel];
         }
-        [mutableArray addObject:sectionModel];
-    }   
-    
-    self.objects = mutableArray;
+        
+        self.objects = mutableArray;
+
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {

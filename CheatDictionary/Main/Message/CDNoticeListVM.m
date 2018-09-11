@@ -12,20 +12,29 @@
 
 @implementation CDNoticeListVM
 
-
 - (void)loadData {
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"notice" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSDictionary *data = [jDic objectForKey:@"data"];
-    NSArray *items = [data objectForKey:@"items"];
-    
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    for (NSDictionary *item in items) {
-        CDNoticeModel *model = [CDNoticeModel modelWithJSON:item];
-        [mutableArray addObject:model];
-    }
-    
-    self.objects = mutableArray;
+
+    [CDApiClient GET:@"message" success:^(NSDictionary *data) {
+        NSArray *items = [data objectForKey:@"items"];
+        
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        for (NSDictionary *item in items) {
+            CDNoticeModel *model = [CDNoticeModel modelWithJSON:item];
+            [mutableArray addObject:model];
+        }
+        
+        self.objects = mutableArray;
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {

@@ -15,14 +15,21 @@
 
 - (void)loadData {
     
-    NSString *jPath = [[NSBundle mainBundle] pathForResource:@"user_profile" ofType:@"json"];
-    NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
-    NSArray *data = [jDic objectForKey:@"data"];
-    
-    
-    CDUserInfoModel *userInfoModel = [CDUserInfoModel modelWithJSON:data];
-    
-    self.userInfoModel = userInfoModel;
+    [CDApiClient GET:@"user_profile" success:^(NSDictionary *data) {
+        CDUserInfoModel *userInfoModel = [CDUserInfoModel modelWithJSON:data];
+        
+        self.userInfoModel = userInfoModel;
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(YES);
+        }
+        
+    } failure:^(NSInteger code, NSString *message) {
+        
+        if (self.completeLoadDataBlock) {
+            self.completeLoadDataBlock(NO);
+        }
+    }];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {
