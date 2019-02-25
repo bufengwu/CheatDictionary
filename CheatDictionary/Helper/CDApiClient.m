@@ -9,7 +9,7 @@
 #import "CDApiClient.h"
 #import <AFNetworking/AFNetworking.h>
 
-static const NSString *const baseURL = @"http://localhost:8023/api/v1/";
+static const NSString *const baseURL = @"http://localhost:8080/api/v1/";
 
 @implementation CDApiClient
 
@@ -22,6 +22,7 @@ static const NSString *const baseURL = @"http://localhost:8023/api/v1/";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.requestSerializer.timeoutInterval = 4.f;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
@@ -54,6 +55,8 @@ static const NSString *const baseURL = @"http://localhost:8023/api/v1/";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.requestSerializer.timeoutInterval = 4.f;
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
     

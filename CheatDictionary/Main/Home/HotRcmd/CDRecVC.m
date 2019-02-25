@@ -63,7 +63,7 @@
     
     self.refreshBlock = ^{
         @strongify(self)
-        [self.tableView triggerPullToRefresh];
+        [self refresh];
     };
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:CDTabBarDidClickNotification object:nil];
@@ -72,7 +72,11 @@
 //点击tabbar刷新
 - (void)refresh {
     if ([self.view isShowingOnKeyWindow]) { // 判断一个view是否显示在根窗口上
-        [self.tableView triggerPullToRefresh];
+        [self.tableView setContentOffset:CGPointMake(0, -55) animated:YES];
+        //给0.3秒延时是等setContentOffset的动画完成，否则triggerPullToRefresh会走wasTriggeredByUser = yes的方法，导致下拉控件不会回到顶部
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView triggerPullToRefresh];
+        });
     }
 }
 
