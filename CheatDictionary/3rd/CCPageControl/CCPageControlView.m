@@ -104,6 +104,9 @@ static NSString *reuseIdentifier = @"PageControlCollectionViewCell";
 
 -(void)removeViewBtn:(UIButton *)sender
 {
+    if (self.dissmissBlock) {
+        self.dissmissBlock();
+    }
     [UIView animateWithDuration:0.2 animations:^{
         sender.backgroundColor = [UIColor clearColor];
         [self removeFromSuperview];

@@ -110,6 +110,9 @@
 		AA58640620ECA6F900364CBE /* CDBaseSectionHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640520ECA6F900364CBE /* CDBaseSectionHeaderModel.m */; };
 		AA58640920ECA7FB00364CBE /* CDShowMoreHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */; };
 		AA58640C20ECAE6A00364CBE /* CDBaseCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58640B20ECAE6A00364CBE /* CDBaseCollectionHeaderView.m */; };
+		AA5A96912227D08F003CB9B3 /* FNWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A96902227D08F003CB9B3 /* FNWindow.m */; };
+		AA5A96942227D0C3003CB9B3 /* FNLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A96932227D0C3003CB9B3 /* FNLauncher.m */; };
+		AA5A96972227DA1D003CB9B3 /* FNSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A96962227DA1D003CB9B3 /* FNSplashViewController.m */; };
 		AA6226D92137DDEF004028F6 /* UIImageView+AddCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6226D62137DDEF004028F6 /* UIImageView+AddCornerRadius.m */; };
 		AA6226DA2137DDEF004028F6 /* UIView+AddCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6226D82137DDEF004028F6 /* UIView+AddCornerRadius.m */; };
 		AA6332F12134F34E00DE3B09 /* AppDelegate+Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6332F02134F34E00DE3B09 /* AppDelegate+Fetcher.m */; };
@@ -369,6 +372,12 @@
 		AA58640820ECA7FB00364CBE /* CDShowMoreHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDShowMoreHeaderModel.m; sourceTree = "<group>"; };
 		AA58640A20ECAE6A00364CBE /* CDBaseCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDBaseCollectionHeaderView.h; sourceTree = "<group>"; };
 		AA58640B20ECAE6A00364CBE /* CDBaseCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDBaseCollectionHeaderView.m; sourceTree = "<group>"; };
+		AA5A968F2227D08F003CB9B3 /* FNWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNWindow.h; sourceTree = "<group>"; };
+		AA5A96902227D08F003CB9B3 /* FNWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNWindow.m; sourceTree = "<group>"; };
+		AA5A96922227D0C3003CB9B3 /* FNLauncher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNLauncher.h; sourceTree = "<group>"; };
+		AA5A96932227D0C3003CB9B3 /* FNLauncher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNLauncher.m; sourceTree = "<group>"; };
+		AA5A96952227DA1D003CB9B3 /* FNSplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNSplashViewController.h; sourceTree = "<group>"; };
+		AA5A96962227DA1D003CB9B3 /* FNSplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNSplashViewController.m; sourceTree = "<group>"; };
 		AA6226D52137DDEF004028F6 /* UIImageView+AddCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AddCornerRadius.h"; sourceTree = "<group>"; };
 		AA6226D62137DDEF004028F6 /* UIImageView+AddCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AddCornerRadius.m"; sourceTree = "<group>"; };
 		AA6226D72137DDEF004028F6 /* UIView+AddCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AddCornerRadius.h"; sourceTree = "<group>"; };
@@ -509,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				3722C14520E7258500D4E993 /* PrefixHeader.pch */,
+				AA5A968F2227D08F003CB9B3 /* FNWindow.h */,
+				AA5A96902227D08F003CB9B3 /* FNWindow.m */,
 				3722C12C20E7209100D4E993 /* AppDelegate.h */,
 				3722C12D20E7209100D4E993 /* AppDelegate.m */,
 				AA6332EF2134F34E00DE3B09 /* AppDelegate+Fetcher.h */,
@@ -517,6 +528,7 @@
 				AA6332F32134F35D00DE3B09 /* AppDelegate+PushService.m */,
 				AA6332F52134F36F00DE3B09 /* AppDelegate+UrlHandler.h */,
 				AA6332F62134F36F00DE3B09 /* AppDelegate+UrlHandler.m */,
+				AA5A968E2227CFC4003CB9B3 /* Launcher */,
 				AA793154214757AB00A39032 /* Main */,
 				AA977BBE20FD811B00B8E826 /* Helper */,
 				3722C15420E732B700D4E993 /* BaseClass */,
@@ -745,6 +757,17 @@
 				AA54442F212D401B00590733 /* CCPageControlView.m */,
 			);
 			path = CCPageControl;
+			sourceTree = "<group>";
+		};
+		AA5A968E2227CFC4003CB9B3 /* Launcher */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A96922227D0C3003CB9B3 /* FNLauncher.h */,
+				AA5A96932227D0C3003CB9B3 /* FNLauncher.m */,
+				AA5A96952227DA1D003CB9B3 /* FNSplashViewController.h */,
+				AA5A96962227DA1D003CB9B3 /* FNSplashViewController.m */,
+			);
+			path = Launcher;
 			sourceTree = "<group>";
 		};
 		AA6226CA213785FC004028F6 /* deprecated */ = {
@@ -1379,8 +1402,10 @@
 				37392A3E20F97D60002A14A4 /* HAItemManager.m in Sources */,
 				37C6779C20F9F59D002D210C /* CDDiscussionModel.m in Sources */,
 				AA0C4E08212C2419001E0A45 /* SXCircleLayout.m in Sources */,
+				AA5A96972227DA1D003CB9B3 /* FNSplashViewController.m in Sources */,
 				AAD0EAD920F7632400D97792 /* CDAttentionVC.m in Sources */,
 				AAB5226521300356009EF004 /* CDHelper.m in Sources */,
+				AA5A96912227D08F003CB9B3 /* FNWindow.m in Sources */,
 				AA977BA420FC9A0F00B8E826 /* CDDiscussionDetailUpperModel.m in Sources */,
 				AAC535C82140D5BE00475694 /* NSString+CDString.m in Sources */,
 				37392A1920F96E72002A14A4 /* CDNoticeListVM.m in Sources */,
@@ -1395,6 +1420,7 @@
 				AA63F30820EDB24B00A9CBDF /* CDListBaseVM.m in Sources */,
 				372D70D320EBAE0B00168172 /* CDRecVC.m in Sources */,
 				AA386ED721427D0900120471 /* UIView+CDView.m in Sources */,
+				AA5A96942227D0C3003CB9B3 /* FNLauncher.m in Sources */,
 				AA977B9B20FC959600B8E826 /* CDDiscussionDetailVC.m in Sources */,
 				AAF4E681212C0AD500AD0219 /* CDPhotoNewsVM.m in Sources */,
 				AA7DF9FA2134162D00E18954 /* CDNavigationController.m in Sources */,

@@ -28,7 +28,8 @@
 {
     self = [super init];
     if (self) {
-        self.viewModel = [CDRecVM new];        
+        self.viewModel = [CDRecVM new];
+        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~%s", __FUNCTION__);
     }
     return self;
 }
@@ -37,9 +38,15 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~%s", __FUNCTION__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.viewModel loadData];
+    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~%s", __FUNCTION__);
     
     [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
     [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];

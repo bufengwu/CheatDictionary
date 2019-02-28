@@ -32,6 +32,8 @@ typedef void(^adImageBlock)(NSString *content);  //可以根据需要添加一�
 /** 广告图点击事件回调*/
 @property (nonatomic, copy) adImageBlock adImageTapBlock;
 
+@property (nonatomic, copy) dispatch_block_t dissmissBlock;
+
 /** 加载广告图*/
 - (void)reloadAdImageWithUrl:(NSString *)urlStr;
 

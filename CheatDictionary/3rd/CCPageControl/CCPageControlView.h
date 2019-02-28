@@ -12,4 +12,6 @@
 
 @property (strong , nonatomic) NSArray *imageArr;
 
+@property (nonatomic, copy) dispatch_block_t dissmissBlock;
+
 @end

@@ -260,12 +260,13 @@
 /** 消失广告图 */
 - (void)dismiss
 {
+    if (self.dissmissBlock) {
+        self.dissmissBlock();
+    }
     [UIView animateWithDuration:0.5 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
-
         self.transform = CGAffineTransformMakeScale(1.2, 1.2);
         self.alpha = 0.0;
     } completion:^(BOOL finished) {
-        
         [self removeFromSuperview];
     }];
 }
