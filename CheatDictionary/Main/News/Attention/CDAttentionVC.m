@@ -37,11 +37,6 @@
     [super viewDidLoad];
     self.tableView.sectionFooterHeight = 0;
     
-    [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
-    [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
-    [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
-    
-    
     [self.viewModel loadData];
     
     CDFlowEditView *flowEditView = [CDFlowEditView new];
@@ -67,6 +62,9 @@
         @strongify(self)
         [self.viewModel loadData];
     }];
+    [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
+    [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
+    [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
     
     self.refreshBlock = ^{
         @strongify(self)

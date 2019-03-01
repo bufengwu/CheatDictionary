@@ -47,11 +47,7 @@
     [super viewDidLoad];
     [self.viewModel loadData];
     NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~%s", __FUNCTION__);
-    
-    [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
-    [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
-    [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
-    
+ 
     @weakify(self)
     self.viewModel.completeLoadDataBlock = ^(BOOL success) {
         @strongify(self)
@@ -67,6 +63,17 @@
         @strongify(self)
         [self.viewModel loadData];
     }];
+    [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
+    [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
+    [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
+//    self.tableView.pullToRefreshView.activityIndicatorViewColor = MainLightBrownColor;
+    self.tableView.pullToRefreshView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    
+    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    indicatorView.backgroundColor = MainLightBrownColor;
+    indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    indicatorView.hidden = NO;
+    [self.tableView.pullToRefreshView setCustomView:indicatorView forState:SVPullToRefreshStateAll];
     
     self.refreshBlock = ^{
         @strongify(self)
@@ -91,21 +98,21 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    //scrollView已经有拖拽手势，直接拿到scrollView的拖拽手势
-    UIPanGestureRecognizer* pan = scrollView.panGestureRecognizer;
-    //获取到拖拽的速度 >0 向下拖动 <0 向上拖动
-    CGFloat velocity = [pan velocityInView:scrollView].y;
-    if (velocity<-5) {
-        //向上拖动，隐藏导航栏
-        [self.navigationController setNavigationBarHidden:true animated:true];
-    }
-    else if (velocity>5) {
-        //向下拖动，显示导航栏
-        [self.navigationController setNavigationBarHidden:false animated:true];
-    }
-    else if(velocity==0){
-        //停止拖拽
-    }
+//    //scrollView已经有拖拽手势，直接拿到scrollView的拖拽手势
+//    UIPanGestureRecognizer* pan = scrollView.panGestureRecognizer;
+//    //获取到拖拽的速度 >0 向下拖动 <0 向上拖动
+//    CGFloat velocity = [pan velocityInView:scrollView].y;
+//    if (velocity<-5) {
+//        //向上拖动，隐藏导航栏
+//        [self.navigationController setNavigationBarHidden:true animated:true];
+//    }
+//    else if (velocity>5) {
+//        //向下拖动，显示导航栏
+//        [self.navigationController setNavigationBarHidden:false animated:true];
+//    }
+//    else if(velocity==0){
+//        //停止拖拽
+//    }
 }
 
 //view将要消失的时候，显示导航栏，这样跳转到其他界面的时候，才能看到导航栏，否则，看不到导航栏
