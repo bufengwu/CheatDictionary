@@ -66,7 +66,6 @@
 		37C677A520FA4763002D210C /* CDEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C677A420FA4763002D210C /* CDEditVC.m */; };
 		37C677A920FA5201002D210C /* CDPersonListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C677A820FA5201002D210C /* CDPersonListVC.m */; };
 		37C677AC20FA5225002D210C /* CDPersonListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C677AB20FA5225002D210C /* CDPersonListVM.m */; };
-		37D3DD8F210A9F6B00D4DC03 /* CDNewsContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D3DD8E210A9F6B00D4DC03 /* CDNewsContainerVC.m */; };
 		37D3DD92210AA0A500D4DC03 /* CDNewsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D3DD91210AA0A500D4DC03 /* CDNewsVM.m */; };
 		37D7B48C2119CF0E0090E774 /* CDHotTopicDiscussionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D7B48B2119CF0E0090E774 /* CDHotTopicDiscussionModel.m */; };
 		37D9A8C220F105C600A91CFE /* CDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D9A8C120F105C600A91CFE /* CDWebViewController.m */; };
@@ -288,8 +287,6 @@
 		37C677A820FA5201002D210C /* CDPersonListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDPersonListVC.m; sourceTree = "<group>"; };
 		37C677AA20FA5225002D210C /* CDPersonListVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDPersonListVM.h; sourceTree = "<group>"; };
 		37C677AB20FA5225002D210C /* CDPersonListVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDPersonListVM.m; sourceTree = "<group>"; };
-		37D3DD8D210A9F6B00D4DC03 /* CDNewsContainerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNewsContainerVC.h; sourceTree = "<group>"; };
-		37D3DD8E210A9F6B00D4DC03 /* CDNewsContainerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDNewsContainerVC.m; sourceTree = "<group>"; };
 		37D3DD90210AA0A500D4DC03 /* CDNewsVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNewsVM.h; sourceTree = "<group>"; };
 		37D3DD91210AA0A500D4DC03 /* CDNewsVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDNewsVM.m; sourceTree = "<group>"; };
 		37D7B48A2119CF0E0090E774 /* CDHotTopicDiscussionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDHotTopicDiscussionModel.h; sourceTree = "<group>"; };
@@ -825,20 +822,11 @@
 				AAD0EAD420F7622300D97792 /* CDHomeVC.h */,
 				AAD0EAD520F7622300D97792 /* CDHomeVC.m */,
 				AABB00F321368BAC007CDB4B /* HotRcmd */,
+				AABB00F521368C7B007CDB4B /* Attention */,
+				AAF4E671212BFC5F00AD0219 /* PhotoFlow */,
 				AABB00F621368CB8007CDB4B /* Channel */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		AA6332F92134FF3200DE3B09 /* News */ = {
-			isa = PBXGroup;
-			children = (
-				37D3DD8D210A9F6B00D4DC03 /* CDNewsContainerVC.h */,
-				37D3DD8E210A9F6B00D4DC03 /* CDNewsContainerVC.m */,
-				AABB00F521368C7B007CDB4B /* Attention */,
-				AAF4E671212BFC5F00AD0219 /* PhotoFlow */,
-			);
-			path = News;
 			sourceTree = "<group>";
 		};
 		AA63F31120EDBFC000A9CBDF /* category */ = {
@@ -870,11 +858,10 @@
 			isa = PBXGroup;
 			children = (
 				AA6332F82134FF2700DE3B09 /* Home */,
-				AA6332F92134FF3200DE3B09 /* News */,
-				AA378248212D6372007A520C /* LeftVC */,
-				AA4D5118212EA82F0071DD4E /* SearchVC */,
 				AABB00F721368CCC007CDB4B /* Message */,
+				AA378248212D6372007A520C /* LeftVC */,
 				AABB00FD21368FE0007CDB4B /* UserProfile */,
+				AA4D5118212EA82F0071DD4E /* SearchVC */,
 				3722C14C20E731DC00D4E993 /* OtherVC */,
 				AA79315D21479AB500A39032 /* CDCardPool.h */,
 				AA79315E21479AB500A39032 /* CDCardPool.m */,
@@ -1400,7 +1387,6 @@
 				AAA480692141215700C37322 /* CDArticleDetailVM.m in Sources */,
 				AA6332F12134F34E00DE3B09 /* AppDelegate+Fetcher.m in Sources */,
 				AA08C620210F1DF600D31FB0 /* UIView+Border.m in Sources */,
-				37D3DD8F210A9F6B00D4DC03 /* CDNewsContainerVC.m in Sources */,
 				AA0C4E06212C2419001E0A45 /* SXStackLayout.m in Sources */,
 				3729964020F82D5100E1F5BF /* CDArticleModel.m in Sources */,
 				AA0C4E09212C2419001E0A45 /* SXLineLayout.m in Sources */,
