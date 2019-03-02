@@ -84,11 +84,11 @@
                                        kImgKey    : @"tab_home",
                                        kSelImgKey : @"tab_home"},
                                      
-                                     @{kClassKey  : @"CDNewsContainerVC",
-                                       kNavTitleKey  : @"资讯",
-                                       kTabTitleKey  : @"资讯",
-                                       kImgKey    : @"tab_arena",
-                                       kSelImgKey : @"tab_arena"},
+                                     @{kClassKey  : @"CDNoticeVC",
+                                       kNavTitleKey  : @"消息",
+                                       kTabTitleKey  : @"消息",
+                                       kImgKey    : @"icon_bell",
+                                       kSelImgKey : @"icon_bell"},
                                      ];
         
         [childItemsArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
@@ -131,6 +131,8 @@
     [[CDRouter shared] map:@"/RadarChartVC" toControllerClass:[NSClassFromString(@"RadarChartVC") class]];
     
     [[CDRouter shared] map:@"/CDSearchVC" toControllerClass:[NSClassFromString(@"CDSearchVC") class]];
+    
+    [[CDRouter shared] map:@"/CDChannelVC" toControllerClass:[NSClassFromString(@"CDChannelVC") class]];
 }
 
 - (void)setAppearanceStyle {

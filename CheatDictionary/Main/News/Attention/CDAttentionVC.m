@@ -15,7 +15,6 @@
 #import "CDBaseTableViewCell.h"
 #import "CDShowMoreHeaderView.h"
 
-#import "CDFlowEditView.h"
 #import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface CDAttentionVC ()
@@ -38,14 +37,6 @@
     self.tableView.sectionFooterHeight = 0;
     
     [self.viewModel loadData];
-    
-    CDFlowEditView *flowEditView = [CDFlowEditView new];
-    [self.view addSubview:flowEditView];
-    [flowEditView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.view).offset(-10);
-        make.bottom.equalTo(self.view).offset(-60);
-        make.width.height.mas_equalTo(60);
-    }];
     
     @weakify(self)
     self.viewModel.completeLoadDataBlock = ^(BOOL success) {

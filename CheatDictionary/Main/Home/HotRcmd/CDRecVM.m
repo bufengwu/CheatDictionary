@@ -28,31 +28,42 @@
                               @"idx" : @111123
                               };
     [CDApiClient GET:@"hot_rcmd" payload:payload success:^(NSDictionary *data) {
-        
-        NSArray *items = [data objectForKey:@"items"];
-        
-        NSMutableArray *mutableArray = [NSMutableArray array];
-        
-        for (NSDictionary *item in items) {
-            NSString *card_type = item[@"card_type"];
-            
-            Class cls = [CDCardPool modelFoyCardType:card_type];
-            
-            CDBaseCellModel *model = [cls modelWithJSON:item];
-            [mutableArray addObject:model];
-        }
-        self.objects = mutableArray;
-        
+        [self _parseData:data];
         if (self.completeLoadDataBlock) {
             self.completeLoadDataBlock(YES);
         }
         
     } failure:^(NSInteger code, NSString *message) {
+        if (!self.objects.count) {
+            NSString *jPath = [[NSBundle mainBundle] pathForResource:@"hot_rcmd" ofType:@"json"];
+            NSDictionary *jDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jPath] options:NSJSONReadingMutableLeaves error:nil];
+            NSDictionary *data = [jDic objectForKey:@"data"];
+            
+            [self _parseData:data];
+            if (self.completeLoadDataBlock) {
+                self.completeLoadDataBlock(YES);
+            }
+            return;
+        }
         
         if (self.completeLoadDataBlock) {
             self.completeLoadDataBlock(NO);
         }
     }];
+}
+
+- (void)_parseData:(NSDictionary *)data {
+    NSArray *items = [data objectForKey:@"items"];
+    NSMutableArray *mutableArray = [NSMutableArray array];
+    for (NSDictionary *item in items) {
+        NSString *card_type = item[@"card_type"];
+        Class cls = [CDCardPool modelFoyCardType:card_type];
+        CDBaseCellModel *model = [cls modelWithJSON:item];
+        [mutableArray addObject:model];
+    }
+    self.objects = mutableArray;
+    
+    self.topModel = [FNHotTopicHeaderModel modelWithJSON:[data objectForKey:@"top"]];
 }
 
 - (NSDictionary<NSString *,Class> *)cellIdentifierMapping {

@@ -7,7 +7,10 @@
 //
 
 #import "CDListBaseVM.h"
+#import "FNHotTopicHeaderModel.h"
 
 @interface CDRecVM : CDListBaseVM
+
+@property (nonatomic, strong) FNHotTopicHeaderModel *topModel;
 
 @end

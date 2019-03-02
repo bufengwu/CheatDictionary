@@ -11,6 +11,8 @@
 #import "CDUserProfileVC.h"
 #import "CDNoticeVC.h"
 #import "CDChannelVC.h"
+#import "CDAttentionVC.h"
+#import "CDPhotoNewsVC.h"
 
 #import "CDBigAlertView.h"
 
@@ -33,12 +35,16 @@
     if (self = [super init]) {
         self.childItemsArray = @[
                                  @{
-                                     kClassKey  : [CDRecVC class],
-                                     kTitleKey  : @"热门"
+                                     kClassKey  : [CDAttentionVC class],
+                                     kTitleKey  : @"关注"
                                      },
                                  @{
-                                     kClassKey  : [CDChannelVC class],
-                                     kTitleKey  : @"版块"
+                                     kClassKey  : [CDRecVC class],
+                                     kTitleKey  : @"推荐"
+                                     },
+                                 @{
+                                     kClassKey  : [CDPhotoNewsVC class],
+                                     kTitleKey  : @"图片"
                                      },
                                  ];
         self.menuViewStyle = WMMenuViewStyleTriangle;
@@ -66,9 +72,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.menuView.backgroundColor = SecondaryNavbarColor;
-//    self.menuView.layoutMode = WMMenuViewLayoutModeLeft;
-    self.showOnNavigationBar = YES;
-    self.itemMargin = 10;
+    self.selectIndex = 1;
     
     {
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -79,18 +83,6 @@
         UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:contentView];
         self.navigationItem.leftBarButtonItem = barButtonItem;
     }
-    
-    NSMutableArray *rightBtns = [NSMutableArray arrayWithCapacity:3];
-    {
-        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        UIButton *rightBtn = [[UIButton alloc] initWithFrame:contentView.bounds];
-        [rightBtn setImage:[UIImage imageNamed:@"icon_bell"] forState:UIControlStateNormal];
-        [rightBtn addTarget:self action:@selector(showMsgCenter:) forControlEvents:UIControlEventTouchUpInside];
-        [contentView addSubview:rightBtn];
-        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:contentView];
-        [rightBtns addObject:barButtonItem];
-//        self.navigationItem.rightBarButtonItem = barButtonItem;
-    }
     {
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
         UIButton *rightBtn = [[UIButton alloc] initWithFrame:contentView.bounds];
@@ -98,31 +90,16 @@
         [rightBtn addTarget:self action:@selector(showEditVC) forControlEvents:UIControlEventTouchUpInside];
         [contentView addSubview:rightBtn];
         UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:contentView];
-//        self.navigationItem.rightBarButtonItem = barButtonItem;
-        
-        [rightBtns addObject:barButtonItem];
+        self.navigationItem.rightBarButtonItem = barButtonItem;
     }
-    {
-        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-        UIButton *rightBtn = [[UIButton alloc] initWithFrame:contentView.bounds];
-        [rightBtn setImage:[[UIImage imageNamed:@"icon_search"] cd_imageWithTintColor:TabBarTitleColorNormal] forState:UIControlStateNormal];
-        [rightBtn addTarget:self action:@selector(showSearchVC) forControlEvents:UIControlEventTouchUpInside];
-        [contentView addSubview:rightBtn];
-        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:contentView];
-//        self.navigationItem.rightBarButtonItem = barButtonItem;
-        
-        [rightBtns addObject:barButtonItem];
-    }
-    
-    self.navigationItem.rightBarButtonItems = rightBtns;
     
     {
         
-//        UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 302, 35)];
+        UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 302, 35)];
 
-//        searchBar.delegate = self;
+        searchBar.delegate = self;
 
-//        self.navigationItem.titleView = searchBar;
+        self.navigationItem.titleView = searchBar;
     }
     
     //双击手势
@@ -138,7 +115,7 @@
     [self.view addGestureRecognizer:twoFingerDoubleTap];
 }
 
-- (BOOL)showSearchVC {
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     
     [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
         
@@ -184,11 +161,11 @@
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
-    return CGRectMake(0, 0, SCREEN_WIDTH/2, 44);
+    return CGRectMake(0, 0, SCREEN_WIDTH, 44);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
-    return CGRectMake(0, 0, SCREEN_WIDTH, self.view.bounds.size.height);
+    return CGRectMake(0, 44, SCREEN_WIDTH, self.view.bounds.size.height - 44);
 }
 
 @end

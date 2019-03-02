@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.title = @"话题";
     [self.viewModel loadData];
 
     @weakify(self)

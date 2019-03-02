@@ -70,6 +70,11 @@
 		37D3DD92210AA0A500D4DC03 /* CDNewsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D3DD91210AA0A500D4DC03 /* CDNewsVM.m */; };
 		37D7B48C2119CF0E0090E774 /* CDHotTopicDiscussionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D7B48B2119CF0E0090E774 /* CDHotTopicDiscussionModel.m */; };
 		37D9A8C220F105C600A91CFE /* CDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D9A8C120F105C600A91CFE /* CDWebViewController.m */; };
+		3DB7BDE7222A41B300BB58F2 /* hot_rcmd.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7BDE5222A41B300BB58F2 /* hot_rcmd.json */; };
+		3DB7BDE8222A41B300BB58F2 /* photo_flow.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7BDE6222A41B300BB58F2 /* photo_flow.json */; };
+		3DB7BDEB222A4A6D00BB58F2 /* FNHotTopicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB7BDEA222A4A6D00BB58F2 /* FNHotTopicHeaderView.m */; };
+		3DB7BDEE222A542B00BB58F2 /* FNHotTopicHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB7BDED222A542B00BB58F2 /* FNHotTopicHeaderModel.m */; };
+		3DB7BDF0222A5B1100BB58F2 /* channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7BDEF222A5B1100BB58F2 /* channel.json */; };
 		AA08C620210F1DF600D31FB0 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = AA08C61F210F1DF600D31FB0 /* UIView+Border.m */; };
 		AA0C4DFA212C237E001E0A45 /* CDPhotoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4DF9212C237E001E0A45 /* CDPhotoDetailVC.m */; };
 		AA0C4E05212C2419001E0A45 /* SXImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4DFC212C2418001E0A45 /* SXImageCell.m */; };
@@ -292,6 +297,13 @@
 		37D9A8C020F105C600A91CFE /* CDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDWebViewController.h; sourceTree = "<group>"; };
 		37D9A8C120F105C600A91CFE /* CDWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDWebViewController.m; sourceTree = "<group>"; };
 		37D9A8C320F1099700A91CFE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		3DB7BDE5222A41B300BB58F2 /* hot_rcmd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hot_rcmd.json; sourceTree = "<group>"; };
+		3DB7BDE6222A41B300BB58F2 /* photo_flow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = photo_flow.json; sourceTree = "<group>"; };
+		3DB7BDE9222A4A6D00BB58F2 /* FNHotTopicHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNHotTopicHeaderView.h; sourceTree = "<group>"; };
+		3DB7BDEA222A4A6D00BB58F2 /* FNHotTopicHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNHotTopicHeaderView.m; sourceTree = "<group>"; };
+		3DB7BDEC222A542B00BB58F2 /* FNHotTopicHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNHotTopicHeaderModel.h; sourceTree = "<group>"; };
+		3DB7BDED222A542B00BB58F2 /* FNHotTopicHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNHotTopicHeaderModel.m; sourceTree = "<group>"; };
+		3DB7BDEF222A5B1100BB58F2 /* channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = channel.json; sourceTree = "<group>"; };
 		9E386783C2DCD063648E2417 /* Pods-CheatDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheatDictionary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheatDictionary/Pods-CheatDictionary.debug.xcconfig"; sourceTree = "<group>"; };
 		AA08C61E210F1DF600D31FB0 /* UIView+Border.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Border.h"; sourceTree = "<group>"; };
 		AA08C61F210F1DF600D31FB0 /* UIView+Border.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Border.m"; sourceTree = "<group>"; };
@@ -537,6 +549,9 @@
 				3722C13A20E7209300D4E993 /* LaunchScreen.storyboard */,
 				3722C13D20E7209300D4E993 /* Info.plist */,
 				3722C13E20E7209300D4E993 /* main.m */,
+				3DB7BDEF222A5B1100BB58F2 /* channel.json */,
+				3DB7BDE5222A41B300BB58F2 /* hot_rcmd.json */,
+				3DB7BDE6222A41B300BB58F2 /* photo_flow.json */,
 			);
 			path = CheatDictionary;
 			sourceTree = "<group>";
@@ -984,6 +999,10 @@
 				372D70BF20EBAE0B00168172 /* CDRecVC.m */,
 				AAE974A320F8583E00BE100E /* CDRecVM.h */,
 				AAE974A420F8583E00BE100E /* CDRecVM.m */,
+				3DB7BDE9222A4A6D00BB58F2 /* FNHotTopicHeaderView.h */,
+				3DB7BDEA222A4A6D00BB58F2 /* FNHotTopicHeaderView.m */,
+				3DB7BDEC222A542B00BB58F2 /* FNHotTopicHeaderModel.h */,
+				3DB7BDED222A542B00BB58F2 /* FNHotTopicHeaderModel.m */,
 				AABB00F421368C55007CDB4B /* cell */,
 			);
 			path = HotRcmd;
@@ -1250,6 +1269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB7BDE8222A41B300BB58F2 /* photo_flow.json in Resources */,
+				3DB7BDF0222A5B1100BB58F2 /* channel.json in Resources */,
 				AA306374211C210300FD6F53 /* CDBarHeaderCell.xib in Resources */,
 				37392A4020F97D60002A14A4 /* icons.bundle in Resources */,
 				AA63F31B20EDC36D00A9CBDF /* CDUserBoardTopCell.xib in Resources */,
@@ -1258,6 +1279,7 @@
 				3798EA2120FCEB5F00DCD7C0 /* CDLoginVC.xib in Resources */,
 				AA378271212D7B52007A520C /* FarmLandViewController.xib in Resources */,
 				3722C13920E7209300D4E993 /* Assets.xcassets in Resources */,
+				3DB7BDE7222A41B300BB58F2 /* hot_rcmd.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,7 +1310,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CheatDictionary/Pods-CheatDictionary-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-CheatDictionary/Pods-CheatDictionary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CNPPopupController/CNPPopupController.framework",
@@ -1355,7 +1377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheatDictionary/Pods-CheatDictionary-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheatDictionary/Pods-CheatDictionary-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1441,6 +1463,7 @@
 				AA0C4DFA212C237E001E0A45 /* CDPhotoDetailVC.m in Sources */,
 				372D70CC20EBAE0B00168172 /* CDSectionHeaderShowMoreView.m in Sources */,
 				AA3063A4211D95B000FD6F53 /* CDDiscussionDetailVM.m in Sources */,
+				3DB7BDEE222A542B00BB58F2 /* FNHotTopicHeaderModel.m in Sources */,
 				372D70CA20EBAE0B00168172 /* CDTopActivityCell.m in Sources */,
 				37932983210B841E00BF1176 /* CDGeneralNewsVC.m in Sources */,
 				3722C14820E7270E00D4E993 /* CDBaseViewController.m in Sources */,
@@ -1455,6 +1478,7 @@
 				37D9A8C220F105C600A91CFE /* CDWebViewController.m in Sources */,
 				AAA4807A214141E700C37322 /* JYWaveView.m in Sources */,
 				37499CCB20F7925500C8354F /* CDPersonRecModel.m in Sources */,
+				3DB7BDEB222A4A6D00BB58F2 /* FNHotTopicHeaderView.m in Sources */,
 				AA4D50A9212E97720071DD4E /* TopmostView.m in Sources */,
 				AAE974E720F8A13B00BE100E /* CDShowMoreHeaderView.m in Sources */,
 				AA4D509D212E96B20071DD4E /* CDToast.m in Sources */,

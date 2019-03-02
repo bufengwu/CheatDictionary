@@ -13,11 +13,13 @@
 
 #import "CDTabBarController.h"
 
+#import "FNHotTopicHeaderView.h"
 #import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface CDRecVC () 
 
 @property (nonatomic, strong) CDRecVM *viewModel;
+@property (nonatomic, strong) FNHotTopicHeaderView *hotTopicView;
 
 @end
 
@@ -29,6 +31,7 @@
     self = [super init];
     if (self) {
         self.viewModel = [CDRecVM new];
+        self.tableViewStyle = UITableViewStyleGrouped;
         NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~%s", __FUNCTION__);
     }
     return self;
@@ -66,14 +69,6 @@
     [self.tableView.pullToRefreshView setTitle:@"下拉以刷新" forState:SVPullToRefreshStateTriggered];
     [self.tableView.pullToRefreshView setTitle:@"刷新完了呀" forState:SVPullToRefreshStateStopped];
     [self.tableView.pullToRefreshView setTitle:@"努力加载中..." forState:SVPullToRefreshStateLoading];
-//    self.tableView.pullToRefreshView.activityIndicatorViewColor = MainLightBrownColor;
-    self.tableView.pullToRefreshView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    
-    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    indicatorView.backgroundColor = MainLightBrownColor;
-    indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    indicatorView.hidden = NO;
-    [self.tableView.pullToRefreshView setCustomView:indicatorView forState:SVPullToRefreshStateAll];
     
     self.refreshBlock = ^{
         @strongify(self)
@@ -142,6 +137,26 @@
     CDBaseCellModel *model = self.viewModel.objects[indexPath.row];
     [[CDRouter shared] pushUrl:model.uri animated:YES];
     
+}
+
+#pragma mark -
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        if (!self.hotTopicView) {
+            self.hotTopicView = [FNHotTopicHeaderView new];
+        }
+        [self.hotTopicView bindViewModel:self.viewModel.topModel];
+        return self.hotTopicView;
+    }
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 96;
+    }
+    return 0;
 }
 
 @end
