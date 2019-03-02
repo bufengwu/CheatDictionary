@@ -34,7 +34,7 @@
     _maskView.image = [UIImage imageNamed:@"common_shadow_top"];
     [_backgroundView addSubview:_maskView];
     _titleLabel = [UILabel new];
-    _titleLabel.textColor = RGB(63, 45, 33);
+    _titleLabel.textColor = [UIColor whiteColor];
     _titleLabel.font = [UIFont systemFontOfSize:12];
     _titleLabel.numberOfLines = 2;
     _titleLabel.textAlignment = NSTextAlignmentLeft;
@@ -65,9 +65,9 @@
     }
 }
 
-- (void)setItem:(id)item {
-    self.titleLabel.text = @"大北山";
-//    [self.backgroundView bfc_setImageWithURL:[NSURL URLWithString:item.imageURL] ptSize:self.bbmyfollowing_size placeholderImage:[UIImage bplusbase_defaultTVImageWithSize:self.bbmyfollowing_size]];
+- (void)setItem:(CDChannelCoverModel *)item {
+    self.titleLabel.text = item.title;
+    [self.backgroundView sd_setImageWithURL:[NSURL URLWithString:item.icon]];
 }
 
 @end
@@ -82,7 +82,6 @@ CGFloat const kFNHotTopicHeaderViewW = 102.0;
 @property (nonatomic, strong) UIButton *backgroundButton;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) FNHotTopicHeaderModel *viewModel;
-//@property (nonatomic, strong) FNGradientLayer *rightGradientLayer;
 
 @end
 
@@ -154,7 +153,6 @@ CGFloat const kFNHotTopicHeaderViewW = 102.0;
     self.backgroundButton.tz_top = 0;
     
     self.scrollView.frame = CGRectMake(0, 27, self.tz_width,kFNHotTopicHeaderViewH);
-//    self.rightGradientLayer.frame = CGRectMake(self.frame.size.width - 30, 50, 30, 76.f);
 }
 
 - (void)layoutSubviews {

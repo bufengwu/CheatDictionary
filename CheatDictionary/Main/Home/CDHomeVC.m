@@ -75,6 +75,12 @@
     self.selectIndex = 1;
     
     {
+        UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 302, 35)];
+        searchBar.delegate = self;
+        self.navigationItem.titleView = searchBar;
+    }
+    
+    {
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         UIButton *leftBtn = [[UIButton alloc] initWithFrame:contentView.bounds];
         [leftBtn setImage:[UIImage imageNamed:@"icon_avatar_little"] forState:UIControlStateNormal];
@@ -93,20 +99,10 @@
         self.navigationItem.rightBarButtonItem = barButtonItem;
     }
     
-    {
-        
-        UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 302, 35)];
-
-        searchBar.delegate = self;
-
-        self.navigationItem.titleView = searchBar;
-    }
-    
     //双击手势
     UITapGestureRecognizer * doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
     [doubleTap setNumberOfTapsRequired:2];
     [self.view addGestureRecognizer:doubleTap];
-    
     
     UITapGestureRecognizer * twoFingerDoubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerDoubleTap:)];
     [twoFingerDoubleTap setNumberOfTapsRequired:2];
@@ -124,6 +120,7 @@
     [[CDRouter shared] presentUrl:@"CDSearchVC" animated:NO];
     return NO;
 }
+
 - (void)showMsgCenter:(UIButton *)sender {
     [[CDRouter shared] pushUrl:@"CDNoticeVC" animated:YES];
 }
